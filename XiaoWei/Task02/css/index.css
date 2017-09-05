@@ -101,11 +101,14 @@ main article .second-title{
     color: #848484;
 }
 
-main article .info {
-    line-height: 38px;
+.info {
     font-size: 12px;
     color: #848484;
     text-indent:0;
+}
+
+main article .info p{
+    line-height: 38px;
 }
 
 main article >p {
@@ -164,25 +167,53 @@ main article table tr:last-child {
 
 main article .input-box {
     font-size: 14px;
-    line-height:14px;
+    line-height:20px;
 }
+main article .input-box div {
+    margin-top: 10px;
+}
+
+main article input {
+    height: 14px;
+}
+
 main article .input-box .left-container {
     float: left;
     width: 30%;
 }
 main article .input-box .right-container {
     float: left;
-    width: 69%;
+    width: 70%;
 }
 
 main article .input-box .left-container>* {
+    margin-right: 10px;
+    margin-top: 10px;
     clear: both;
     float: right;
 }
 main article .input-box .right-container>* {
+    margin-top: 10px;
     clear: both;
     float: left;
 }
+
+.describe-text {
+    font-size: 14px;
+    width: 780px;
+    height: 100px;
+}
+
+.submit-btn {
+    font-size: 14px;
+    border-radius: 10px;
+    margin-top: 10px;
+    color: #FFF;
+    height: 40px;
+    width: 100%;
+    background-color: #3355D0;
+}
+
 footer {
     font-size:12px;
     display: block;
