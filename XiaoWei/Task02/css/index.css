@@ -108,7 +108,7 @@ main article .info {
     text-indent:0;
 }
 
-main article p {
+main article >p {
     text-indent: 2em;
 }
 
@@ -162,6 +162,27 @@ main article table tr:last-child {
     background-color: #CCCCCC;
 }
 
+main article .input-box {
+    font-size: 14px;
+    line-height:14px;
+}
+main article .input-box .left-container {
+    float: left;
+    width: 30%;
+}
+main article .input-box .right-container {
+    float: left;
+    width: 69%;
+}
+
+main article .input-box .left-container>* {
+    clear: both;
+    float: right;
+}
+main article .input-box .right-container>* {
+    clear: both;
+    float: left;
+}
 footer {
     font-size:12px;
     display: block;
