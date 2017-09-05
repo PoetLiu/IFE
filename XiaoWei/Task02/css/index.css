@@ -1,0 +1,174 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+ul li {
+    list-style: none;
+}
+
+body {
+    background-color: #DEDEDE;
+    Font-family: "微软雅黑", Helvetica, Tahoma, Arial, SimSun,  Heiti, "黑体", sans-serif;
+}
+
+nav {
+    background-color: #212121;
+    color:#FFF;
+    width: 100%;
+}
+
+nav .container {
+    margin: 0 auto;
+    width: 1240px;
+    padding: 10px;
+}
+
+nav .logo {
+    float:left;
+    margin-top: 12px;
+    margin-left: 15px;
+    margin-bottom: 4px;
+}
+
+nav .nav-link {
+    float: right;
+}
+
+.clear-fix {
+    *overflow: hidden;
+    *zoom: 1;
+}
+
+.clear-fix:after {
+    display: table;
+    content: "";
+    width: 0;
+    clear: both;
+}
+
+nav ul li {
+    float:left;
+    font-size:12px;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+nav ul li:last-child a {
+   color: #CDCDCD;
+}
+
+main {
+    font-size:15px;
+    line-height: 25px;
+    width: 1240px;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+main article {
+    display: block;
+    margin-bottom: 20px;
+    padding: 32px 20px;
+    background-color: #FFF;
+    /*box-shadow:2px 2px 3px #aaaaaa;*/
+    border: 1px solid #CDCDCD;
+    border-right: 2px solid #848484;
+    border-bottom: 2px solid #848484;
+}
+
+main article>img {
+    margin-top: 15px;
+}
+
+main article h2 {
+    font-size: 22px;
+}
+main article h3 {
+    font-size: 16px;
+}
+main article .title{
+    line-height: 40px;
+}
+
+main article .second-title{
+    line-height: 35px;
+    color: #848484;
+}
+
+main article .info {
+    line-height: 38px;
+    font-size: 12px;
+    color: #848484;
+    text-indent:0;
+}
+
+main article p {
+    text-indent: 2em;
+}
+
+main article ul {
+    margin-left: 20px;
+}
+
+main #images div {
+    text-align: center;
+    padding: 0 10px 10px;
+    margin-left: 40px;
+    margin-top: 15px;
+    width: 100px;
+    height: 115px;
+    border: 1px solid #CDCDCD;
+}
+
+main #images div span{
+    display: inline-block;
+    font-size:12px;
+    line-height:35px;
+}
+
+main #images div img {
+    width: 100px;
+    height: 80px;
+}
+
+main article ol {
+    margin-left: 40px;
+}
+
+main article .table-title {
+    font-weight:bold;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+main article table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+main article table tr th {
+    text-align: left;
+    color: #FFF;
+    background-color: #333333;
+}
+
+main article table tr:last-child {
+    background-color: #CCCCCC;
+}
+
+footer {
+    font-size:12px;
+    display: block;
+    height: 60px;
+    padding: 15px;
+    background-color: #212121;
+    text-align: center;
+    color: #FFF;
+}
+
