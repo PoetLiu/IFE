@@ -174,7 +174,9 @@ main article .input-box div {
 }
 
 main article input {
-    height: 14px;
+    line-height: 14px;
+    padding: 2px;
+    border-width: 1px;
 }
 
 main article .input-box .left-container {
