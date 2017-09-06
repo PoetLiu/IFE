@@ -179,6 +179,12 @@ main article input {
     border-width: 1px;
 }
 
+.left-border-highlight {
+   border-left: 3px solid #A2CCDD;
+    padding-left: 10px;
+    line-height: 40px;
+}
+
 main article .input-box .left-container {
     float: left;
     width: 30%;
