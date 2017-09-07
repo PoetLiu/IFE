@@ -1,0 +1,29 @@
+.container {
+    padding: 20px 160px 20px 240px;
+}
+
+.middle-container,
+.left-container,
+.right-container {
+    float: left;
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.middle-container {
+    width: 100%;
+}
+
+.left-container {
+    width: 200px;
+    margin-left: -220px;
+    left: -100%;
+}
+
+.right-container {
+    width: 120px;
+    margin-left: -120px;
+    right: -140px;
+}

@@ -1,0 +1,22 @@
+.container .middle-container {
+    float: left;
+    margin-left: 220px;
+    margin-right: 140px;
+    margin-top: -375px;
+}
+
+.left-container {
+    float: left;
+}
+
+.right-container {
+    float: right;
+}
+
+.left-container {
+    width: 160px;
+}
+
+.right-container{
+    width: 80px;
+}

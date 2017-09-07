@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding: 20px;
+}
+
+.clear-fix:after {
+    clear: both;
+    display: table;
+    content: " ";
+}
+
+.container {
+    padding: 20px;
+    border: 1px solid  #999;
+    background-color: #EEE;
+}
+
+.left-container,
+.middle-container,
+.right-container {
+    background: #FFF;
+    border: 1px solid #999;
+    padding: 20px;
+}
+
