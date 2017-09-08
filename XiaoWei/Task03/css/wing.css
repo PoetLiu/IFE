@@ -1,0 +1,26 @@
+.middle-wrapper{
+    width: 100%;
+}
+
+.middle-wrapper,
+.left-container,
+.right-container {
+    float: left;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.middle-container {
+    margin: 0 140px 20px 220px;
+}
+
+.left-container {
+    width: 200px;
+    margin-left: -100%;
+}
+
+.right-container {
+    width: 120px;
+    margin-left: -120px;
+}
