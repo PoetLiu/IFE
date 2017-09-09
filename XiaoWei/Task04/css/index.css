@@ -18,3 +18,23 @@ body {
     width: 400px;
     height: 200px;
 }
+
+.top-left-sector,
+.bottom-right-sector {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #FC0;
+}
+
+.top-left-sector {
+    border-bottom-right-radius: 100%;
+    top: 0;
+    left: 0;
+}
+
+.bottom-right-sector {
+    border-top-left-radius: 100%;
+    right: 0;
+    bottom: 0;
+}
