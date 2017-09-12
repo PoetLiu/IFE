@@ -1,0 +1,246 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    list-style: none;
+}
+
+body {
+    background-color: #DEDEDE;
+    Font-family: "微软雅黑", Helvetica, Tahoma, Arial, SimSun,  Heiti, "黑体", sans-serif;
+}
+
+nav {
+    background-color: #212121;
+    color:#FFF;
+    width: 100%;
+}
+
+nav .container {
+    margin: 0 auto;
+    padding: 10px;
+}
+
+nav .logo {
+    float:left;
+    margin-top: 12px;
+    margin-left: 15px;
+    margin-bottom: 4px;
+}
+
+nav .nav-link {
+    float: right;
+}
+
+.clear-fix {
+    *overflow: hidden;
+    *zoom: 1;
+}
+
+.clear-fix:after {
+    display: table;
+    content: "";
+    width: 0;
+    clear: both;
+}
+
+nav ul li {
+    float:left;
+    font-size:12px;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+nav ul li:last-child a {
+   color: #CDCDCD;
+}
+
+main {
+    font-size:15px;
+    line-height: 25px;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+main .left-main {
+    box-sizing: border-box;
+    width: 100%;
+   float: left;
+    padding-right: 380px;
+}
+
+main .right-main {
+    width: 360px;
+   float: right;
+    margin-left: -100%;
+}
+
+main article {
+    display: block;
+    margin-bottom: 20px;
+    padding: 32px 20px;
+    background-color: #FFF;
+    /*box-shadow:2px 2px 3px #aaaaaa;*/
+    border: 1px solid #CDCDCD;
+    border-right: 2px solid #848484;
+    border-bottom: 2px solid #848484;
+}
+
+main article>img {
+    margin-top: 15px;
+}
+
+main article h2 {
+    font-size: 22px;
+}
+main article h3 {
+    font-size: 16px;
+}
+main article .title{
+    line-height: 40px;
+}
+
+main article .second-title{
+    line-height: 35px;
+    color: #848484;
+}
+
+.info {
+    font-size: 12px;
+    color: #848484;
+    text-indent:0;
+}
+
+main article .info p{
+    line-height: 38px;
+}
+
+main article >p {
+    text-indent: 2em;
+}
+
+main article ul {
+    margin-left: 20px;
+}
+
+main #images div {
+    display: inline-block;
+    text-align: center;
+    padding: 0 10px 10px;
+    margin: 10px;
+    width: 100px;
+    height: 115px;
+    border: 1px solid #CDCDCD;
+}
+
+main #images div span{
+    display: inline-block;
+    font-size:12px;
+    line-height:35px;
+}
+
+main #images div img {
+    width: 100px;
+    height: 80px;
+}
+
+main article ol {
+    margin-left: 40px;
+}
+
+main article .table-title {
+    font-weight:bold;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+main article table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+main article table tr th {
+    text-align: left;
+    color: #FFF;
+    background-color: #333333;
+}
+
+main article table tr:last-child {
+    background-color: #CCCCCC;
+}
+
+main article .input-box {
+    font-size: 14px;
+    line-height:20px;
+}
+main article .input-box div {
+    margin-top: 10px;
+}
+
+main article input {
+    vertical-align: middle;
+    line-height: 14px;
+    padding: 2px;
+    border-width: 1px;
+}
+
+.left-border-highlight {
+   border-left: 3px solid #A2CCDD;
+    padding-left: 10px;
+    line-height: 40px;
+}
+
+main article .input-box .left-container {
+    float: left;
+    width: 30%;
+}
+main article .input-box .right-container {
+    float: left;
+    width: 70%;
+}
+
+main article .input-box .left-container>* {
+    margin-right: 10px;
+    margin-top: 10px;
+    clear: both;
+    float: right;
+}
+main article .input-box .right-container>* {
+    margin-top: 10px;
+    clear: both;
+    float: left;
+}
+
+.describe-text {
+    font-size: 14px;
+    height: 100px;
+    margin-right: 10px;
+}
+
+.submit-btn {
+    font-size: 14px;
+    border-radius: 10px;
+    margin-top: 10px;
+    color: #FFF;
+    height: 40px;
+    width: 100%;
+    background-color: #3355D0;
+}
+
+footer {
+    font-size:12px;
+    display: block;
+    height: 60px;
+    padding: 15px;
+    background-color: #212121;
+    text-align: center;
+    color: #FFF;
+}
+
