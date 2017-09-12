@@ -131,6 +131,7 @@ main article ul {
 }
 
 main #images div {
+    float: left;
     display: inline-block;
     text-align: center;
     padding: 0 10px 10px;
