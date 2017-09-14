@@ -9,22 +9,23 @@ ul li {
 
 body {
     background-color: #DEDEDE;
-    Font-family: "微软雅黑", Helvetica, Tahoma, Arial, SimSun,  Heiti, "黑体", sans-serif;
+    Font-family: "微软雅黑", Helvetica, Tahoma, Arial, SimSun, Heiti, "黑体", sans-serif;
 }
 
 nav {
     background-color: #212121;
-    color:#FFF;
+    color: #FFF;
     width: 100%;
 }
 
 nav .container {
+
     margin: 0 auto;
     padding: 10px;
 }
 
 nav .logo {
-    float:left;
+    float: left;
     margin-top: 12px;
     margin-left: 15px;
     margin-bottom: 4px;
@@ -47,8 +48,8 @@ nav .nav-link {
 }
 
 nav ul li {
-    float:left;
-    font-size:12px;
+    float: left;
+    font-size: 12px;
     margin-top: 10px;
     margin-left: 20px;
 }
@@ -59,11 +60,11 @@ nav ul li a {
 }
 
 nav ul li:last-child a {
-   color: #CDCDCD;
+    color: #CDCDCD;
 }
 
 main {
-    font-size:15px;
+    font-size: 15px;
     line-height: 25px;
     padding: 20px;
     margin: 0 auto;
@@ -73,13 +74,13 @@ main .left-main {
     min-width: 720px;
     box-sizing: border-box;
     width: 100%;
-   float: left;
+    float: left;
     padding-right: 380px;
 }
 
 main .right-main {
     width: 360px;
-   float: right;
+    float: right;
     margin-left: -100%;
 }
 
@@ -94,21 +95,23 @@ main article {
     border-bottom: 2px solid #848484;
 }
 
-main article>img {
+main article > img {
     margin-top: 15px;
 }
 
 main article h2 {
     font-size: 22px;
 }
+
 main article h3 {
     font-size: 16px;
 }
-main article .title{
+
+main article .title {
     line-height: 40px;
 }
 
-main article .second-title{
+main article .second-title {
     line-height: 35px;
     color: #848484;
 }
@@ -116,14 +119,14 @@ main article .second-title{
 .info {
     font-size: 12px;
     color: #848484;
-    text-indent:0;
+    text-indent: 0;
 }
 
-main article .info p{
+main article .info p {
     line-height: 38px;
 }
 
-main article >p {
+main article > p {
     text-indent: 2em;
 }
 
@@ -142,10 +145,10 @@ main #images div {
     border: 1px solid #CDCDCD;
 }
 
-main #images div span{
+main #images div span {
     display: inline-block;
-    font-size:12px;
-    line-height:35px;
+    font-size: 12px;
+    line-height: 35px;
 }
 
 main #images div img {
@@ -158,7 +161,7 @@ main article ol {
 }
 
 main article .table-title {
-    font-weight:bold;
+    font-weight: bold;
     display: inline-block;
     margin-top: 10px;
 }
@@ -180,8 +183,9 @@ main article table tr:last-child {
 
 main article .input-box {
     font-size: 14px;
-    line-height:20px;
+    line-height: 20px;
 }
+
 main article .input-box div {
     margin-top: 10px;
 }
@@ -194,7 +198,7 @@ main article input {
 }
 
 .left-border-highlight {
-   border-left: 3px solid #A2CCDD;
+    border-left: 3px solid #A2CCDD;
     padding-left: 10px;
     line-height: 40px;
 }
@@ -203,18 +207,20 @@ main article .input-box .left-container {
     float: left;
     width: 35%;
 }
+
 main article .input-box .right-container {
     float: left;
     width: 65%;
 }
 
-main article .input-box .left-container>* {
+main article .input-box .left-container > * {
     margin-right: 10px;
     margin-top: 10px;
     clear: both;
     float: right;
 }
-main article .input-box .right-container>* {
+
+main article .input-box .right-container > * {
     margin-top: 10px;
     clear: both;
     float: left;
@@ -238,7 +244,7 @@ main article .input-box .right-container>* {
 }
 
 footer {
-    font-size:12px;
+    font-size: 12px;
     display: block;
     height: 60px;
     padding: 15px;
