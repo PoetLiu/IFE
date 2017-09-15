@@ -19,7 +19,7 @@ nav {
 }
 
 nav .container {
-    max-width: 1200px;
+    max-width: 1845px;
     margin: 0 auto;
     padding: 10px;
 }
@@ -64,6 +64,7 @@ nav ul li:last-child a {
 }
 
 main {
+    max-width: 1845px;
     font-size: 15px;
     line-height: 25px;
     padding: 20px;
