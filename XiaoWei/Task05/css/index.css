@@ -227,6 +227,10 @@ main article .input-box .right-container > * {
     float: left;
 }
 
+main article > img {
+    width: 300px;height:245px;
+}
+
 .describe-text {
     box-sizing: border-box;
     width: 100%;
