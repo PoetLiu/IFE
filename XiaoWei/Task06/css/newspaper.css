@@ -86,13 +86,20 @@ body {
 .intro {
     border-top: solid 2px #CC8091;
     margin-left: 40px;
+    color: #000000;
+    font-family: 微软雅黑;
 }
 
 .intro-title-font {
     font-size: 24px;
-    color: #000000;
-    font-family: 微软雅黑;
-    line-height: 40px;
+    line-height: 35px;
+}
+
+.intro-title-font2 {
+    font-size: 18px; 
+}
+
+u {
     text-decoration: underline;
 }
 
@@ -103,11 +110,13 @@ body {
     line-height: 10px;
 }
 
-.intro-title-large-font {
+.intro-title-large-font{
+    margin-top: 34px;
     font-size: 116px;
     color: #75B86B;
     font-family: 微软雅黑;
     font-style: italic;
+    line-height: 116px;
 }
 
 .intro-title-small-font,
@@ -117,13 +126,6 @@ body {
     color: #CC8091;
     font-family: 微软雅黑;
 
-}
-
-.float-left {
-    float:left;
-}
-.float-right {
-    float:right;
 }
 
 .intro-title-big-font {
@@ -138,3 +140,14 @@ body {
     font-size:12px;
 }
 
+.intro-container {
+    position:relative;
+}
+
+.intro-right, .intro-left {
+    display:inline-block;
+}
+
+.intro-right {
+    line-height: 12px;
+}
