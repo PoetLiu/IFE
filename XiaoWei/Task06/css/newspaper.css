@@ -1,0 +1,140 @@
+.clear-fix {
+    *overflow: hidden;
+    *zoom: 1;
+}
+
+.clear-fix:after {
+    display: table;
+    content: "";
+    width: 0;
+    clear: both;
+}
+
+body {
+    font-family:"微软雅黑", Helvetica, Tahoma, Arial, SimSun, Heiti, "黑体", sans-serif;
+    font-size: 12px;
+    background-color: #5D5D5D;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 44px;
+    background-color: #FFFFFF;
+    width:980px;
+    height:1386px;
+    box-sizing: border-box;
+}
+
+.header {
+    font-family: "黑体";
+    border-bottom: solid 2px #938E8C;
+    position: relative;
+}
+
+.logo {
+    position: relative;
+    width: 110px;
+    height: 61px;
+    background-color: #D55D5C;
+}
+
+.logo .logo-text {
+    position: absolute;
+    left: 5px;
+    bottom: 4px;
+    color: #FFFFFF;
+}
+
+.date {
+    color: #D45D5C;
+    position: absolute;
+    right: 0;
+    bottom: 4px;
+}
+
+.title {
+    margin-top: 35px;
+}
+
+.img-box {
+    position: relative;
+    width: 641px;
+    height: 301px;
+}
+
+.img-box, .intro {
+    display: inline-block;
+}
+
+.left-cover, .right-cover {
+    position: absolute;
+    width: 191px;
+    height: 301px;
+    opacity: 0.3;
+}
+
+.left-cover {
+    background-color: green;
+    left:0;
+}
+
+.right-cover {
+    background-color: red;
+    right:0;
+}
+
+.intro {
+    border-top: solid 2px #CC8091;
+    margin-left: 40px;
+}
+
+.intro-title-font {
+    font-size: 24px;
+    color: #000000;
+    font-family: 微软雅黑;
+    line-height: 40px;
+    text-decoration: underline;
+}
+
+.intro-font {
+    font-size: 12px;
+    color: #676767;
+    font-family: 楷体;
+    line-height: 10px;
+}
+
+.intro-title-large-font {
+    font-size: 116px;
+    color: #75B86B;
+    font-family: 微软雅黑;
+    font-style: italic;
+}
+
+.intro-title-small-font,
+.intro-title-mid-font,
+.intro-title-big-font
+{
+    color: #CC8091;
+    font-family: 微软雅黑;
+
+}
+
+.float-left {
+    float:left;
+}
+.float-right {
+    float:right;
+}
+
+.intro-title-big-font {
+    font-size:55px;
+}
+
+.intro-title-mid-font {
+    font-size: 21px;
+}
+
+.intro-title-small-font {
+    font-size:12px;
+}
+
