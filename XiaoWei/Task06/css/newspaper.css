@@ -64,6 +64,7 @@ body {
 
 .img-box, .intro {
     display: inline-block;
+    float: left;
 }
 
 .left-cover, .right-cover {
@@ -116,7 +117,7 @@ u {
     color: #75B86B;
     font-family: 微软雅黑;
     font-style: italic;
-    line-height: 116px;
+    line-height: 124px;
 }
 
 .intro-title-small-font,
@@ -130,6 +131,7 @@ u {
 
 .intro-title-big-font {
     font-size:55px;
+    line-height: 55px;
 }
 
 .intro-title-mid-font {
@@ -150,4 +152,17 @@ u {
 
 .intro-right {
     line-height: 12px;
+}
+
+.content {
+    margin-top: 35px;
+    line-height: 16px;
+    font-family: 微软雅黑;
+    font-size: 12px;
+    color:#231815;
+}
+
+.content div {
+    float: left;
+    margin-right: 28px;
 }
