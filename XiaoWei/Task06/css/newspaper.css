@@ -159,10 +159,38 @@ u {
     line-height: 16px;
     font-family: 微软雅黑;
     font-size: 12px;
-    color:#231815;
+    color: #231815;
+    opacity: 0.7;
 }
 
 .content div {
     float: left;
     margin-right: 28px;
+}
+.content-title1,
+.content-title2,
+.content-title3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.content-title1 {
+    color: black;
+}
+.content-title2 {
+    color: #D2994F;
+}
+
+.content-title3 {
+    color: #CC7680;
+}
+
+.content-title4 {
+    margin-top: 20px;
+    color: #CD4A48;
+}
+
+.content-text {
+    margin-top: -3px;
+    line-height: 22px;
 }
