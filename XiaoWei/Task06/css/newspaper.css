@@ -175,7 +175,7 @@ u {
 }
 
 .content-title1 {
-    color: black;
+    color: #418C59;
 }
 .content-title2 {
     color: #D2994F;
@@ -193,4 +193,52 @@ u {
 .content-text {
     margin-top: -3px;
     line-height: 22px;
+}
+
+.left-container,
+.right-container {
+   margin-top: 70px;
+}
+.left-container {
+    float: left;
+}
+.right-container {
+    float: right;
+}
+
+.content-normal-font {
+    font-size: 12px;
+    color: #767777;
+    font-family: 宋体;
+}
+
+.content-mid-font {
+    font-size: 33px;
+    color: #11456B;
+    font-family: 黑体;
+    font-weight: bold;
+}
+
+.content-big-font {
+    font-size: 42px;
+    color: #11456B;
+    font-family: 黑体;
+    line-height: 16px;
+}
+
+.content-large-font {
+    font-size: 70px;
+    color: #F5E327;
+}
+
+.content-huge-font {
+    font-size: 72px;
+    color: #F5E327;
+    font-family: 黑体;
+    font-style: italic;
+}
+
+.bottom-left-title {
+    border-bottom: solid 2px #11456C;
+    padding-bottom: 10px;
 }
