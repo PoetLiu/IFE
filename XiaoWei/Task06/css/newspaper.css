@@ -308,3 +308,8 @@ u {
     height: 318px;
     background-color: #EEEED6;
 }
+
+.footer {
+    margin-top: 40px;
+    border-top: 1px solid #938E8C;
+}
