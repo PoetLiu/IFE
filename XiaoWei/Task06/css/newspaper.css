@@ -313,3 +313,10 @@ u {
     margin-top: 40px;
     border-top: 1px solid #938E8C;
 }
+
+.footer span {
+    float: right;
+    font-size: 12px;
+    font-family: 黑体;
+    color: #D45D5C;
+}
