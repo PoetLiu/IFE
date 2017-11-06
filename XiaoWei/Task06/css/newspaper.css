@@ -201,6 +201,7 @@ u {
 }
 .left-container {
     float: left;
+    width: 415px;
 }
 .right-container {
     float: right;
@@ -229,6 +230,7 @@ u {
 .content-large-font {
     font-size: 70px;
     color: #F5E327;
+    font-family: 微软雅黑;
 }
 
 .content-huge-font {
@@ -241,4 +243,16 @@ u {
 .bottom-left-title {
     border-bottom: solid 2px #11456C;
     padding-bottom: 12px;
+}
+
+.bottom-left-content {
+    margin-top: 25px;
+    line-height: 16px;
+}
+
+.bottom-left-content .content-large-font {
+    float: left;
+    line-height: 70px;
+    padding-right: 10px;
+    text-align: center;
 }
