@@ -265,3 +265,43 @@ u {
     padding-top: 20px;
     padding-bottom: 10px;
 }
+
+.bottom-right-title {
+    position: relative;
+    width: 458px;
+    height: 257px;
+}
+
+.bottom-right-img-cover {
+    width: 458px;
+    height: 61px;
+    background-color: #040000;
+    position: absolute;
+    bottom: 0;
+    opacity: 0.4;
+}
+
+.left-banner {
+    margin-left: 38px;
+    border-left: 3px solid #72B16A;
+    padding-left: 10px;
+    height: 44px;
+    line-height: 44px;
+    position: absolute;
+    bottom: 7px;
+    font-size: 26px;
+    color: #FFFFFF;
+    font-family: 微软雅黑;
+}
+
+.left-banner span {
+    margin-left: 10px;
+    font-size: 12px;
+    color: #72B16A;
+    font-style: italic;
+    letter-spacing: 0.14em;
+}
+
+.bottom-right-content {
+
+}
