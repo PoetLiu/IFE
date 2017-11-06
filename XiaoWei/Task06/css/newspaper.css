@@ -303,5 +303,8 @@ u {
 }
 
 .bottom-right-content {
-
+    margin-top: 30px;
+    width: 459px;
+    height: 318px;
+    background-color: #EEEED6;
 }
