@@ -18,7 +18,7 @@ body {
 
 .container {
     margin: 0 auto;
-    padding: 0 44px;
+    padding: 0 45px;
     background-color: #FFFFFF;
     width:980px;
     height:1386px;
@@ -241,6 +241,7 @@ u {
 }
 
 .bottom-left-title {
+    margin-top: -15px;
     border-bottom: solid 2px #11456C;
     padding-bottom: 12px;
 }
@@ -248,11 +249,19 @@ u {
 .bottom-left-content {
     margin-top: 25px;
     line-height: 16px;
+    padding: 0 2px;
 }
 
 .bottom-left-content .content-large-font {
     float: left;
     line-height: 70px;
-    padding-right: 10px;
+    padding-right: 5px;
     text-align: center;
+}
+
+.bottom-left-content img {
+    float:right;
+    padding-left: 15px;
+    padding-top: 20px;
+    padding-bottom: 10px;
 }
