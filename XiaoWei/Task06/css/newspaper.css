@@ -299,7 +299,7 @@ u {
     font-size: 12px;
     color: #72B16A;
     font-style: italic;
-    letter-spacing: 0.14em;
+    word-spacing: 140%;
 }
 
 .bottom-right-content {
