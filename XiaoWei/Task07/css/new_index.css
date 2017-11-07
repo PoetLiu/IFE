@@ -1,4 +1,5 @@
 .container {
+    margin: 0 auto;
     width: 1280px;
     height: 4554px;
     background-color: #FFFFFF;
@@ -6,4 +7,54 @@
 
 .header {
     height: 55px;
+}
+
+#intro-image-box, #intro-image{
+    height: 690px;
+    width: 100%;
+}
+
+#intro-section {
+    height: 250px;
+}
+
+#about-new-world {
+    height: 360px;
+    background-color: #EEECED;
+}
+
+#world-img-box, #world-img{
+    width: 100%;
+    height: 340px;
+}
+
+#gallery-box {
+    height: 605px;
+    background-color: #F8F8F8;
+}
+
+#time-box {
+    height: 565px;
+}
+
+#time-box-1 {
+    height: 520px;
+}
+
+#join-us {
+    height: 750px;
+}
+
+#contact-us {
+    height: 360px;
+    background-color: #33363F;
+}
+
+#copyright {
+    height: 55px;
+    background-color: #30303A;
+}
+
+.footer {
+    color: #FFFFFF;
 }
