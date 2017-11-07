@@ -322,15 +322,44 @@ u {
 }
 
 .catalog-bottom-left {
+    box-sizing: border-box;
     float: left;
     width: 260px;
     height: 160px;
     color: #FFFFFF;
     background-color: #D55D5C;
+    padding: 40px 10px 30px 10px;
 }
 
 .catalog-bottom-right {
     float: right;
+}
+
+.highlight-0 {
+    position: relative;
+    top: -2px;
+    height: 86px;
+    line-height: 86px;
+    font-size: 110px;
+    font-family: 微软雅黑;
+    float: left;
+}
+
+.highlight-0-right {
+    margin-left: 3px;
+    padding-left: 8px;
+    height: 86px;
+    border-left: solid 2px #FFFFFF;
+    float: left;
+    font-size: 12px;
+    font-family: 黑体;
+    line-height: 6px;
+}
+
+.highlight-0-right span {
+    font-size: 21px;
+    font-style: italic;
+    line-height: 24px;
 }
 
 .footer {
