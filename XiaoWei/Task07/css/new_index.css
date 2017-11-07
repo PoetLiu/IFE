@@ -1,3 +1,6 @@
+body {
+    background-color: black;
+}
 .container {
     margin: 0 auto;
     width: 1280px;
@@ -7,6 +10,18 @@
 
 .header {
     height: 55px;
+}
+
+.logo {
+    float: left;
+    line-height: 55px;
+    margin-left: 60px;
+}
+
+.navigator {
+    float: right;
+    margin-right: 70px;
+    margin-top: 15px;
 }
 
 #intro-image-box, #intro-image{
