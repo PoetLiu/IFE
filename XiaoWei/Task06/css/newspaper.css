@@ -309,6 +309,17 @@ u {
     background-color: #EEEED6;
 }
 
+.catalog {
+    padding: 20px 20px 20px 30px;
+    font-size: 16px;
+    color: #5A5B5B;
+    font-family: 宋体;
+}
+
+.catalog p {
+    padding: 10px 0;
+}
+
 .footer {
     margin-top: 40px;
     border-top: 1px solid #938E8C;
