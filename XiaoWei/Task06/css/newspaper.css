@@ -332,6 +332,17 @@ u {
     font-style: italic;
     text-align: right;
 }
+
+.triangle-up {
+    margin-right: 5px;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 10px solid black;
+}
+
 .catalog-bottom-left {
     box-sizing: border-box;
     float: left;
