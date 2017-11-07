@@ -11,7 +11,7 @@
 }
 
 body {
-    font-family:"微软雅黑", Helvetica, Tahoma, Arial, SimSun, Heiti, "黑体", sans-serif;
+    font-family: "微软雅黑", Helvetica, Tahoma, Arial, SimSun, Heiti, "黑体", sans-serif;
     font-size: 12px;
     background-color: #5D5D5D;
 }
@@ -20,8 +20,8 @@ body {
     margin: 0 auto;
     padding: 0 45px;
     background-color: #FFFFFF;
-    width:980px;
-    height:1386px;
+    width: 980px;
+    height: 1386px;
     box-sizing: border-box;
 }
 
@@ -76,12 +76,12 @@ body {
 
 .left-cover {
     background-color: green;
-    left:0;
+    left: 0;
 }
 
 .right-cover {
     background-color: red;
-    right:0;
+    right: 0;
 }
 
 .intro {
@@ -97,7 +97,7 @@ body {
 }
 
 .intro-title-font2 {
-    font-size: 18px; 
+    font-size: 18px;
 }
 
 u {
@@ -111,7 +111,7 @@ u {
     line-height: 10px;
 }
 
-.intro-title-large-font{
+.intro-title-large-font {
     margin-top: 34px;
     font-size: 116px;
     color: #75B86B;
@@ -122,15 +122,14 @@ u {
 
 .intro-title-small-font,
 .intro-title-mid-font,
-.intro-title-big-font
-{
+.intro-title-big-font {
     color: #CC8091;
     font-family: 微软雅黑;
 
 }
 
 .intro-title-big-font {
-    font-size:55px;
+    font-size: 55px;
     line-height: 55px;
 }
 
@@ -139,15 +138,15 @@ u {
 }
 
 .intro-title-small-font {
-    font-size:12px;
+    font-size: 12px;
 }
 
 .intro-container {
-    position:relative;
+    position: relative;
 }
 
 .intro-right, .intro-left {
-    display:inline-block;
+    display: inline-block;
 }
 
 .intro-right {
@@ -167,6 +166,7 @@ u {
     float: left;
     margin-right: 28px;
 }
+
 .content-title1,
 .content-title2,
 .content-title3 {
@@ -177,6 +177,7 @@ u {
 .content-title1 {
     color: #418C59;
 }
+
 .content-title2 {
     color: #D2994F;
 }
@@ -197,12 +198,14 @@ u {
 
 .left-container,
 .right-container {
-   margin-top: 70px;
+    margin-top: 70px;
 }
+
 .left-container {
     float: left;
     width: 415px;
 }
+
 .right-container {
     float: right;
 }
@@ -260,7 +263,7 @@ u {
 }
 
 .bottom-left-content img {
-    float:right;
+    float: right;
     padding-left: 15px;
     padding-top: 20px;
     padding-bottom: 10px;
@@ -332,7 +335,36 @@ u {
 }
 
 .catalog-bottom-right {
+    padding: 15px 20px 15px 15px;
+    position: relative;
     float: right;
+    font-size: 14px;
+    font-family: 黑体;
+    line-height: 16px;
+    color: #5A5B5B;
+    font-style: italic;
+}
+
+.catalog-bottom-right p {
+    text-indent: 3em;
+}
+
+.left-quote,
+.right-quote {
+    position: absolute;
+    font-size: 72px;
+    color: #D45D5C;
+    font-style: normal;
+}
+
+.left-quote {
+    left: -65px;
+    top: 33px;
+}
+
+.right-quote {
+    right: -20px;
+    bottom: -15px;
 }
 
 .highlight-0 {
