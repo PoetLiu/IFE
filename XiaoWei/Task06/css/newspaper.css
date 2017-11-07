@@ -312,12 +312,25 @@ u {
 .catalog {
     padding: 20px 20px 20px 30px;
     font-size: 16px;
+    line-height: 19px;
     color: #5A5B5B;
     font-family: 宋体;
 }
 
 .catalog p {
     padding: 10px 0;
+}
+
+.catalog-bottom-left {
+    float: left;
+    width: 260px;
+    height: 160px;
+    color: #FFFFFF;
+    background-color: #D55D5C;
+}
+
+.catalog-bottom-right {
+    float: right;
 }
 
 .footer {
