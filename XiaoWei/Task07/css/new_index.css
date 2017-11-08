@@ -9,7 +9,7 @@ body {
 }
 
 .header {
-    height: 56px;
+    height: 57px;
 }
 
 .red-text {
@@ -38,6 +38,9 @@ body {
     vertical-align: middle;
 }
 
+#new-world-text {
+    margin-left: 10px;
+}
 .navigator {
     height: 100%;
     float: right;
