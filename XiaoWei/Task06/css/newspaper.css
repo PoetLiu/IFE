@@ -406,13 +406,17 @@ u {
     float: left;
     font-size: 12px;
     font-family: 黑体;
-    line-height: 6px;
+    line-height: 12px;
 }
 
 .highlight-0-right span {
     font-size: 21px;
     font-style: italic;
     line-height: 24px;
+}
+
+.highlight-0-right p {
+    margin-top: 5px;
 }
 
 .footer {
