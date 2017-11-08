@@ -1,5 +1,6 @@
 body {
     background-color: black;
+    font-family: "微软雅黑", Helvetica, Tahoma, Arial, SimSun, Heiti, "黑体", sans-serif;
 }
 .container {
     margin: 0 auto;
@@ -77,6 +78,25 @@ body {
     height: 690px;
     width: 100%;
     overflow: hidden;
+    background: url("../image/task_1_7_2.jpg") no-repeat;
+    color: #FFFFFF;
+}
+
+#intro-text {
+    margin-top: 227px;
+    margin-left: 117px;
+}
+
+.font60 {
+    font-size: 60px;
+}
+
+.font30 {
+    font-size: 30px;
+}
+
+.font21 {
+    font-size: 21px;
 }
 
 #intro-section {
