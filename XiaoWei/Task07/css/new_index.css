@@ -9,19 +9,64 @@ body {
 }
 
 .header {
-    height: 55px;
+    height: 56px;
 }
 
+.red-text {
+    color: #ff6666;
+}
+
+.red-bar {
+    background: url("../image/red_bar.jpg") bottom no-repeat;
+}
 .logo {
     float: left;
-    line-height: 55px;
-    margin-left: 60px;
+    height: 100%;
+    margin-left: 59px;
+    font-size: 21px;
+    font-family: "黑体", "微软雅黑", Helvetica, Tahoma, Arial, SimSun, Heiti,  sans-serif;
+    color: #333333;
+}
+
+.logo *{
+    vertical-align: middle;
+}
+
+.helper {
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .navigator {
+    height: 100%;
     float: right;
-    margin-right: 70px;
-    margin-top: 15px;
+    font-size: 14px;
+    line-height: 14px;
+    font-family: "微软雅黑", Helvetica, Tahoma, Arial, SimSun, Heiti, "黑体", sans-serif;
+}
+
+.navigator a {
+    display: inline-block;
+    height: 19px;
+    float: left;
+    margin-top: 14px;
+    padding-left: 20px;
+    padding-right: 25px;
+}
+
+.navigator a *{
+    vertical-align: middle;
+}
+
+#login-img {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.navigator a:last-child {
+    padding-left: 6px;
+    padding-right: 67px;
 }
 
 #intro-image-box, #intro-image{
