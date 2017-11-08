@@ -73,9 +73,10 @@ body {
     padding-right: 67px;
 }
 
-#intro-image-box, #intro-image{
+#intro-image-box {
     height: 690px;
     width: 100%;
+    overflow: hidden;
 }
 
 #intro-section {
