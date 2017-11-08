@@ -50,10 +50,11 @@ body {
 }
 
 .navigator a {
+    color: #787b83;
     display: inline-block;
     height: 19px;
     float: left;
-    margin-top: 14px;
+    margin-top: 16px;
     padding-left: 20px;
     padding-right: 25px;
 }
