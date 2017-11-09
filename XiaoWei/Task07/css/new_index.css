@@ -89,12 +89,14 @@ body {
     height: 100%;
     background-color: #cdcccc;
     opacity: 0.2;
-    z-index: -1;
+    z-index: 0;
 }
 
 #intro-text {
+    position: relative;
     margin-top: 215px;
     margin-left: 115px;
+    z-index: 1;
 }
 
 #intro-text p:last-child {
@@ -104,12 +106,14 @@ body {
 }
 
 #start-btn {
+    position: relative;
     margin-top: 62px;
     margin-left: 126px;
     height: 64px;
     width: 330px;
     font-family: "微软雅黑", Helvetica, Tahoma, Arial, SimSun, Heiti, "黑体", sans-serif;
     letter-spacing: 3px;
+    z-index: 1;
 }
 
 .font60 {
