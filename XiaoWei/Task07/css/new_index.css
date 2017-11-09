@@ -246,6 +246,10 @@ body {
     margin-right: 0px;
 }
 
+#select-boxes select option {
+    background: #e3e2e4;
+}
+
 #gallery-box {
     height: 605px;
     background-color: #F8F8F8;
