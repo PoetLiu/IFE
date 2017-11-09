@@ -21,11 +21,74 @@
         ["福州", 10],
         ["广州", 50],
         ["成都", 90],
+        ["西安", 100],
+        ["北京", 90],
+        ["上海", 50],
+        ["福州", 10],
+        ["广州", 50],
+        ["成都", 90],
+        ["西安", 100],
+        ["北京", 90],
+        ["上海", 50],
+        ["福州", 10],
+        ["广州", 50],
+        ["成都", 90],
+        ["西安", 100],
+        ["北京", 90],
+        ["上海", 50],
+        ["福州", 10],
+        ["广州", 50],
+        ["成都", 90],
+        ["西安", 100],
+        ["北京", 90],
+        ["上海", 50],
+        ["福州", 10],
+        ["广州", 50],
+        ["成都", 90],
+        ["西安", 100],
+        ["北京", 90],
+        ["上海", 50],
+        ["福州", 10],
+        ["广州", 50],
+        ["成都", 90],
+        ["西安", 100],
+        ["北京", 90],
+        ["上海", 50],
+        ["福州", 10],
+        ["广州", 50],
+        ["成都", 90],
+        ["西安", 100],
+        ["北京", 90],
+        ["上海", 50],
+        ["福州", 10],
+        ["广州", 50],
+        ["成都", 90],
+        ["西安", 100],
+        ["北京", 90],
+        ["上海", 50],
+        ["福州", 10],
+        ["广州", 50],
+        ["成都", 90],
+        ["西安", 100],
+        ["北京", 90],
+        ["上海", 50],
+        ["福州", 10],
+        ["广州", 50],
+        ["成都", 90],
+        ["西安", 100],
+        ["北京", 90],
+        ["上海", 50],
+        ["福州", 10],
+        ["广州", 50],
+        ["成都", 90],
+        ["西安", 100],
+        ["北京", 90],
+        ["上海", 50],
+        ["福州", 10],
+        ["广州", 50],
+        ["成都", 90],
         ["西安", 100]
     ];
-
-    const aqiValve = 60;
-    var list = document.getElementById('aqi-list');
 
     (function () {
 
@@ -34,10 +97,55 @@
         遍历读取aqiData中各个城市的数据
         将空气质量指数大于60的城市显示到aqi-list的列表中
         */
-        aqiData.forEach(function (t) {
+
+        function getRankCHNByNum(n) {
+           var rankCHN = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九'];
+           var units = ['十', '百', '千' ,'万'];
+           var rank = "";
+
+           var bitMap = n.toString().split("");
+           var bitsLeft = bitMap.length;
+
+           if (n <= 9 && n > 0) {
+               return rankCHN[n];
+           }
+
+           bitMap.forEach(function (t, number) {
+               console.log(t, number);
+                rank    += rankCHN[Number(t)] + (units[bitsLeft-2] || '') + '';
+                bitsLeft--;
+
+                // remove tail 零
+                if (number+1 == bitMap.length && rank[rank.length-1] == '零') {
+                    rank    = rank.substr(0, rank.length-1);
+                }
+
+                // remove adjacent 一 and 十
+                var i = rank.indexOf('一十');
+                if (i != -1) {
+                   rank = rank.substr(i+1, rank.length);
+                }
+           });
+           return rank;
+        }
+        const aqiValve = 60;
+        var list = document.getElementById('aqi-list');
+
+        for (var i = 0; i < aqiData.length; i++) {
+            for (var j = i+1; j < aqiData.length; j++) {
+                if (aqiData[i][1] < aqiData[j][1]) {
+                   var tmp = aqiData[i];
+                   aqiData[i]   = aqiData[j];
+                   aqiData[j]   = tmp;
+                }
+            }
+        }
+
+        aqiData.forEach(function (t, idx) {
           if (t[1] > aqiValve) {
               var li = document.createElement('li');
-              li.appendChild(document.createTextNode(t[0]+","+t[1]));
+              var rank = getRankCHNByNum(idx+1);
+              li.appendChild(document.createTextNode("第"+rank+"名"+t[0]+", "+t[1]));
              list.appendChild(li);
           }
         });
