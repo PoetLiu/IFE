@@ -120,6 +120,10 @@ body {
     font-size: 60px;
 }
 
+.font54 {
+    font-size: 54px;
+}
+
 .font30 {
     font-size: 30px;
 }
@@ -163,7 +167,21 @@ body {
 
 #about-new-world {
     height: 360px;
-    background-color: #EEECED;
+    background-color: #ededed;
+    color: #333333;
+    font-family: "黑体", "微软雅黑", Helvetica, Tahoma, Arial, SimSun, Heiti, sans-serif;
+}
+
+#about-new-world img {
+    margin: 0 auto;
+    padding-top: 90px;
+    padding-bottom: 40px;
+    display: block;
+}
+
+#about-new-world p {
+    opacity: 0.5;
+    text-align: center;
 }
 
 #world-img-box, #world-img{
