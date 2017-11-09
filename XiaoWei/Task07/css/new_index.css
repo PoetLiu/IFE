@@ -135,7 +135,9 @@ body {
 .font14 {
     font-size: 14px;
 }
-
+.font12 {
+    font-size: 12px;
+}
 #intro-section {
     height: 250px;
 }
@@ -184,9 +186,64 @@ body {
     text-align: center;
 }
 
+#world-img-box {
+    position: relative;
+    color: #FFFFFF;
+    font-family: "微软雅黑", Helvetica, Tahoma, Arial, SimSun, Heiti, "黑体", sans-serif;
+}
+
 #world-img-box, #world-img{
     width: 100%;
     height: 340px;
+}
+
+#world-img {
+    position: absolute;
+    z-index: 0;
+}
+
+#world-img-cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #eed6d6;
+    opacity: 0.2;
+    z-index: 1;
+}
+
+#world-content {
+    text-align: center;
+   width: 100%;
+}
+
+#world-img-box >div:last-child {
+    position: absolute;
+    z-index: 2;
+}
+
+#world-content-title {
+    margin-top: 50px;
+    margin-bottom: 15px;
+}
+
+#world-content-title span {
+    display: inline-block;
+    padding-bottom: 10px;
+    border-bottom: 2px solid white;
+}
+
+#select-boxes {
+    margin-top: 50px;
+}
+
+#select-boxes >* {
+    width: 236px;
+    height: 37px;
+    margin-right: 25px;
+}
+
+#select-boxes >:last-child {
+    margin-right: 0px;
 }
 
 #gallery-box {
