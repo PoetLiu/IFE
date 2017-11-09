@@ -297,6 +297,31 @@ body {
     height: 565px;
 }
 
+#time-box >div {
+    float: left;
+}
+
+#time-box-content {
+    width: 430px;
+    box-sizing: border-box;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-top: 160px;
+    text-align: center;
+}
+
+#time-box-content p:last-child {
+    text-align: left;
+    color: #aaaaaa;
+    font-family:  "宋体", SimSun, "黑体", SimHei, "微软雅黑", Helvetica, Tahoma, Arial, Heiti, sans-serif;
+    line-height: 32px;
+    margin-top: 20px;
+}
+
+#time-box-img img {
+    width: 850px;
+}
+
 #time-box-1 {
     height: 520px;
 }
