@@ -114,8 +114,37 @@ body {
     font-size: 21px;
 }
 
+.font14 {
+    font-size: 14px;
+}
+
 #intro-section {
     height: 250px;
+}
+
+#intro-section >div {
+    float: left;
+    width: 25%;
+}
+
+#intro-section div img {
+    display: block;
+    margin: 50px auto;
+}
+
+#intro-section div p {
+    padding: 0 82px;
+    width: 156px;
+    height: 55px;
+    font-family: "黑体", "微软雅黑", Helvetica, Tahoma, Arial, SimSun, Heiti, sans-serif;
+    color: #666666;
+    font-size: 14px;
+    text-align: center;
+    background: url("../image/split_line.jpg") right top no-repeat;
+}
+
+#intro-section div:last-child p {
+    background: none;
 }
 
 #about-new-world {
