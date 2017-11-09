@@ -132,12 +132,25 @@ body {
     font-size: 21px;
 }
 
+.font16 {
+    font-size:15px;
+}
+
 .font14 {
     font-size: 14px;
 }
 .font12 {
     font-size: 12px;
 }
+
+.bold {
+    font-weight: bold;
+}
+
+.opacity-half {
+   opacity: 0.5;
+}
+
 #intro-section {
     height: 250px;
 }
@@ -182,7 +195,6 @@ body {
 }
 
 #about-new-world p {
-    opacity: 0.5;
     text-align: center;
 }
 
@@ -251,8 +263,34 @@ body {
 }
 
 #gallery-box {
+    box-sizing: border-box;
     height: 605px;
     background-color: #F8F8F8;
+    padding-left: 147px;
+    padding-top: 100px;
+    font-family: "微软雅黑", Helvetica, Tahoma, Arial, SimSun, Heiti, "黑体", sans-serif;
+}
+
+#gallery-box >div {
+    float: left;
+    margin-right: 34px;
+    text-align: center;
+}
+
+#gallery-box >div:last-child {
+   margin-right: 0;
+}
+
+#gallery-box .gallery-img-box {
+    border: solid 1px #d3d3d3;
+    padding: 15px 8px 15px 8px;
+    background-color: #FFFFFF;
+    margin-bottom: 7px;
+}
+
+.gallery-content {
+    margin-top: 7px;
+    margin-bottom: 7px;
 }
 
 #time-box {
