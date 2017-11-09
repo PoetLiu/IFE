@@ -22,3 +22,11 @@ a:link {
 ul {
     list-style: none;
 }
+
+button, .btn {
+    color: #FFFFFF;
+    background: #e74f4d;
+    border: none;
+    outline: none;
+    vertical-align: middle;
+}
