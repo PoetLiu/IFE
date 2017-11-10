@@ -365,12 +365,24 @@ body {
     text-align: center;
 }
 
-#time-box-content p:last-child {
+#time-box-content p:nth-child(2) {
     text-align: left;
     color: #aaaaaa;
     font-family:  "宋体", SimSun, "黑体", SimHei, "微软雅黑", Helvetica, Tahoma, Arial, Heiti, sans-serif;
     line-height: 32px;
     margin-top: 20px;
+}
+
+#time-box-content button {
+    background-color: #FFFFFF;
+    border: solid 1px #cc6666;
+    width: 105px;
+    height: 33px;
+    margin-top: 40px;
+}
+
+#time-box-content button span {
+    color: #cc6666;
 }
 
 #time-box-1 {
