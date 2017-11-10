@@ -415,6 +415,42 @@ body {
 
 #time-box-1 {
     height: 520px;
+    text-align: center;
+}
+
+#time-box-1 >div {
+    width: 425px;
+    height: 100%;
+}
+
+#time-box-1 >* {
+    float: left;
+}
+
+#time-box-1 div:first-child {
+    background-color: #E8504F;
+    color: #FFFFFF;
+}
+
+#time-box-1 div p {
+    margin-top: 170px;
+    line-height: 32px;
+}
+
+#time-box-1 div button {
+    margin-top: 25px;
+    width: 170px;
+    height: 45px;
+}
+
+#time-box-1 div:first-child button {
+    border: solid 1px #FFFFFF;
+}
+
+#time-box-1 div:nth-child(2) button {
+    border: solid 1px #F29093;
+    background-color: #FFFFFF;
+    color: black;
 }
 
 #join-us {
