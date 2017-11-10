@@ -35,7 +35,7 @@
         return d;
     }
 
-   function onBtnClick(e, t) {
+   function onBtnClick(e) {
        var id = btnIdx.indexOf(e.target.id);
        var n = 0;
        switch (id) {
@@ -58,11 +58,16 @@
        }
    }
 
+   function onNumberClick(e) {
+     console.log(e.target);
+   }
+
    function addListeners() {
        var btn = document.getElementsByTagName('button');
         for (var i = 0; i < btn.length; i++) {
           btn[i].addEventListener('click', onBtnClick);
        }
+       numbers.addEventListener('click', onNumberClick);
    }
 
    function init() {
