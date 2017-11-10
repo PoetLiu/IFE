@@ -350,6 +350,15 @@ body {
     border-right: 25px solid #FFFFFF;
 }
 
+.triangle-right {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 25px solid #FFFFFF;
+}
+
 #time-box-img .triangle-left {
     position: absolute;
     right: 0;
@@ -416,41 +425,63 @@ body {
 #time-box-1 {
     height: 520px;
     text-align: center;
+    font-family: "黑体", SimHei, "微软雅黑", Helvetica, Tahoma, Arial, SimSun, Heiti, sans-serif;
 }
 
 #time-box-1 >div {
+    float: left;
     width: 425px;
     height: 100%;
 }
 
-#time-box-1 >* {
-    float: left;
-}
-
-#time-box-1 div:first-child {
+#time-box-1 >div:first-child {
     background-color: #E8504F;
     color: #FFFFFF;
 }
 
-#time-box-1 div p {
+#time-box-1 >div p {
     margin-top: 170px;
     line-height: 32px;
 }
 
-#time-box-1 div button {
-    margin-top: 25px;
+#time-box-1 >div button {
+    margin-top: 5px;
     width: 170px;
     height: 45px;
 }
 
-#time-box-1 div:first-child button {
+#time-box-1 >div:first-child button {
     border: solid 1px #FFFFFF;
 }
 
-#time-box-1 div:nth-child(2) button {
+#time-box-1 >div:nth-child(2) button {
     border: solid 1px #F29093;
     background-color: #FFFFFF;
-    color: black;
+    color: #ff6666;
+}
+
+.split-bar {
+    width: 30px;
+    height: 3px;
+}
+
+#time-box-1 >div:first-child .split-bar {
+    background-color: #FFFFFF;
+    margin: 20px auto;
+}
+#time-box-1 >div:nth-child(2) .split-bar {
+    background-color: #aaaaaa;
+    margin: 20px auto;
+}
+
+#time-box-1 >div:last-child {
+    position: relative;
+}
+
+#time-box-1 >div:last-child .triangle-right {
+    position: absolute;
+    left: 0;
+    top: 245px;
 }
 
 #join-us {
