@@ -116,6 +116,10 @@ body {
     z-index: 1;
 }
 
+.font158 {
+    font-size: 158px;
+}
+
 .font60 {
     font-size: 60px;
 }
@@ -124,8 +128,16 @@ body {
     font-size: 54px;
 }
 
+.font50 {
+    font-size: 50px;
+}
+
 .font30 {
     font-size: 30px;
+}
+
+.font22 {
+    font-size: 22px;
 }
 
 .font21 {
@@ -301,6 +313,34 @@ body {
     float: left;
 }
 
+#time-box-img {
+    height: 100%;
+    width: 850px;
+    background: url("../image/task_1_7_8.jpg") left no-repeat;
+    color: #FFFFFF;
+    font-family: "微软雅黑", Helvetica, Tahoma, Arial, SimSun, Heiti, "黑体", sans-serif;
+    text-align: center;
+    position: relative;
+}
+
+#time-box-img p:first-child {
+    margin-top: 120px;
+}
+
+#time-box-img p:nth-child(2) {
+    line-height: 125px;
+}
+
+#time-box-img p:nth-child(3) {
+    margin-top: 35px;
+}
+
+#time-box-img p:nth-child(4) {
+    margin-top: 15px;
+    position: absolute;
+    left: 355px;
+}
+
 #time-box-content {
     width: 430px;
     box-sizing: border-box;
@@ -316,10 +356,6 @@ body {
     font-family:  "宋体", SimSun, "黑体", SimHei, "微软雅黑", Helvetica, Tahoma, Arial, Heiti, sans-serif;
     line-height: 32px;
     margin-top: 20px;
-}
-
-#time-box-img img {
-    width: 850px;
 }
 
 #time-box-1 {
