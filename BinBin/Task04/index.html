@@ -59,7 +59,10 @@
    }
 
    function onNumberClick(e) {
-     console.log(e.target);
+        var t = e.target;
+     if (t.parentNode.id === 'numbers') {
+         t.parentNode.removeChild(t);
+     }
    }
 
    function addListeners() {
