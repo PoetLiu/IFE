@@ -35,49 +35,49 @@
         return d;
     }
 
-   function onBtnClick(e) {
-       var id = btnIdx.indexOf(e.target.id);
-       var n = 0;
-       switch (id) {
-           case 0:
-           case 1:
-               n    = input.value;
-               if (isNaN(n)){
-                   break;
-               }
-               data.push(n);
-               id ? numbers.appendChild(getNumHtml(n)) :
-                   numbers.insertBefore(getNumHtml(n), numbers.firstChild);
-               break;
-           case 2:
-               numbers.removeChild(numbers.firstChild);
-               break;
-           case 3:
-               numbers.removeChild(numbers.lastChild);
-               break;
-       }
-   }
+    function onBtnClick(e) {
+        var id = btnIdx.indexOf(e.target.id);
+        var n = 0;
+        switch (id) {
+            case 0:
+            case 1:
+                n = input.value;
+                if (isNaN(n)) {
+                    break;
+                }
+                data.push(n);
+                id ? numbers.appendChild(getNumHtml(n)) :
+                    numbers.insertBefore(getNumHtml(n), numbers.firstChild);
+                break;
+            case 2:
+                numbers.removeChild(numbers.firstChild);
+                break;
+            case 3:
+                numbers.removeChild(numbers.lastChild);
+                break;
+        }
+    }
 
-   function onNumberClick(e) {
+    function onNumberClick(e) {
         var t = e.target;
-     if (t.parentNode.id === 'numbers') {
-         t.parentNode.removeChild(t);
-     }
-   }
+        if (t.parentNode.id === 'numbers') {
+            t.parentNode.removeChild(t);
+        }
+    }
 
-   function addListeners() {
-       var btn = document.getElementsByTagName('button');
+    function addListeners() {
+        var btn = document.getElementsByTagName('button');
         for (var i = 0; i < btn.length; i++) {
-          btn[i].addEventListener('click', onBtnClick);
-       }
-       numbers.addEventListener('click', onNumberClick);
-   }
+            btn[i].addEventListener('click', onBtnClick);
+        }
+        numbers.addEventListener('click', onNumberClick);
+    }
 
-   function init() {
-      addListeners();
-   }
+    function init() {
+        addListeners();
+    }
 
-   init();
+    init();
 </script>
 
 </body>
