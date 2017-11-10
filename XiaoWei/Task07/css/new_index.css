@@ -385,6 +385,26 @@ body {
     color: #cc6666;
 }
 
+.circle {
+    border-radius: 50%;
+}
+
+#time-box-content >div {
+    margin-top: 18px;
+}
+#time-box-content .circle {
+    margin-left: 5px;
+    margin-right: 5px;
+    display: inline-block;
+    height: 8px;
+    width: 8px;
+    border: solid 1px #999999;
+}
+
+#time-box-content .circle:first-child {
+    background-color: #999999;
+}
+
 #time-box-1 {
     height: 520px;
 }
