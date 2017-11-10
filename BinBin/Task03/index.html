@@ -29,6 +29,42 @@
 
 <script type="text/javascript">
 
+    /*
+    * Convert number to Chinese ordered number.
+    * @n: Number
+    * 31 -> 三十一
+    * */
+    function getRankCHNByNum(n) {
+        var rankCHN = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九'];
+        var units = ['十', '百', '千', '万'];
+        var rank = "";
+
+        var bitMap = n.toString().split("");
+        var bitsLeft = bitMap.length;
+
+        if (n <= 9 && n > 0) {
+            return rankCHN[n];
+        }
+
+        bitMap.forEach(function (t, number) {
+//                console.log(t, number);
+            rank += rankCHN[Number(t)] + (units[bitsLeft - 2] || '') + '';
+            bitsLeft--;
+
+            // remove tail 零
+            if (number + 1 === bitMap.length && rank[rank.length - 1] === '零') {
+                rank = rank.substr(0, rank.length - 1);
+            }
+
+            // remove adjacent 一 and 十
+            var i = rank.indexOf('一十');
+            if (i !== -1) {
+                rank = rank.substr(i + 1, rank.length);
+            }
+        });
+        return rank;
+    }
+
     /**
      * getData方法
      * 读取id为source的列表，获取其中城市名字及城市对应的空气质量
@@ -42,7 +78,7 @@
         var srcUL = document.getElementById('source');
         var src = srcUL.innerHTML.replace(/<\/?\w+>| */g, '').split('\n');
 
-        src.forEach(function (t, number) {
+        src.forEach(function (t) {
             console.log(t);
             var idx = t.indexOf('：');
             if (idx !== -1) {
@@ -80,7 +116,13 @@
      * 格式见ul中的注释的部分
      */
     function render(data) {
+        var resortUL = document.getElementById('resort');
 
+        data.forEach(function (t, n) {
+            var li = document.createElement('li');
+            li.innerHTML    = "第"+getRankCHNByNum(n+1)+"名："+t[0]+"空气质量："+t[1];
+            resortUL.appendChild(li);
+        });
     }
 
     function btnHandle() {
