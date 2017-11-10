@@ -405,6 +405,14 @@ body {
     background-color: #999999;
 }
 
+#time-box-content p:first-child {
+    font-family: "黑体", SimHei, "微软雅黑", Helvetica, Tahoma, Arial, SimSun, Heiti, sans-serif;
+}
+
+#time-box-content p:first-child span {
+    color: #cc6666;
+}
+
 #time-box-1 {
     height: 520px;
 }
