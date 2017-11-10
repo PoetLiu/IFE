@@ -1,6 +1,6 @@
 body {
     background-color: black;
-    font-family: "微软雅黑", Helvetica, Tahoma, Arial, SimSun, Heiti, "黑体", sans-serif;
+    font-family: "微软雅黑", "Microsoft YaHei", Helvetica, Tahoma, Arial, SimSun, Heiti, "黑体", sans-serif;
 }
 .container {
     margin: 0 auto;
@@ -25,7 +25,7 @@ body {
     height: 100%;
     margin-left: 59px;
     font-size: 21px;
-    font-family: "黑体", "微软雅黑", Helvetica, Tahoma, Arial, SimSun, Heiti,  sans-serif;
+    font-family: "黑体", SimHei, "微软雅黑", Helvetica, Tahoma, Arial, SimSun, Heiti,  sans-serif;
     color: #333333;
 }
 
@@ -47,7 +47,7 @@ body {
     float: right;
     font-size: 14px;
     line-height: 14px;
-    font-family: "微软雅黑", Helvetica, Tahoma, Arial, SimSun, Heiti, "黑体", sans-serif;
+    font-family: "微软雅黑", "Microsoft YaHei", Helvetica, Tahoma, Arial, SimSun, Heiti, "黑体", sans-serif;
 }
 
 .navigator a {
@@ -111,7 +111,7 @@ body {
     margin-left: 126px;
     height: 64px;
     width: 330px;
-    font-family: "微软雅黑", Helvetica, Tahoma, Arial, SimSun, Heiti, "黑体", sans-serif;
+    font-family: "微软雅黑", "Microsoft YaHei", Helvetica, Tahoma, Arial, SimSun, Heiti, "黑体", sans-serif;
     letter-spacing: 3px;
     z-index: 1;
 }
@@ -169,7 +169,7 @@ body {
     padding: 0 82px;
     width: 156px;
     height: 55px;
-    font-family: "黑体", "微软雅黑", Helvetica, Tahoma, Arial, SimSun, Heiti, sans-serif;
+    font-family: "黑体", SimHei, "微软雅黑", Helvetica, Tahoma, Arial, SimSun, Heiti, sans-serif;
     color: #666666;
     font-size: 14px;
     text-align: center;
@@ -184,7 +184,7 @@ body {
     height: 360px;
     background-color: #ededed;
     color: #333333;
-    font-family: "黑体", "微软雅黑", Helvetica, Tahoma, Arial, SimSun, Heiti, sans-serif;
+    font-family: "黑体", SimHei, "微软雅黑", Helvetica, Tahoma, Arial, SimSun, Heiti, sans-serif;
 }
 
 #about-new-world img {
@@ -201,7 +201,7 @@ body {
 #world-img-box {
     position: relative;
     color: #FFFFFF;
-    font-family: "微软雅黑", Helvetica, Tahoma, Arial, SimSun, Heiti, "黑体", sans-serif;
+    font-family: "微软雅黑", "Microsoft YaHei", Helvetica, Tahoma, Arial, SimSun, Heiti, "黑体", sans-serif;
 }
 
 #world-img-box, #world-img{
@@ -268,7 +268,7 @@ body {
     background-color: #F8F8F8;
     padding-left: 147px;
     padding-top: 100px;
-    font-family: "微软雅黑", Helvetica, Tahoma, Arial, SimSun, Heiti, "黑体", sans-serif;
+    font-family: "微软雅黑", "Microsoft YaHei", Helvetica, Tahoma, Arial, SimSun, Heiti, "黑体", sans-serif;
 }
 
 #gallery-box >div {
@@ -295,6 +295,31 @@ body {
 
 #time-box {
     height: 565px;
+}
+
+#time-box >div {
+    float: left;
+}
+
+#time-box-content {
+    width: 430px;
+    box-sizing: border-box;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-top: 160px;
+    text-align: center;
+}
+
+#time-box-content p:last-child {
+    text-align: left;
+    color: #aaaaaa;
+    font-family:  "宋体", SimSun, "黑体", SimHei, "微软雅黑", Helvetica, Tahoma, Arial, Heiti, sans-serif;
+    line-height: 32px;
+    margin-top: 20px;
+}
+
+#time-box-img img {
+    width: 850px;
 }
 
 #time-box-1 {
