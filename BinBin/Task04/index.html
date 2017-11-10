@@ -3,8 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <title>任务四：基础JavaScript练习（一）</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
 <body>
+
+<div class="container">
+    <input id="input"/>
+    <button id="left-in-btn">左侧入</button>
+    <button id="right-in-btn">右侧入</button>
+    <button id="left-out-btn">左侧出</button>
+    <button id="right-out-btn">右侧出</button>
+    <div id="numbers"></div>
+</div>
+
+<script type="text/javascript">
+    var btnIdx = [
+        'left-in-btn',
+        'right-in-btn',
+        'left-out-btn',
+        'right-out-btn',
+    ];
+
+    var input = document.getElementById('input');
+    var numbers = document.getElementById('numbers');
+
+    var data = [];
+
+    function getNumHtml(n) {
+        var d = document.createElement('div');
+        d.innerHTML = n;
+        return d;
+    }
+
+   function onBtnClick(e, t) {
+       var id = btnIdx.indexOf(e.target.id);
+       var n = 0;
+       switch (id) {
+           case 0:
+           case 1:
+               n    = input.value;
+               if (isNaN(n)){
+                   break;
+               }
+               data.push(n);
+               id ? numbers.appendChild(getNumHtml(n)) :
+                   numbers.insertBefore(getNumHtml(n), numbers.firstChild);
+               break;
+           case 2:
+               numbers.removeChild(numbers.firstChild);
+               break;
+           case 3:
+               numbers.removeChild(numbers.lastChild);
+               break;
+       }
+   }
+
+   function addListeners() {
+       var btn = document.getElementsByTagName('button');
+        for (var i = 0; i < btn.length; i++) {
+          btn[i].addEventListener('click', onBtnClick);
+       }
+   }
+
+   function init() {
+      addListeners();
+   }
+
+   init();
+</script>
 
 </body>
 </html>
