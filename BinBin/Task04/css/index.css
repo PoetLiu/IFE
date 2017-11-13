@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    transform: translate(-50%, -50%);
+}
+
+#numbers >div {
+    display: inline-block;
+    background: red;
+    padding: 10px;
+    color: #FFFFFF;
+    margin-top: 10px;
+    margin-right: 10px;
+}
