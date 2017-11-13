@@ -611,6 +611,42 @@ body {
 #contact-us {
     height: 360px;
     background-color: #33363F;
+    text-align: center;
+}
+
+#contact-us .font21 {
+    font-family: "黑体", SimHei, "微软雅黑", Helvetica, Tahoma, Arial, SimSun, Heiti, sans-serif;
+    padding-top: 90px;
+}
+
+#contact-us .font12 {
+    padding-top: 10px;
+    font-family: "宋体", SimSun, "黑体", SimHei, "微软雅黑", Helvetica, Tahoma, Arial, Heiti, sans-serif;
+}
+
+#input-box {
+    margin-top: 30px;
+}
+
+#input-box input,
+#input-box button {
+    font-family: "微软雅黑", Helvetica, Tahoma, Arial, SimSun, Heiti, "黑体", sans-serif;
+    height: 40px;
+    line-height: 40px;
+    vertical-align: middle;
+}
+
+#input-box input {
+    background-color: #FFFFFF;
+    font-size: 14px;
+    width: 430px;
+    padding-left: 10px;
+}
+
+#input-box button {
+    background-color: #6f7178;
+    font-size: 15px;
+    width: 80px;
 }
 
 #copyright {
