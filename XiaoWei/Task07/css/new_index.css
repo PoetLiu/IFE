@@ -560,6 +560,52 @@ body {
 #join-us-right {
     margin-left: 70px;
     width: 640px;
+    font-size: 12px;
+    font-family: "宋体", SimSun, "黑体", SimHei, "微软雅黑", Helvetica, Tahoma, Arial, Heiti, sans-serif;
+    color: #330000;
+}
+
+#join-us-right >div {
+    vertical-align: middle;
+    line-height: 40px;
+    box-sizing: border-box;
+    padding-left: 15px;
+    padding-right: 15px;
+    float: left;
+    width: 310px;
+    height: 40px;
+    background-color: #ededef;
+}
+
+#join-us-right >div:nth-child(2),
+#join-us-right >div:nth-child(4) {
+    margin-left: 17px;
+}
+
+#join-us-right >div:nth-child(3),
+#join-us-right >div:nth-child(4),
+#join-us-right >div:nth-child(5) {
+    margin-top: 15px;
+}
+
+#join-us-right >div:nth-child(5) {
+    height: 120px;
+    width: 100%;
+}
+
+#join-us-right textarea {
+    width: 610px;
+    height: 65px;
+}
+
+#join-us-right button {
+    margin-top: 14px;
+    width: 100%;
+    height: 40px;
+    background: #ededef;
+    color: #333333;
+    font-family: "黑体", SimHei, "微软雅黑", Helvetica, Tahoma, Arial, SimSun, Heiti, sans-serif;
+    font-weight: bold;
 }
 
 #contact-us {

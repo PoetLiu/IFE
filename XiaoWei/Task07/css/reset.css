@@ -30,3 +30,9 @@ button, .btn {
     outline: none;
     vertical-align: middle;
 }
+
+input,
+textarea {
+    border: none;
+    background-color: inherit;
+}
