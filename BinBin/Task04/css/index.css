@@ -4,11 +4,17 @@
 }
 
 .container {
+    padding: 10px;
     position: fixed;
     top: 50%;
     left: 50%;
     width: 400px;
     transform: translate(-50%, -50%);
+}
+
+.container input {
+    border: solid 1px gray;
+    vertical-align: middle;
 }
 
 .red-text {
