@@ -488,6 +488,10 @@ body {
     height: 750px;
 }
 
+#join-us-title {
+    padding-top: 120px;
+}
+
 #join-us-title p {
     text-align: center;
 }
@@ -498,7 +502,6 @@ body {
 }
 
 #join-us-title p:first-child {
-    margin-top: 120px;
     font-family: "黑体", SimHei, "微软雅黑", Helvetica, Tahoma, Arial, SimSun, Heiti, sans-serif;
     color: #333333;
 }
@@ -506,6 +509,57 @@ body {
 #join-us-title p:last-child {
     font-family: "微软雅黑", Helvetica, Tahoma, Arial, SimSun, Heiti, "黑体", sans-serif;
     color: #999999;
+}
+
+#join-us-content {
+    padding-top: 100px;
+    height: 285px;
+    width: 100%;
+}
+
+#join-us-left, #join-us-right {
+    float: left;
+}
+
+#join-us-left {
+    margin-left: 135px;
+    width: 290px;
+}
+
+#join-us-left .article .font14 {
+    font-weight: bold;
+    font-family: "黑体", SimHei, "微软雅黑", Helvetica, Tahoma, Arial, SimSun, Heiti, sans-serif;
+    color: #330000;
+}
+
+#join-us-left .article .font12 {
+    margin-top: 22px;
+    font-family: "宋体", SimSun, "黑体", SimHei, "微软雅黑", Helvetica, Tahoma, Arial, Heiti, sans-serif;
+    color: #330000;
+    line-height: 21px;
+}
+
+#join-us-left .article .more {
+    float: right;
+    margin-top: 0;
+}
+
+#join-us-left .article .more img {
+    padding-right: 7px;
+}
+
+#join-us-content .article:nth-child(2) {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.arrow-down {
+    background: url("../image/more.png");
+}
+
+#join-us-right {
+    margin-left: 70px;
+    width: 640px;
 }
 
 #contact-us {
