@@ -59,7 +59,7 @@
             // remove adjacent 一 and 十
             var i = rank.indexOf('一十');
             if (i !== -1) {
-                rank = rank.substr(i + 1, rank.length);
+                rank = rank.slice(0, i) + rank.slice(i+1);
             }
         });
         return rank;
