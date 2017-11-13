@@ -8,11 +8,12 @@
 <body>
 
 <div class="container">
-    <input id="input"/>
+    <input id="input" placeholder="请输入一个数字"/>
     <button id="left-in-btn">左侧入</button>
     <button id="right-in-btn">右侧入</button>
     <button id="left-out-btn">左侧出</button>
     <button id="right-out-btn">右侧出</button>
+    <div id="err-msg" class="red-text"></div>
     <div id="numbers"></div>
 </div>
 
@@ -26,6 +27,7 @@
 
     var input = document.getElementById('input');
     var numbers = document.getElementById('numbers');
+    var errMsg  = document.getElementById('err-msg');
 
     var data = [];
 
@@ -35,6 +37,13 @@
         return d;
     }
 
+    function showErrMsg() {
+        errMsg.innerHTML    = '数字非法, 请检查输入!';
+        window.setTimeout(function () {
+            errMsg.innerHTML    = '';
+        }, 3000);
+    }
+
     function onBtnClick(e) {
         var id = btnIdx.indexOf(e.target.id);
         var n = 0;
@@ -42,7 +51,8 @@
             case 0:
             case 1:
                 n = input.value;
-                if (isNaN(n)) {
+                if (isNaN(n) || n === '') {
+                    showErrMsg();
                     break;
                 }
                 data.push(n);

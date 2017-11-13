@@ -11,6 +11,10 @@
     transform: translate(-50%, -50%);
 }
 
+.red-text {
+    color: red;
+}
+
 #numbers >div {
     display: inline-block;
     background: red;
