@@ -13,6 +13,7 @@
     <button id="right-in-btn">右侧入</button>
     <button id="left-out-btn">左侧出</button>
     <button id="right-out-btn">右侧出</button>
+    <button id="sort-btn">排序</button>
     <div id="err-msg" class="red-text"></div>
     <div id="numbers"></div>
 </div>
@@ -23,6 +24,7 @@
         'right-in-btn',
         'left-out-btn',
         'right-out-btn',
+        'sort-btn',
     ];
 
     var input = document.getElementById('input');
@@ -85,7 +87,17 @@
         return step;
     }
 
-    var sortDataIntervalId = 0;
+    function sortDataOneByOneStep() {
+        allBtnEnableToggle();
+        var sortDataIntervalId = window.setInterval(function () {
+            if (!sortData(data, true)) {
+                window.clearInterval(sortDataIntervalId);
+                allBtnEnableToggle();
+                console.log(data);
+            }
+        }, 1000);
+    }
+
     function onBtnClick(e) {
         var id = btnIdx.indexOf(e.target.id);
         var n = 0;
@@ -108,20 +120,15 @@
                     numbers.insertBefore(numElement, numbers.firstChild);
                 id ? data.push([Number(n), numElement]) :
                     data.unshift([Number(n), numElement]);
-                allBtnEnableToggle();
-                sortDataIntervalId = window.setInterval(function () {
-                   if (!sortData(data, true)) {
-                       window.clearInterval(sortDataIntervalId);
-                       allBtnEnableToggle();
-                       console.log(data);
-                   }
-                }, 1000);
                 break;
             case 2:
                 numbers.removeChild(numbers.firstChild);
                 break;
             case 3:
                 numbers.removeChild(numbers.lastChild);
+                break;
+            case 4:
+                sortDataOneByOneStep();
                 break;
         }
     }
