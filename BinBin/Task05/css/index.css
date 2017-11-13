@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding: 10px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container input {
+    border: solid 1px gray;
+    vertical-align: middle;
+}
+
+.red-text {
+    color: red;
+}
+
+#numbers {
+    margin-top: 10px;
+    width: 750px;
+    height: 100px;
+}
+
+#numbers >div {
+    display: inline-block;
+    background: red;
+    width: 10px;
+    margin: 0 1px;
+}
+
+#numbers >div:first-child {
+    margin: 0;
+}
