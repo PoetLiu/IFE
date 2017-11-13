@@ -32,9 +32,17 @@
     var data = [];
     const maxDataLength = 60;
 
+    function setElementHeight(e, h) {
+        e.style.height  = h+'px';
+    }
+
+    function dataUpdateElement(d) {
+       setElementHeight(d[1], d[0]);
+    }
+
     function getNumElement(n) {
         var d = document.createElement('div');
-        d.style.height  = n+'px';
+        setElementHeight(d, n);
         return d;
     }
 
@@ -60,13 +68,12 @@
         for (var i = 0; i < data.length; i++) {
             for (var j = i + 1; j < data.length; j++) {
                 if (data[i][0] > data[j][0]) {
-                    var tmp = data[i];
-                    data[i] = data[j];
-                    data[j] = tmp;
+                    var tmp = data[i][0];
+                    data[i][0] = data[j][0];
+                    data[j][0] = tmp;
 
-                    tmp = data[i][1].style.height;
-                    data[i][1].style.height = data[j][1].style.height;
-                    data[j][1].style.height = tmp;
+                    dataUpdateElement(data[i]);
+                    dataUpdateElement(data[j]);
 
                     step    = true;
                     if(oneStep) {
