@@ -488,6 +488,26 @@ body {
     height: 750px;
 }
 
+#join-us-title p {
+    text-align: center;
+}
+
+#join-us-title .split-bar {
+    margin: 10px auto;
+    background-color: #eb6664;
+}
+
+#join-us-title p:first-child {
+    margin-top: 120px;
+    font-family: "黑体", SimHei, "微软雅黑", Helvetica, Tahoma, Arial, SimSun, Heiti, sans-serif;
+    color: #333333;
+}
+
+#join-us-title p:last-child {
+    font-family: "微软雅黑", Helvetica, Tahoma, Arial, SimSun, Heiti, "黑体", sans-serif;
+    color: #999999;
+}
+
 #contact-us {
     height: 360px;
     background-color: #33363F;
