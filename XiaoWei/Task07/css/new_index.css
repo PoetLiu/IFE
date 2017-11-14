@@ -81,6 +81,7 @@ body {
     width: 100%;
     overflow: hidden;
     background: url("../image/task_1_7_2.jpg") no-repeat;
+    -webkit-background-size: 100%;
     background-size: 100%;
     color: #FFFFFF;
     position: relative;
