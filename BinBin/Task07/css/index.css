@@ -1,0 +1,36 @@
+.tree div {
+    display: inline-block;
+    border: solid 1px black;
+    box-sizing: border-box;
+    margin-top: 10px;
+    padding-left: 5px;
+}
+
+.root {
+    width: 400px;
+    height: 200px;
+}
+
+.first {
+    height: 180px;
+    width: 190px;
+}
+
+.second {
+    height: 160px;
+    width: 85px;
+}
+
+.third {
+    height: 140px;
+    width: 32px;
+}
+
+#buttons {
+    margin-top: 10px;
+}
+
+.highlight {
+    background-color: blue;
+}
+

@@ -3,8 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <title>任务七：JavaScript和树（一）</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
 <body>
 
+<div class="tree">
+    <div id="binary-tree" class="root">
+        <div class="first">
+            <div class="second">
+                <div class="third">
+                </div>
+                <div class="third">
+                </div>
+            </div>
+            <div class="second">
+                <div class="third">
+                </div>
+                <div class="third">
+                </div>
+            </div>
+        </div>
+        <div class="first">
+            <div class="second">
+                <div class="third">
+                </div>
+                <div class="third">
+                </div>
+            </div>
+            <div class="second">
+                <div class="third">
+                </div>
+                <div class="third">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="buttons">
+    <button id="first-btn">先序遍历</button>
+    <button id="middle-btn">中序遍历</button>
+    <button id="after-btn">后序遍历</button>
+</div>
+
+<script type="text/javascript">
+    var btnId = [
+        "first-btn",
+        "middle-btn",
+        "after-btn"
+    ];
+    var binTree = document.getElementById('binary-tree');
+    var nodeQueues = [];
+
+    function nodeHighlightToggle(n, add) {
+       if (add) {
+           n.className += ' highlight';
+       } else {
+           n.className  = n.className.replace(' highlight', '');
+       }
+    }
+
+    function binTreeTraverseOneStep(t, traverseBuildQueueCB, idx) {
+        var nodeQueue = nodeQueues[idx];
+        if (!nodeQueue) {
+            nodeQueues[idx]  = [];
+            nodeQueue = traverseBuildQueueCB(t, idx);
+            console.log(nodeQueue);
+        }
+        var prevNode;
+        var traverseIntervalId = window.setInterval(function () {
+            var i;
+            if (prevNode) {
+                nodeHighlightToggle(prevNode, false);
+                i = nodeQueue.indexOf(prevNode) + 1;
+            } else {
+                i = 0;
+            }
+
+            if (i < nodeQueue.length) {
+                prevNode = nodeQueue[i];
+                nodeHighlightToggle(prevNode, true);
+                i++;
+            } else {
+                window.clearInterval(traverseIntervalId);
+            }
+        }, 1000);
+    }
+
+    function binTreeFirstTraverse(t, idx) {
+        var left, right;
+
+        if (!t) {
+            return false;
+        }
+
+        nodeQueues[idx].push(t);
+
+        left    = t.children[0];
+        right   = t.children[1];
+        binTreeFirstTraverse(left, idx);
+        binTreeFirstTraverse(right, idx);
+        return nodeQueues[idx];
+    }
+
+    function binTreeMidTraverse (t, idx) {
+        var left, right;
+
+        if (!t) {
+            return false;
+        }
+        left    = t.children[0];
+        right   = t.children[1];
+        binTreeFirstTraverse(left, idx);
+
+        nodeQueues[idx].push(t);
+
+        binTreeFirstTraverse(right, idx);
+        return nodeQueues[idx];
+    }
+
+    function binTreeAfterTraverse(t, idx) {
+        var left, right;
+
+        if (!t) {
+            return false;
+        }
+        left    = t.children[0];
+        right   = t.children[1];
+        binTreeFirstTraverse(left, idx);
+        binTreeFirstTraverse(right, idx);
+
+        nodeQueues[idx].push(t);
+
+        return nodeQueues[idx];
+    }
+
+    function getBtnIdxByIdName(id) {
+        return btnId.indexOf(id);
+    }
+
+    function onBtnClick(e) {
+        var idx = getBtnIdxByIdName(e.target.id);
+        switch (idx) {
+            case 0:
+                return binTreeTraverseOneStep(binTree, binTreeFirstTraverse, idx);
+            case 1:
+                return binTreeTraverseOneStep(binTree, binTreeMidTraverse, idx);
+            case 2:
+                return binTreeTraverseOneStep(binTree, binTreeAfterTraverse, idx);
+        }
+    }
+
+    function init() {
+       btnId.forEach(function (t) {
+          var e = document.getElementById(t);
+          e.addEventListener('click', onBtnClick);
+       });
+       console.log(binTree);
+    }
+   init();
+</script>
 </body>
 </html>
