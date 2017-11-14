@@ -33,10 +33,14 @@
         data.forEach(function (t, idx) {
             if (t.indexOf(keyWord) !== -1) {
                 console.log(t + ' Matches ' + keyWord);
-                data[idx] = '<span class="highlight">' + t + '</span>';
+                data[idx] = highlightText(t);
             }
         });
         updateResultText(data.join(''));
+    }
+
+    function highlightText(text) {
+        return '<span class="highlight">' + text + '</span>';
     }
 
     function updateResultText(text) {
