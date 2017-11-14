@@ -1,0 +1,13 @@
+.container {
+    width: 400px;
+    margin: 0 auto;
+}
+
+#text-input-area {
+   width: 100%;
+    height: 400px;
+}
+
+.highlight {
+    color: red;
+}

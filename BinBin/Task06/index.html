@@ -3,15 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <title>任务六：基础JavaScript练习（三）</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
 <body>
 
-<textarea id="textInputArea"></textarea>
-<input id="queryInput" placeholder="请输入查询词">
-<button id="queryBtn">查询</button>
+<div class="container">
+    <textarea id="text-input-area" placeholder="请输入任意字符，可用换行、空格、逗号隔开"></textarea><br/>
+    <button id="submit-btn">提交</button>
+    <br/>
+    <input id="query-input" placeholder="请输入查询词">
+    <button id="query-btn">查询</button>
+    <div id="result"></div>
+</div>
 
 <script type="text/javascript">
+    var queryBtn = document.getElementById('query-btn');
+    var submitBtn = document.getElementById('submit-btn');
+    var queryInput = document.getElementById('query-input');
+    var textInput = document.getElementById('text-input-area');
+    var result = document.getElementById('result');
 
+    var allInputText = '';
+
+    function textKeyWordMatchAndHighlight(keyWord) {
+        var text = allInputText;
+        var data = text.split(/([\s,，])/);
+        console.log(text, keyWord, data);
+
+        data.forEach(function (t, idx) {
+            if (t.indexOf(keyWord) !== -1) {
+                console.log(t + ' Matches ' + keyWord);
+                data[idx] = '<span class="highlight">' + t + '</span>';
+            }
+        });
+        updateResultText(data.join(''));
+    }
+
+    function updateResultText(text) {
+        result.innerHTML = text.replace(/\n/g, '<br/>');
+
+    }
+
+    function onSubmitBtnClick() {
+        var text = textInput.value;
+        allInputText += text + '\n';
+        updateResultText(allInputText);
+    }
+
+    function onQueryBtnClick() {
+        var keyWord = queryInput.value;
+        if (keyWord === '')
+            return;
+
+        textKeyWordMatchAndHighlight(keyWord);
+    }
+
+    function init() {
+        queryBtn.addEventListener('click', onQueryBtnClick);
+        submitBtn.addEventListener('click', onSubmitBtnClick);
+    }
+
+    init();
 </script>
 
 </body>
