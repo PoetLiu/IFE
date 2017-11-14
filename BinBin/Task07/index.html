@@ -41,16 +41,16 @@
 </div>
 
 <div id="buttons">
-    <button id="first-btn">先序遍历</button>
-    <button id="middle-btn">中序遍历</button>
-    <button id="after-btn">后序遍历</button>
+    <button id="pre-btn">先序遍历</button>
+    <button id="in-btn">中序遍历</button>
+    <button id="post-btn">后序遍历</button>
 </div>
 
 <script type="text/javascript">
     var btnId = [
-        "first-btn",
-        "middle-btn",
-        "after-btn"
+        "pre-btn",
+        "in-btn",
+        "post-btn"
     ];
     var binTree = document.getElementById('binary-tree');
     var nodeQueues = [];
@@ -90,7 +90,7 @@
         }, 1000);
     }
 
-    function binTreeFirstTraverse(t, idx) {
+    function binTreePreOrderTraverse(t, idx) {
         var left, right;
 
         if (!t) {
@@ -101,12 +101,12 @@
 
         left    = t.children[0];
         right   = t.children[1];
-        binTreeFirstTraverse(left, idx);
-        binTreeFirstTraverse(right, idx);
+        binTreePreOrderTraverse(left, idx);
+        binTreePreOrderTraverse(right, idx);
         return nodeQueues[idx];
     }
 
-    function binTreeMidTraverse (t, idx) {
+    function binTreeInOrderTraverse (t, idx) {
         var left, right;
 
         if (!t) {
@@ -114,15 +114,15 @@
         }
         left    = t.children[0];
         right   = t.children[1];
-        binTreeFirstTraverse(left, idx);
+        binTreeInOrderTraverse(left, idx);
 
         nodeQueues[idx].push(t);
 
-        binTreeFirstTraverse(right, idx);
+        binTreeInOrderTraverse(right, idx);
         return nodeQueues[idx];
     }
 
-    function binTreeAfterTraverse(t, idx) {
+    function binTreePostOrderTraverse(t, idx) {
         var left, right;
 
         if (!t) {
@@ -130,8 +130,8 @@
         }
         left    = t.children[0];
         right   = t.children[1];
-        binTreeFirstTraverse(left, idx);
-        binTreeFirstTraverse(right, idx);
+        binTreePostOrderTraverse(left, idx);
+        binTreePostOrderTraverse(right, idx);
 
         nodeQueues[idx].push(t);
 
@@ -146,11 +146,11 @@
         var idx = getBtnIdxByIdName(e.target.id);
         switch (idx) {
             case 0:
-                return binTreeTraverseOneStep(binTree, binTreeFirstTraverse, idx);
+                return binTreeTraverseOneStep(binTree, binTreePreOrderTraverse, idx);
             case 1:
-                return binTreeTraverseOneStep(binTree, binTreeMidTraverse, idx);
+                return binTreeTraverseOneStep(binTree, binTreeInOrderTraverse, idx);
             case 2:
-                return binTreeTraverseOneStep(binTree, binTreeAfterTraverse, idx);
+                return binTreeTraverseOneStep(binTree, binTreePostOrderTraverse, idx);
         }
     }
 
