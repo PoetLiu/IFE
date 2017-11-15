@@ -1,0 +1,91 @@
+.left-box {
+    float: left;
+}
+
+.right-box {
+    float: right;
+}
+
+.main {
+    height: 1266px;
+}
+
+.container {
+    width: 1280px;
+    margin: 0 auto;
+}
+
+.header {
+    height: 55px;
+    background-color: #2189bf;
+}
+
+.header .container,
+.header .container .left-box,
+.header .container .right-box
+{
+    height: 100%;
+}
+
+.header .container .right-box >*,
+.header .container .left-box >*{
+    vertical-align: middle;
+}
+
+.header .container .left-box {
+    margin-left: 50px;
+}
+
+.header .container .right-box {
+    margin-right: 90px;
+}
+
+.logo {
+    display: inline-block;
+}
+
+.vertical-center-helper {
+    display: inline-block;
+   line-height: 100%;
+    height: 100%;
+}
+
+.search-box {
+    display: inline-block;
+    position: relative;
+}
+
+.search-input {
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    padding-left: 40px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.search-img {
+   position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 18px;
+}
+
+.header .container .right-box .search-box {
+    width: 315px;
+    height: 30px;
+}
+
+.font12 {
+   font-size: 12px;
+}
+
+.header .container .right-box .font12 {
+   font-family: "Adobe Heiti Std", "黑体", Heiti, "微软雅黑", "Microsoft YaHei", Helvetica, Tahoma, Arial, SimSun, sans-serif;
+    color: #FFFFFF;
+    margin-left: 5px;
+}
+
+.header .container .right-box img {
+    margin-left: 15px;
+}
