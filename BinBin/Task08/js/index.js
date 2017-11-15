@@ -4,7 +4,7 @@ var traverseBtn =document.getElementById('traverse-btn');
 var tree = document.getElementById('tree');
 var time = 0;
 const interVal = 500;
-var lastMatchNode;
+var lastHighlightNode;
 
 function showNode(node, en) {
     en ? node.className  += ' highlight' :
@@ -26,14 +26,12 @@ function showNodeAuto(node, autoHideDisable) {
 
 function nodeMathByKey(node, key) {
     if (!node.children || !node.children[0]) {
-       return null;
+       return false;
     }
     console.log(node,key);
     var text = node.children[0].innerText;
-    if (text === key) {
-        return node;
-    }
-    return null;
+    return text === key;
+
 }
 
 function multiTreeTraverse(t, visitNodeCB) {
@@ -49,9 +47,9 @@ function multiTreeTraverse(t, visitNodeCB) {
 
 function clearLastData() {
     time    = 0;
-    if (lastMatchNode) {
-        showNode(lastMatchNode, false);
-        lastMatchNode   = null;
+    if (lastHighlightNode) {
+        showNode(lastHighlightNode, false);
+        lastHighlightNode   = null;
     }
 }
 
@@ -61,14 +59,16 @@ function onQueryBtnClick() {
 
     clearLastData();
     multiTreeTraverse(tree, function (node) {
-        if (lastMatchNode) {
+        if (lastHighlightNode) {
             return;
         }
-        lastMatchNode  = nodeMathByKey(node, input.value);
-        showNodeAuto(node, lastMatchNode);
+        if (nodeMathByKey(node, input.value)) {
+            lastHighlightNode   = node;
+        }
+        showNodeAuto(node, !!lastHighlightNode);
     });
 
-    if (!lastMatchNode) {
+    if (!lastHighlightNode) {
         window.setTimeout(function () {
             alert('查询结果为空');
         }, time+=interVal);
