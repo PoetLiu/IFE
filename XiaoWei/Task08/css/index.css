@@ -12,15 +12,11 @@
 }
 
 .container .col {
-    height: 70px;
+    height: 50px;
     float: left;
-    padding: 10px;
-}
-
-.content {
     border: solid 1px #999;
     background-color: #eee;
-    height: 100%;
+    margin: 10px;
 }
 
 .row:before,
@@ -32,38 +28,38 @@
 
 @media (max-width: 768px) {
     .col-sm-2 {
-        width: calc(100%/12*2);
+        width: calc(100%/12*2 - 20px);
     }
     .col-sm-3 {
-        width: calc(100%/12*3);
+        width: calc(100%/12*3 - 20px);
     }
     .col-sm-6 {
-        width: calc(100%/12*6);
+        width: calc(100%/12*6 - 20px);
     }
     .col-sm-8 {
-        width: calc(100%/12*8);
+        width: calc(100%/12*8 - 20px);
 
     }
     .col-sm-12 {
-        width: calc(100%/12*12);
+        width: calc(100%/12*12 - 20px);
     }
 }
 
 @media (min-width: 768px) {
     .col-bg-1 {
-        width: calc(100%/12*1);
+        width: calc(100%/12*1 - 20px);
     }
     .col-bg-2 {
-        width: calc(100%/12*2);
+        width: calc(100%/12*2 - 20px);
     }
     .col-bg-3 {
-        width: calc(100%/12*3);
+        width: calc(100%/12*3 - 20px);
     }
     .col-bg-4 {
-        width: calc(100%/12*4);
+        width: calc(100%/12*4 - 20px);
     }
     .col-bg-6 {
-        width: calc(100%/12*6);
+        width: calc(100%/12*6 - 20px);
     }
 
 }
