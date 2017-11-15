@@ -2,7 +2,8 @@ var input = document.getElementById('keyword-input');
 var queryBtn = document.getElementById('query-btn');
 var traverseBtn =document.getElementById('traverse-btn');
 var tree = document.getElementById('tree');
-var time = 0, interVal = 500;
+var time = 0;
+const interVal = 500;
 var lastMatchNode;
 
 function showNode(node, en) {
