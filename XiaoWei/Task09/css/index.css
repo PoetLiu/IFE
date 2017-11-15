@@ -89,3 +89,18 @@
 .header .container .right-box >img {
     margin-left: 15px;
 }
+
+.content .left-box,
+.content .right-box {
+    height: 1211px;
+}
+
+.content .left-box {
+    width: 260px;
+    background-color: #2a2e3d;;
+}
+
+.content .right-box {
+    width: 1020px;
+    background-color: #eeeeed;
+}
