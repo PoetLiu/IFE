@@ -38,5 +38,8 @@
 #check-result {
     clear: left;
     margin-left: 110px;
-    color: grey;
+}
+
+.highlight {
+    color: red;
 }
