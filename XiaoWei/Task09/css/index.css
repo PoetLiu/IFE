@@ -79,6 +79,10 @@
     font-size: 12px;
 }
 
+.font16 {
+    font-size: 16px;
+}
+
 .header .container .right-box .font12 {
     font-family: "Adobe Heiti Std", "黑体", Heiti, "微软雅黑", "Microsoft YaHei", Helvetica, Tahoma, Arial, SimSun, sans-serif;
     color: #FFFFFF;
@@ -102,4 +106,72 @@
 .content .right-box {
     width: 1020px;
     background-color: #eeeeed;
+}
+
+.user-logo-box {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: solid 1px #B9B9BE;
+    position: relative;
+}
+
+.user-logo {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #B9B9BE;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+
+#user-info-top .font16 {
+    font-family: "黑体", SimHei, "微软雅黑", Helvetica, Tahoma, Arial, SimSun, Heiti, sans-serif;
+    color: #FFFFFF;
+}
+
+#user-info-top >* {
+    vertical-align: middle;
+}
+
+#user-info-top {
+    margin-left: 45px;
+    margin-top: 20px;
+}
+
+#user-info-top #user-name {
+    margin-left: 15px;
+}
+
+#user-info-bottom {
+    margin-top: 20px;
+}
+
+#user-info-bottom .font12,
+#user-info-bottom .font16 {
+    color: #669999;
+    text-align: center;
+}
+
+#user-info-bottom >div {
+    display: inline-block;
+}
+
+#user-info-bottom >div:first-child {
+    margin-left: 60px;
+    margin-right: 55px;
+}
+
+#user-nav-box {
+    font-family: "黑体", SimHei, "微软雅黑", Helvetica, Tahoma, Arial, SimSun, Heiti, sans-serif;
+    margin-top: 35px;
+    margin-left: 45px;
+    color: #669999;
+}
+
+#user-nav-box ul li {
+    margin-bottom: 35px;
 }
