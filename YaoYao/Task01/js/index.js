@@ -1,11 +1,12 @@
 const minChrInput = 4;
 const maxChrInput = 16;
 const highlightClassName = ' highlight ';
+const highlightBorderClassName = ' highlight-border ';
 var nameInput = document.getElementById('name-input');
 var nameCKBtn = document.getElementById('name-check-btn');
 var checkResult = document.getElementById('check-result');
 var resultStr = {
-    init:   '必填，长度为4-16个字符',
+    init:   '必填，长度为4~16个字符',
     empty:  '姓名不能为空',
     valid:  '名称格式正确',
     invalid:'名称格式错误'
@@ -36,15 +37,20 @@ function onCKBtnClick() {
     updateCKResult(result?'valid':'invalid', true);
 }
 
-function updateCKResult(type, highlight) {
-    checkResult.innerHTML = resultStr[type];
-    if (highlight) {
-        if (checkResult.className.indexOf(highlightClassName) === -1) {
-            checkResult.className += highlightClassName;
+function highlightElement(e, highlightClassName, highlight) {
+     if (highlight) {
+        if (e.className.indexOf(highlightClassName) === -1) {
+            e.className += highlightClassName;
         }
     } else {
-        checkResult.className   = checkResult.className.replace(highlightClassName, '');
+        e.className   = e.className.replace(highlightClassName, '');
     }
+}
+
+function updateCKResult(type, highlight) {
+    checkResult.innerHTML = resultStr[type];
+    highlightElement(checkResult, highlightClassName, highlight);
+    highlightElement(nameInput, highlightBorderClassName, type!=='valid' && highlight);
 }
 
 function init() {
