@@ -1,0 +1,42 @@
+#name-input-box {
+    margin: 100px auto;
+    width: 780px;
+    height: 70px;
+}
+
+#name-input-box >* {
+    float: left;
+}
+
+#name-input-box label {
+    font-size: 26px;
+    line-height: 70px;
+}
+
+#name-input,
+#name-check-btn {
+    height: 70px;
+    border: solid 1px lightgrey;
+    border-radius: 10px;
+    font-size: 26px;
+    box-sizing: border-box;
+}
+
+#name-check-btn {
+   color: #FFFFFF;
+    width: 110px;
+    background-color: #2F79BA;
+}
+
+#name-input {
+    width: 540px;
+    margin-left: 55px;
+    margin-right: 20px;
+    padding-left: 30px;
+}
+
+#check-result {
+    clear: left;
+    margin-left: 110px;
+    color: grey;
+}
