@@ -37,13 +37,13 @@ function onCKBtnClick() {
     updateCKResult(result?'valid':'invalid', true);
 }
 
-function highlightElement(e, highlightClassName, highlight) {
+function highlightElement(e, className, highlight) {
      if (highlight) {
-        if (e.className.indexOf(highlightClassName) === -1) {
-            e.className += highlightClassName;
+        if (e.className.indexOf(className) === -1) {
+            e.className += className;
         }
     } else {
-        e.className   = e.className.replace(highlightClassName, '');
+        e.className   = e.className.replace(className, '');
     }
 }
 
