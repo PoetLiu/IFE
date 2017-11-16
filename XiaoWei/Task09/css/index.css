@@ -231,3 +231,21 @@
 .right {
     float: right;
 }
+
+.content-box-sm .content-title-box,
+.content-box .content-title-box {
+    padding-left: 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: solid 1px lightgrey;
+    height: 40px;
+    background-color: #F4F5F7;
+    box-sizing: border-box;
+}
+
+.content-box .font12,
+.content-box-sm .font12 {
+    color: #aaaaaa;
+    font-family: "黑体", SimHei, "微软雅黑", Helvetica, Tahoma, Arial, SimSun, Heiti, sans-serif;
+    line-height: 40px;
+}
