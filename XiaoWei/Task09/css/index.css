@@ -187,3 +187,47 @@
    color: #999999;
     font-family: "黑体", SimHei, "微软雅黑", Helvetica, Tahoma, Arial, SimSun, Heiti, sans-serif;
 }
+
+.inner-container {
+    width: 890px;
+    margin: 0 auto;
+}
+
+.query {
+    margin-top: 20px;
+    height: 85px;
+    background-color: #FFFFFF;
+}
+
+.history {
+    margin-top: 10px;
+    height: 65px;
+}
+
+.statistic {
+    margin-top: 20px;
+    height: 90px;
+}
+
+.content-box-sm,
+.content-box {
+    height: 355px;
+    border: solid 1px lightgrey;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    float: left;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+
+.content-box-sm {
+    width: 350px;
+}
+
+.content-box {
+    width: 530px;
+}
+
+.right {
+    float: right;
+}
