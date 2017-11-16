@@ -36,3 +36,14 @@ textarea {
     border: none;
     background-color: inherit;
 }
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0;
+    border: solid 1px #aaaaaa;
+    background: url("../image/down.png") no-repeat right 10px center;
+    padding: 0 10px;
+    box-sizing: border-box;
+}

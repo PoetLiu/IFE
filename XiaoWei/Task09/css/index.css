@@ -194,9 +194,40 @@
 }
 
 .query {
+    box-sizing: border-box;
+    padding-top: 15px;
+    padding-left: 30px;
     margin-top: 20px;
     height: 85px;
     background-color: #FFFFFF;
+    color: #aaaaaa;
+}
+
+.query >div ,
+.query >div >* {
+    float: left;
+}
+
+.query >div span {
+    line-height: 25px;
+}
+
+.query >div select {
+    margin-left: 15px;
+}
+
+.select-sm {
+    height: 25px;
+    width: 70px;
+}
+
+.select-md {
+    height: 25px;
+    width: 120px;
+}
+
+.query >div:nth-child(2) {
+    margin-left: 40px;
 }
 
 .history {
