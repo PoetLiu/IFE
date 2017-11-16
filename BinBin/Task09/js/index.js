@@ -89,30 +89,54 @@ function delTreeNode(t) {
     p.removeChild(t);
 }
 
-function onTreeNodeClick(e) {
-    clearLastData();
-
-    var t = e.target;
+function findNodeContainDiv(t) {
     while (t && t.localName !== 'div') {
         t   = t.parentNode;
     }
+    return t;
+}
+
+function onTreeNodeClick(e) {
+    clearLastData();
+
+    var t = findNodeContainDiv(e.target);
     lastHighlightNode   = t;
     showNode(t, true);
 }
 
 function onDelNodeBtnClick() {
     if (!lastHighlightNode) {
-        alert('请先选择需要删除的元素');
+        alert('请先选择需要删除的结点');
        return;
     }
     delTreeNode(lastHighlightNode);
     clearLastData();
 }
 
+function onAddNodeBtnClick() {
+    if (!lastHighlightNode) {
+        alert('请先选择需要插入结点的位置');
+       return;
+    }
+
+    if (nodeInput.value === '') {
+        alert('请先输入新节点的内容');
+        return;
+    }
+
+    var content = nodeInput.value;
+    var p = lastHighlightNode;
+    var node = document.createElement('div');
+    node.innerHTML= '<span>'+content+'</span>';
+    p.appendChild(node);
+}
+
 function init() {
     queryBtn.addEventListener('click', onQueryBtnClick);
     traverseBtn.addEventListener('click', onTraverseBtnClick);
     delNodeBtn.addEventListener('click', onDelNodeBtnClick);
+    addNodeBtn.addEventListener('click', onAddNodeBtnClick);
+
     tree.addEventListener('click', onTreeNodeClick);
 }
 
