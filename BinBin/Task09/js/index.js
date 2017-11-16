@@ -80,9 +80,19 @@ function onTraverseBtnClick() {
     multiTreeTraverse(tree, showNodeAuto);
 }
 
+function onTreeNodeClick(e) {
+    var t = e.target, p;
+    while (t && t.localName !== 'div') {
+        t   = t.parentNode;
+    }
+    p   = t.parentNode;
+    p.removeChild(t);
+}
+
 function init() {
     queryBtn.addEventListener('click', onQueryBtnClick);
     traverseBtn.addEventListener('click', onTraverseBtnClick);
+    tree.addEventListener('click', onTreeNodeClick);
 }
 
 init();
