@@ -1,6 +1,10 @@
 var input = document.getElementById('keyword-input');
 var queryBtn = document.getElementById('query-btn');
 var traverseBtn =document.getElementById('traverse-btn');
+var nodeInput = document.getElementById('node-input');
+var addNodeBtn = document.getElementById('add-node-btn');
+var delNodeBtn = document.getElementById('del-node-btn');
+
 var tree = document.getElementById('tree');
 var time = 0;
 const interVal = 500;
@@ -96,9 +100,19 @@ function onTreeNodeClick(e) {
     showNode(t, true);
 }
 
+function onDelNodeBtnClick() {
+    if (!lastHighlightNode) {
+        alert('请先选择需要删除的元素');
+       return;
+    }
+    delTreeNode(lastHighlightNode);
+    clearLastData();
+}
+
 function init() {
     queryBtn.addEventListener('click', onQueryBtnClick);
     traverseBtn.addEventListener('click', onTraverseBtnClick);
+    delNodeBtn.addEventListener('click', onDelNodeBtnClick);
     tree.addEventListener('click', onTreeNodeClick);
 }
 
