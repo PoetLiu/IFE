@@ -80,13 +80,20 @@ function onTraverseBtnClick() {
     multiTreeTraverse(tree, showNodeAuto);
 }
 
+function delTreeNode(t) {
+    var p = t.parentNode;
+    p.removeChild(t);
+}
+
 function onTreeNodeClick(e) {
-    var t = e.target, p;
+    clearLastData();
+
+    var t = e.target;
     while (t && t.localName !== 'div') {
         t   = t.parentNode;
     }
-    p   = t.parentNode;
-    p.removeChild(t);
+    lastHighlightNode   = t;
+    showNode(t, true);
 }
 
 function init() {
