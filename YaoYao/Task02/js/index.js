@@ -8,9 +8,9 @@ var nameResStr = {
 };
 
 var pwdResStr = {
-    init: '必填，清输入密码，长度为4~16个字符',
+    init: '必填，清输入密码，长度为8~16个字符(必须包含数字、小写大写英文字母)',
     empty: '密码不能为空',
-    valid: '密码格式正确',
+    valid: '密码可用',
     invalid: '密码格式错误'
 };
 
@@ -54,7 +54,9 @@ function init() {
 
     var checkBtn = document.getElementById('check-btn');
     checkBtn.addEventListener('click', function () {
-        f.doCheck();
+        if (!f.doCheck()) {
+            alert('输入有误！');
+        }
     });
 }
 

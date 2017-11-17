@@ -19,7 +19,9 @@ FormItem.prototype.updateResult = function (retType, highlight) {
 };
 
 FormItem.prototype.checkAndUpdateResult = function () {
-    this.updateResult(this.checker(), true);
+    var ckRes = this.checker();
+    this.updateResult(ckRes, true);
+    return ckRes === 'valid';
 };
 
 FormItem.prototype.highlightSelf = function (en) {
@@ -57,8 +59,12 @@ function getCheckerByType(type) {
     }
 }
 
-const minNameInput = 4;
-const maxNameInput = 16;
+function numInInterVal(n, min, max) {
+   return  (n >= min && n <= max);
+}
+
+const minNameLen = 4;
+const maxNameLen = 16;
 function nameValidCK(name) {
     name = name || this.dom.value;
     var charNumCnt = 0;
@@ -74,15 +80,19 @@ function nameValidCK(name) {
             charNumCnt += 2;
         }
     }
-    return (charNumCnt >= minNameInput && charNumCnt <= maxNameInput) ? 'valid' : 'invalid';
+    return numInInterVal(name.length, minNameLen, maxNameLen)?
+        'valid' : 'invalid';
 }
 
+const minPWDLen = 8;
+const maxPWDLen = 16;
 function pwdValidCK(pwd) {
     pwd = pwd || this.dom.value;
     if (pwd === '') {
         return 'empty';
     }
-
+    return numInInterVal(pwd.length, minPWDLen, maxPWDLen) &&
+        pwd.match(/\d+[a-z]+[A-Z]+/) ? 'valid' : 'invalid';
 }
 
 function rePwdValidCK(pwd, rePwd) {
@@ -113,7 +123,7 @@ function phoneValidCK(phone) {
     }
 
     var regExp = '^\\d{'+phoneNumberBits+'}$';
-    console.log(regExp);
+    // console.log(regExp);
     var reObj = new RegExp(regExp, '');
     return phone.match(reObj) ? 'valid' : 'invalid';
 }

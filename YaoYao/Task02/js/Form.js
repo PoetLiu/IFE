@@ -1,10 +1,9 @@
-
 function Form(id, resultIdPostFix, highlight, highlightBorder) {
-   this.id  = id;
-   this.resIdPostFix = resultIdPostFix;
-   this.items = [];
-   this.highlight   = highlight;
-   this.highlightBorder = highlightBorder;
+    this.id = id;
+    this.resIdPostFix = resultIdPostFix;
+    this.items = [];
+    this.highlight = highlight;
+    this.highlightBorder = highlightBorder;
 }
 
 Form.prototype.addItems = function (item) {
@@ -18,9 +17,15 @@ Form.prototype.addItems = function (item) {
 };
 
 Form.prototype.doCheck = function () {
-   this.items.forEach(function (item) {
-        item.checkAndUpdateResult();
-   });
+    var ret = true;
+    var ckRes;
+    this.items.forEach(function (item) {
+        ckRes = item.checkAndUpdateResult();
+        if (ret && !ckRes) {
+            ret = false;
+        }
+    });
+    return ret;
 };
 
 Form.prototype.getItemByType = function (type) {
