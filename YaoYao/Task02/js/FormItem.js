@@ -105,9 +105,15 @@ function emailValidCK(email) {
     return email.match(/\w+@\w+\.com$/) ? 'valid' : 'invalid';
 }
 
+var phoneNumberBits = 11;
 function phoneValidCK(phone) {
     phone = phone || this.dom.value;
     if (phone === '') {
         return 'empty';
     }
+
+    var regExp = '^\\d{'+phoneNumberBits+'}$';
+    console.log(regExp);
+    var reObj = new RegExp(regExp, '');
+    return phone.match(reObj) ? 'valid' : 'invalid';
 }
