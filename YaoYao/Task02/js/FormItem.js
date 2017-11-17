@@ -1,9 +1,9 @@
-function FormItem(f, id, type, resultString) {
+function FormItem(f, id, type) {
     this.f  = f;
     this.id = id;
     this.dom = document.getElementById(id);
     this.type = type;
-    this.resultStrings = resultString;
+    this.resultStrings = f.getResultStrByType(type);
     this.checker = getCheckerByType(type);
     this.resultDom  = document.getElementById(type+f.resIdPostFix);
 }

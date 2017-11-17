@@ -1,6 +1,7 @@
-function Form(id, resultIdPostFix, highlight, highlightBorder) {
+function Form(id, resultIdPostFix, resultMap, highlight, highlightBorder) {
     this.id = id;
     this.resIdPostFix = resultIdPostFix;
+    this.resultMap = resultMap;
     this.items = [];
     this.highlight = highlight;
     this.highlightBorder = highlightBorder;
@@ -37,5 +38,9 @@ Form.prototype.getItemByType = function (type) {
         }
     });
     return ret;
+};
+
+Form.prototype.getResultStrByType = function (type) {
+    return this.resultMap[type];
 };
 
