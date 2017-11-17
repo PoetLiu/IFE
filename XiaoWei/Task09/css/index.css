@@ -237,8 +237,25 @@ select.font12 {
     margin-left: 40px;
 }
 
-.query >div:nth-child(2) .select-box:nth-child(2) {
+.query >div:nth-child(2) .select-box:nth-child(2),
+.query >div:nth-child(3) .select-box:nth-child(3),
+.query >div:nth-child(3) .select-box:nth-child(4) {
    margin-top: 5px;
+}
+
+.query >div:nth-child(3) {
+    width: 290px;
+    margin-left: 30px;
+}
+
+.query >div:nth-child(3) .select-box:nth-child(2),
+.query >div:nth-child(3) .select-box:nth-child(4) {
+   margin-left: 15px;
+}
+
+.query >div:nth-child(3) .select-box:nth-child(2) select,
+.query >div:nth-child(3) .select-box:nth-child(4) select {
+    margin-left: 10px;
 }
 
 #switch-font,
