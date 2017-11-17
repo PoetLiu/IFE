@@ -22,3 +22,15 @@ Form.prototype.doCheck = function () {
         item.checkAndUpdateResult();
    });
 };
+
+Form.prototype.getItemByType = function (type) {
+    var ret = null;
+    this.items.forEach(function (item) {
+        // console.log(item, type);
+        if (!ret && item.type === type) {
+            ret = item;
+        }
+    });
+    return ret;
+};
+

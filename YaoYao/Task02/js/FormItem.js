@@ -86,12 +86,14 @@ function pwdValidCK() {
 }
 
 function rePwdValidCK() {
+    var pwd = this.f.getItemByType('pwd').dom.value;
     var rePwd = this.dom.value;
 
     if (rePwd === '') {
         return 'empty';
     }
 
+    return pwd === rePwd ? 'valid' : 'invalid';
 }
 
 function emailValidCK() {
