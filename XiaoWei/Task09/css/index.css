@@ -258,6 +258,16 @@ select.font12 {
     margin-left: 10px;
 }
 
+.query >div:last-child {
+    margin-top: 15px;
+    margin-left: 30px;
+}
+
+.query button {
+    width: 50px;
+    height: 25px;
+}
+
 #switch-font,
 #switch {
     position: absolute;
