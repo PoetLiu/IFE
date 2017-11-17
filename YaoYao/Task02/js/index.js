@@ -52,17 +52,16 @@ function init() {
 
     userInfoForm = f;
 
-    var checkBtn = document.getElementById('check-btn');
-    checkBtn.addEventListener('click', function () {
-        if (!f.doCheck()) {
-            alert('输入有误！');
-        }
-    });
+    // var checkBtn = document.getElementById('check-btn');
+    // checkBtn.addEventListener('click', formCheck);
 }
 
 function formCheck() {
-    // return userInfoForm.doCheck();
-    return false;
+    var ret = userInfoForm.doCheck();
+    if (!ret) {
+        alert('输入有误！');
+    }
+    return ret;
 }
 
 init();

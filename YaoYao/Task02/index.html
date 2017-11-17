@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
 <body>
-<form id="user-info-form" onsubmit="formCheck(this);return false;">
+<form id="user-info-form" onsubmit="return formCheck(this);" method="post">
     <div class="container">
         <div class="input-box clear-fix">
             <label for="name-input">名称</label>
