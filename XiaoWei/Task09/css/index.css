@@ -190,7 +190,7 @@
 
 .inner-container {
     width: 890px;
-    margin: 0 auto;
+    margin-left: 60px;
 }
 
 .query {
@@ -204,7 +204,8 @@
 }
 
 .query >div ,
-.query >div >* {
+.query >div >* ,
+.query >div >* >* {
     float: left;
 }
 
