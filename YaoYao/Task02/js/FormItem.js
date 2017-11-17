@@ -59,8 +59,8 @@ function getCheckerByType(type) {
 
 const minNameInput = 4;
 const maxNameInput = 16;
-function nameValidCK() {
-    var name = this.dom.value;
+function nameValidCK(name) {
+    name = name || this.dom.value;
     var charNumCnt = 0;
 
     if (name === '') {
@@ -77,17 +77,17 @@ function nameValidCK() {
     return (charNumCnt >= minNameInput && charNumCnt <= maxNameInput) ? 'valid' : 'invalid';
 }
 
-function pwdValidCK() {
-    var pwd = this.dom.value;
+function pwdValidCK(pwd) {
+    pwd = pwd || this.dom.value;
     if (pwd === '') {
         return 'empty';
     }
 
 }
 
-function rePwdValidCK() {
-    var pwd = this.f.getItemByType('pwd').dom.value;
-    var rePwd = this.dom.value;
+function rePwdValidCK(pwd, rePwd) {
+    pwd = pwd || this.f.getItemByType('pwd').dom.value;
+    rePwd = rePwd || this.dom.value;
 
     if (rePwd === '') {
         return 'empty';
@@ -96,15 +96,17 @@ function rePwdValidCK() {
     return pwd === rePwd ? 'valid' : 'invalid';
 }
 
-function emailValidCK() {
-    var email = this.dom.value;
+function emailValidCK(email) {
+    email = email || this.dom.value;
     if (email === '') {
         return 'empty';
     }
+
+    return email.match(/\w+@\w+\.com$/) ? 'valid' : 'invalid';
 }
 
-function phoneValidCK() {
-    var phone = this.dom.value;
+function phoneValidCK(phone) {
+    phone = phone || this.dom.value;
     if (phone === '') {
         return 'empty';
     }
