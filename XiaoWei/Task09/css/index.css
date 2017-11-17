@@ -226,8 +226,33 @@
     width: 120px;
 }
 
+select.font12 {
+    font-family: "黑体", SimHei, "微软雅黑", Helvetica, Tahoma, Arial, SimSun, Heiti, sans-serif;
+}
+
 .query >div:nth-child(2) {
+    position: relative;
+    width: 190px;
     margin-left: 40px;
+}
+
+.query >div:nth-child(2) .select-box:nth-child(2) {
+   margin-top: 5px;
+}
+
+#switch-font,
+#switch {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 0;
+}
+
+#switch-font {
+    right: 2px;
+    color: #FFFFFF;
+    z-index: 1;
 }
 
 .history {
