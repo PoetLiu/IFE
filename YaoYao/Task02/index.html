@@ -7,37 +7,39 @@
     <link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
 <body>
-<form>
+<form id="user-info-form" onsubmit="formCheck(this);return false;">
     <div class="container">
         <div class="input-box clear-fix">
             <label for="name-input">名称</label>
-            <input id="name-input" class="input">
+            <input id="name-input" name="name" class="input">
             <span id="name-check-result" class="check-result"></span>
         </div>
         <div class="input-box clear-fix">
             <label for="pwd-input">密码</label>
-            <input id="pwd-input" class="input">
+            <input id="pwd-input" name="pwd" class="input">
             <span id="pwd-check-result" class="check-result"></span>
         </div>
         <div class="input-box clear-fix">
             <label for="name-input">密码确认</label>
-            <input id="pwd-re-input" class="input">
-            <span id="pwd-re-result" class="check-result"></span>
+            <input id="re-pwd-input" name="re-pwd" class="input">
+            <span id="re-pwd-check-result" class="check-result"></span>
         </div>
         <div class="input-box clear-fix">
             <label for="name-input">邮箱</label>
-            <input id="email-input" class="input">
+            <input id="email-input" name="email" class="input">
             <span id="email-check-result" class="check-result"></span>
         </div>
         <div class="input-box clear-fix">
             <label for="name-input">手机</label>
-            <input id="phone-input" class="input">
+            <input id="phone-input" name="phone" class="input">
             <span id="phone-check-result" class="check-result"></span>
         </div>
-        <button id="check-btn" class="check-btn">提交</button>
+        <button type="submit" id="check-btn" class="check-btn">提交</button>
     </div>
 </form>
 
+<script type="text/javascript" src="js/FormItem.js"></script>
+<script type="text/javascript" src="js/Form.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>

@@ -1,62 +1,66 @@
-const minChrInput = 4;
-const maxChrInput = 16;
-const highlightClassName = ' highlight ';
-const highlightBorderClassName = ' highlight-border ';
-var nameInput = document.getElementById('name-input');
-var nameCheckResult = document.getElementById('name-check-result');
-var checkBtn = document.getElementById('check-btn');
+var userInfoForm;
 
-var resultStr = {
-    init:   '必填，长度为4~16个字符',
-    empty:  '姓名不能为空',
-    valid:  '名称格式正确',
-    invalid:'名称格式错误'
+var nameResStr = {
+    init: '必填，长度为4~16个字符',
+    empty: '姓名不能为空',
+    valid: '名称格式正确',
+    invalid: '名称格式错误'
 };
 
-function nameValidCK(name) {
-    var charNumCnt = 0;
+var pwdResStr = {
+    init: '必填，清输入密码，长度为4~16个字符',
+    empty: '密码不能为空',
+    valid: '密码格式正确',
+    invalid: '密码格式错误'
+};
 
-    console.log(name);
-    for(var i = 0; i < name.length; i++) {
-        if (name.charAt(i).match(/[\u0000-\u00ff]/)) {
-            charNumCnt++;
-        } else {
-            charNumCnt  += 2;
-        }
-    }
-    return (charNumCnt >= minChrInput && charNumCnt <= maxChrInput);
-}
+var rePwdResStr = {
+    init: '必填，请重新输入密码',
+    empty: '密码不能为空',
+    valid: '两次输入密码一致',
+    invalid: '两次输入密码不一致'
+};
 
-function onCKBtnClick() {
-    var name = nameInput.value;
-    if (name === '') {
-        updateCKResult('empty', true);
-        return;
-    }
+var emailResStr = {
+    init: '必填，请输入邮箱地址',
+    empty: '邮箱不能为空',
+    valid: '邮箱格式正确',
+    invalid: '邮箱格式错误'
+};
 
-    var result =  nameValidCK(name);
-    updateCKResult(result?'valid':'invalid', true);
-}
+var phoneResStr = {
+    init: '必填, 请输入11位数字手机号码',
+    empty: '手机号码不能为空',
+    valid: '手机号码格式正确',
+    invalid: '手机号码格式错误'
+};
 
-function highlightElement(e, className, highlight) {
-     if (highlight) {
-        if (e.className.indexOf(className) === -1) {
-            e.className += className;
-        }
-    } else {
-        e.className   = e.className.replace(className, '');
-    }
-}
-
-function updateCKResult(type, highlight) {
-    checkResult.innerHTML = resultStr[type];
-    highlightElement(checkResult, highlightClassName, highlight);
-    highlightElement(nameInput, highlightBorderClassName, type!=='valid' && highlight);
-}
+const highlightClassName = ' highlight ';
+const highlightBorderClassName = ' highlight-border ';
 
 function init() {
-    // updateCKResult('init');
-    // checkBtn.addEventListener('click', onCKBtnClick);
+    var f = new Form(
+        'user-info-form',
+        '-check-result',
+        highlightClassName,
+        highlightBorderClassName);
+    f.addItems(new FormItem(f, 'name-input', 'name', nameResStr));
+    f.addItems(new FormItem(f, 'pwd-input', 'pwd', pwdResStr));
+    f.addItems(new FormItem(f, 're-pwd-input', 're-pwd', rePwdResStr));
+    f.addItems(new FormItem(f, 'email-input', 'email', emailResStr));
+    f.addItems(new FormItem(f, 'phone-input', 'phone', phoneResStr));
+
+    userInfoForm = f;
+
+    var checkBtn = document.getElementById('check-btn');
+    checkBtn.addEventListener('click', function () {
+        f.doCheck();
+    });
+}
+
+function formCheck() {
+    // return userInfoForm.doCheck();
+    return false;
 }
 
 init();
