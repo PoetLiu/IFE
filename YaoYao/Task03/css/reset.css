@@ -30,5 +30,13 @@ button {
 input,
 select {
     border: solid 1px lightgrey;
+    padding: 0 10px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+select {
+    background: url("../image/arrows.png") right 5px center no-repeat;
 }
 
