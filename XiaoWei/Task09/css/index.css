@@ -488,3 +488,16 @@ select.font12 {
     font-family: "黑体", SimHei, "微软雅黑", Helvetica, Tahoma, Arial, SimSun, Heiti, sans-serif;
     line-height: 40px;
 }
+
+.content-main-box {
+    position: relative;
+}
+
+.project-table-head {
+    top: 0;
+    position: absolute;
+}
+
+.project-table {
+    border: 1px solid lightgrey;
+}
