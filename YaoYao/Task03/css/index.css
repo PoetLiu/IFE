@@ -9,7 +9,7 @@ body {
 
 .container {
     position: absolute;
-    width: 600px;
+    width: 630px;
     height: 115px;
     top: 50%;
     left: 50%;
@@ -81,7 +81,7 @@ body {
 .radio-container .check-mark:after {
     top: 50%;
     left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    transform: translate(-50%, -50%);
     width: 6px;
     height: 6px;
     border-radius: 50%;
@@ -92,6 +92,59 @@ body {
     float: left;
 }
 
+.container >:nth-child(1) {
+    margin-left: 90px;
+}
 .container >:nth-child(2) {
     margin-left: 205px;
+}
+
+.unit {
+    width: 630px;
+    margin: 0 auto;
+    font-size: 16px;
+    height: 37px;
+    line-height: 37px;
+}
+
+.unit select,
+.unit input {
+    box-sizing: border-box;
+    height: 37px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.unit #city {
+    width: 190px;
+    margin-left: 20px;
+}
+
+.unit #school-name {
+    width: 310px;
+    margin-left: 45px;
+}
+
+.unit #employer-name {
+    width: 545px;
+    margin-left: 20px;
+    padding-left: 10px;
+}
+
+.unit #school > * {
+    float: left;
+}
+
+.container .unit {
+    margin-top: 50px;
+}
+
+.unit div label {
+    display: inline-block;
+    width: 65px;
+    text-align: right;
+}
+
+.hide {
+    display: none;
 }

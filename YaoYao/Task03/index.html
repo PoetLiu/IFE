@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>任务三：表单（三）联动</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
 <body>
 
 <div class="container">
-    <label class="small radio-container">
+    <label class="radio-container">
         <label for="undergraduate">在校生</label>
         <input id="undergraduate" type="radio" name="student" checked/>
         <span class="check-mark"></span>
@@ -18,6 +19,21 @@
         <input id="graduate" type="radio" name="student"/>
         <span class="check-mark"></span>
     </label>
+    <br/>
+    <div class="unit">
+        <div id="school" class="clear-fix">
+            <label for="city">学校</label>
+            <select id="city">
+                <option>北京</option>
+            </select>
+            <select id="school-name">
+                <option>北京大学</option>
+            </select>
+        </div>
+        <div id="employer">
+           <label for="employer-name">就业单位</label><input id="employer-name"/>
+        </div>
+    </div>
 </div>
 
 <script type="text/javascript" src="js/index.js"></script>

@@ -27,3 +27,8 @@ button {
     border: none;
 }
 
+input,
+select {
+    border: solid 1px lightgrey;
+}
+
