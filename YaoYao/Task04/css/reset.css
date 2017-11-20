@@ -35,8 +35,3 @@ select {
     -moz-appearance: none;
     appearance: none;
 }
-
-select {
-    background: url("../image/arrows.png") right 5px center no-repeat;
-}
-
