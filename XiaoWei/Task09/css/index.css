@@ -83,6 +83,10 @@
     font-size: 16px;
 }
 
+.font21 {
+    font-size: 21px;
+}
+
 .header .container .right-box .font12 {
     font-family: "Adobe Heiti Std", "黑体", Heiti, "微软雅黑", "Microsoft YaHei", Helvetica, Tahoma, Arial, SimSun, sans-serif;
     color: #FFFFFF;
@@ -286,6 +290,60 @@ select.font12 {
 .history {
     margin-top: 10px;
     height: 65px;
+    font-family: "微软雅黑", "Microsoft YaHei", Helvetica, Tahoma, Arial, SimSun, Heiti, "黑体", sans-serif;
+}
+
+.history > div {
+    float: left;
+    padding-top: 8px;
+    margin-right: 5px;
+    text-align: center;
+    background-color: #FFFFFF;
+    height: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.history > div:last-child {
+    text-align: left;
+    margin-right: 0;
+    width: 130px;
+}
+
+.history > div:last-child >* {
+    vertical-align: middle;
+}
+
+.history > div:last-child >:nth-child(1),
+.history > div:last-child >:nth-child(2) {
+    margin-left: 10px;
+}
+
+.history .money {
+    width: 110px;
+}
+
+.history .money .font21 {
+    color: #ff6600;
+    line-height: 30px;
+}
+
+.history .money .font12 {
+    color: #666666;
+    line-height: 12px;
+}
+
+.nav-arrow {
+    width: 30px;
+}
+
+.nav-arrow-left {
+   background: url("../image/arrow-left.png") center no-repeat;
+}
+
+.nav-arrow-right {
+    background: url("../image/arrow-right.png") center no-repeat;
 }
 
 .statistic {
