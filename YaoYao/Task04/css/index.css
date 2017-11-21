@@ -36,6 +36,10 @@ body {
     box-sizing: border-box;
 }
 
+.chess-board >* {
+    float: left;
+}
+
 .x-axis {
     margin-left: 30px;
     width: 452px;
@@ -62,4 +66,12 @@ body {
 .cmd-box {
     margin-left: 30px;
     margin-top: 15px;
+}
+
+.cell {
+    width: 10%;
+    height: 10%;
+    box-sizing: border-box;
+    border-right: 1px solid #CDCDCD;
+    border-bottom: 1px solid #CDCDCD;
 }
