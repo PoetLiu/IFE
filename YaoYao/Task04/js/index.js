@@ -1,7 +1,9 @@
 var chessBoard = document.getElementById('chess-board');
+var cmdInput = document.getElementById('cmd-input');
+var exeBtn  = document.getElementById('exe-btn');
 var chessBoardData = [];
 var chess;
-const ROW = 10, COL = 10, UP = 0, RIGHT = 1, DOWN = 2, LEFT = 3;
+const ROW = 10, COL = 10, UP = 1, RIGHT = 2, DOWN = 3, LEFT = 4;
 
 function onChessBoardClick(e) {
     console.log(chessBoardData.indexOf(e.target));
@@ -28,7 +30,7 @@ function loadChessBoard() {
     chessBoardData = Array.from(chessBoard.children);
 
     // add random chess.
-    chess = {id: randomChessIdx(), dom: newChess(), dir:UP};
+    chess = {id: randomChessIdx(), dom: newChess(), dir:UP, deg:0};
     chessBoardData[chess.id].appendChild(chess.dom);
 }
 
@@ -50,16 +52,16 @@ function onKeyDown(e) {
     var k = e.key;
     switch (k) {
         case 'w':
-            moveChessToDirection(UP);
+            moveChess(UP);
             break;
         case 's':
-            moveChessToDirection(DOWN);
+            moveChess(DOWN);
             break;
         case 'a':
-            moveChessToDirection(LEFT);
+            moveChess(LEFT);
             break;
         case 'd':
-            moveChessToDirection(RIGHT);
+            moveChess(RIGHT);
             break;
     }
 }
@@ -77,34 +79,75 @@ function chessWithinBorder(i) {
     return i >= 0 && i < COL * ROW;
 }
 
-function getDirClassName(dir) {
-   switch (dir) {
-       case UP:
-           return '';
-       case RIGHT:
-           return ' right';
-       case DOWN:
-           return ' down';
-       case LEFT:
-           return ' left';
+function degRound(deg) {
+   if (deg < 0) {
+       deg += 360;
+   } else if (deg === 360) {
+      deg   = 0;
    }
+
+   return deg;
 }
 
-function chessChangeDir(chess, dir) {
-    if (chess.dir === dir) {
+function getDirByDeg(deg) {
+    var dir = 0;
+    switch (deg) {
+        case 0:
+            dir = UP;
+            break;
+        case 90:
+            dir = RIGHT;
+            break;
+        case 180:
+            dir = DOWN;
+            break;
+        case 270:
+            dir = LEFT;
+            break;
+    }
+    return dir;
+}
+
+function chessChangeDir(dir, continueRotate) {
+    if (!continueRotate && chess.dir === dir) {
         return;
     }
 
-    // Revert to init state.
-    chess.dom.className = chess.dom.className.replace(getDirClassName(chess.dir), '');
-    chess.dom.className += getDirClassName(dir);
+    // Rotate
+    var deg = chess.deg;
+    switch (dir) {
+        case UP:
+            deg = 0;
+            break;
+        case RIGHT:
+            deg = continueRotate ? deg+90 : 90;
+            break;
+        case DOWN:
+            deg = continueRotate ? deg+180 : 180;
+            break;
+        case LEFT:
+            deg = continueRotate ? deg-90 : -90;
+            break;
+    }
+
+    deg = degRound(deg);
+    dir = getDirByDeg(deg);
+    chess.dom.style.webkitTransform = 'rotate('+deg+'deg)';
+    chess.dom.style.mozTransform    = 'rotate('+deg+'deg)';
+    chess.dom.style.msTransform     = 'rotate('+deg+'deg)';
+    chess.dom.style.oTransform      = 'rotate('+deg+'deg)';
+    chess.dom.style.transform       = 'rotate('+deg+'deg)';
+
     chess.dir   = dir;
+    chess.deg   = deg;
+    // console.log(chess);
 }
 
-function moveChessToDirection(dir) {
+function moveChess(dir) {
     var idx = chess.id;
+    dir = dir || chess.dir;
 
-    chessChangeDir(chess, dir);
+    chessChangeDir(dir);
     if (chessWillHitBorder(idx, dir)) {
         return;
     }
@@ -129,10 +172,30 @@ function moveChessToDirection(dir) {
     chessBoardData[chess.id].appendChild(chess.dom);
 }
 
+function onExeBtnClick() {
+    var cmd = cmdInput.value;
+    switch (cmd) {
+        case 'GO':
+            moveChess();
+            break;
+        case 'TUN LEF':
+            chessChangeDir(LEFT, true);
+            break;
+        case 'TUN RIG':
+            chessChangeDir(RIGHT, true);
+            break;
+        case 'TUN BAC':
+            chessChangeDir(DOWN, true);
+            break;
+    }
+}
+
+
 function init() {
     loadChessBoard();
     chessBoard.addEventListener('click', onChessBoardClick);
     document.addEventListener('keydown', onKeyDown);
+    exeBtn.addEventListener('click', onExeBtnClick);
 }
 
 init();
