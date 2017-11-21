@@ -657,3 +657,40 @@ select.font12 {
     height: 100%;
 }
 
+#adv-search {
+    height: 235px;
+    width: 280px;
+    margin-top: 15px;
+    margin-left: 40px;
+    border-collapse: collapse;
+    font-family: "微软雅黑", "Microsoft YaHei", Helvetica, Tahoma, Arial, SimSun, Heiti, "黑体", sans-serif;
+}
+
+#adv-search,
+#adv-search td,
+#adv-search tr {
+    padding-left: 10px;
+    border-bottom: solid 1px #CCCCCC;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+
+#adv-search tr {
+    height: 45px;
+}
+
+#adv-search tr:last-child {
+    height: 147px;
+}
+
+#adv-search tr:nth-child(2) td:first-child {
+    border-right: solid 1px #CCCCCC;
+}
+
+#adv-search .title {
+    color: #cccccc; 
+}
+
+#adv-search .content {
+    color: #666666; 
+}
