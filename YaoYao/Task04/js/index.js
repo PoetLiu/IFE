@@ -1,5 +1,6 @@
 var chessBoard = document.getElementById('chess-board');
 var chessBoardData = [];
+var chess;
 const ROW = 10, COL = 10;
 
 function onChessBoardClick(e) {
@@ -27,7 +28,8 @@ function loadChessBoard() {
     chessBoardData = Array.from(chessBoard.children);
 
     // add random chess.
-    chessBoardData[randomChessIdx()].appendChild(newChess());
+    chess = {id:randomChessIdx(), dom:newChess()};
+    chessBoardData[chess.id].appendChild(chess.dom);
 }
 
 function newChess() {
