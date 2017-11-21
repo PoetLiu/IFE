@@ -317,6 +317,7 @@ select.font12 {
     text-align: left;
     margin-right: 0;
     width: 130px;
+    padding: 0;
 }
 
 .history > div:last-child >* {
