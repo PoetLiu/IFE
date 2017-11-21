@@ -660,9 +660,9 @@ select.font12 {
 
 #adv-search {
     height: 235px;
-    width: 280px;
+    width: 279px;
     margin-top: 10px;
-    margin-left: 40px;
+    margin-left: 35px;
     border-collapse: collapse;
     font-family: "微软雅黑", "Microsoft YaHei", Helvetica, Tahoma, Arial, SimSun, Heiti, "黑体", sans-serif;
 }
@@ -694,4 +694,43 @@ select.font12 {
 
 #adv-search .content {
     color: #666666; 
+}
+
+#adv-search-box {
+    margin-top: 5px;
+    margin-left: 40px;
+    margin-right: 35px;
+}
+
+#adv-search-box .font12 {
+    color: #c3c2c2;
+    font-family: "微软雅黑", "Microsoft YaHei", Helvetica, Tahoma, Arial, SimSun, Heiti, "黑体", sans-serif;
+}
+
+#adv-search-box button {
+    float: right;
+    width: 50px;
+    height: 25px;
+}
+
+#adv-search-box input[type=checkbox] {
+    display: none;
+}
+
+#adv-search-box input[type=checkbox]:checked + label:before {
+    background-color: #d5d5d5;
+    content: '\2713';
+    text-align: center;
+}
+
+#adv-search-box input[type=checkbox] + label:before {
+    margin-right: 10px;
+    vertical-align: middle;
+    border: solid 1px #d5d5d5;
+    line-height: 11px;
+    width: 11px;
+    height: 11px;
+    background-color: #FFFFFF;
+    display: inline-block;
+    content: '\00a0';
 }
