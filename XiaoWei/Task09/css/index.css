@@ -615,3 +615,45 @@ select.font12 {
 #cars[class~=font12] {
     color: #333333;
 }
+
+#cars tr td:first-child {
+    width: 68px;
+}
+
+#cars tr td:nth-child(2) {
+    width: 92px;
+}
+
+.color-red {
+    background-color: #ed6e52;
+    width: 85%;
+}
+
+.color-red1 {
+    background-color: #ee804f;
+    width: 75%;
+}
+
+.color-red2 {
+    background-color: #f19f4f;
+    width: 65%;
+}
+
+.color-blue {
+    background-color: #7ecaef;
+    width: 60%;
+}
+
+.color-bar-box {
+    margin-left: 20px;
+    display: inline-block;
+    height: 5px;
+    width: 170px;
+    background-color: #dddcdc;
+}
+
+.color-bar {
+    float: left;
+    height: 100%;
+}
+
