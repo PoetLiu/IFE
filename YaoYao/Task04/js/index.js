@@ -50,16 +50,16 @@ function onKeyDown(e) {
     var k = e.key;
     switch (k) {
         case 'w':
-            moveChessToDir(UP);
+            moveChessToDirection(UP);
             break;
         case 's':
-            moveChessToDir(DOWN);
+            moveChessToDirection(DOWN);
             break;
         case 'a':
-            moveChessToDir(LEFT);
+            moveChessToDirection(LEFT);
             break;
         case 'd':
-            moveChessToDir(RIGHT);
+            moveChessToDirection(RIGHT);
             break;
     }
 }
@@ -77,7 +77,7 @@ function chessWithinBorder(i) {
     return i >= 0 && i < COL * ROW;
 }
 
-function moveChessToDir(dir) {
+function moveChessToDirection(dir) {
     var idx = chess.id;
 
     if (chessWillHitBorder(idx, dir)) {
