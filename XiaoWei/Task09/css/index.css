@@ -83,6 +83,10 @@
     font-size: 12px;
 }
 
+.font13 {
+    font-size: 13px;
+}
+
 .font16 {
     font-size: 16px;
 }
@@ -482,8 +486,7 @@ select.font12 {
     box-sizing: border-box;
 }
 
-.content-box .font12,
-.content-box-sm .font12 {
+.content-title-box[class~=font12] {
     color: #aaaaaa;
     font-family: "黑体", SimHei, "微软雅黑", Helvetica, Tahoma, Arial, SimSun, Heiti, sans-serif;
     line-height: 40px;
@@ -585,4 +588,30 @@ select.font12 {
 
 #projects .tab .tab-body table * {
     border: solid 1px #CCCCCC;
+}
+
+#cars {
+    margin-left: 40px;
+    margin-top: 20px;
+    width: 450px;
+    height: 275px;
+    box-sizing: border-box;
+    border-collapse: collapse;
+    text-align: center;
+    font-family: "黑体", SimHei, "微软雅黑", Helvetica, Tahoma, Arial, SimSun, Heiti, sans-serif;
+}
+
+#cars,
+#cars tr,
+#cars td {
+    border: solid 1px #CCCCCC;
+    border-bottom: none;
+}
+
+#cars .font13 {
+    color: #330000;
+}
+
+#cars[class~=font12] {
+    color: #333333;
 }
