@@ -518,12 +518,12 @@ select.font12 {
 
 .tab label {
     background: #ededf0;
-    border: 1px solid #cccccc;
     position: relative;
 }
 
 [type=radio]:checked ~ label {
     background: white;
+    border: 1px solid #cccccc;
     border-bottom: 1px solid white;
     z-index: 2;
 }
