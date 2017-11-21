@@ -28,7 +28,7 @@ function loadChessBoard() {
     chessBoardData = Array.from(chessBoard.children);
 
     // add random chess.
-    chess = {id: randomChessIdx(), dom: newChess()};
+    chess = {id: randomChessIdx(), dom: newChess(), dir:UP};
     chessBoardData[chess.id].appendChild(chess.dom);
 }
 
@@ -77,9 +77,34 @@ function chessWithinBorder(i) {
     return i >= 0 && i < COL * ROW;
 }
 
+function getDirClassName(dir) {
+   switch (dir) {
+       case UP:
+           return '';
+       case RIGHT:
+           return ' right';
+       case DOWN:
+           return ' down';
+       case LEFT:
+           return ' left';
+   }
+}
+
+function chessChangeDir(chess, dir) {
+    if (chess.dir === dir) {
+        return;
+    }
+
+    // Revert to init state.
+    chess.dom.className = chess.dom.className.replace(getDirClassName(chess.dir), '');
+    chess.dom.className += getDirClassName(dir);
+    chess.dir   = dir;
+}
+
 function moveChessToDirection(dir) {
     var idx = chess.id;
 
+    chessChangeDir(chess, dir);
     if (chessWillHitBorder(idx, dir)) {
         return;
     }
