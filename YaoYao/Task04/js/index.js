@@ -66,7 +66,8 @@ function onKeyDown(e) {
     }
 }
 
-function chessWillHitBorder(i, dir) {
+function chessWillHitBorder(dir) {
+    var i = chess.id;
     var r = Math.floor(i / COL);
     var c = i % COL;
     return ((r === 0 && dir === UP) ||
@@ -143,32 +144,33 @@ function chessChangeDir(dir, continueRotate) {
     // console.log(chess);
 }
 
+function updateIdxByDir(dir) {
+        switch (dir) {
+        case UP:
+            chess.id -= COL;
+            break;
+        case RIGHT:
+            chess.id += 1;
+            break;
+        case DOWN:
+            chess.id += COL;
+            break;
+        case LEFT:
+            chess.id -= 1;
+            break;
+    }
+}
+
 function moveChess(dir) {
-    var idx = chess.id;
     dir = dir || chess.dir;
 
     chessChangeDir(dir);
-    if (chessWillHitBorder(idx, dir)) {
+    if (chessWillHitBorder(dir)) {
         return;
     }
 
-    switch (dir) {
-        case UP:
-            idx = chess.id - (COL);
-            break;
-        case RIGHT:
-            idx = chess.id + 1;
-            break;
-        case DOWN:
-            idx = chess.id + (COL);
-            break;
-        case LEFT:
-            idx = chess.id - 1;
-            break;
-    }
-
     chessBoardData[chess.id].removeChild(chess.dom);
-    chess.id = idx;
+    updateIdxByDir(dir);
     chessBoardData[chess.id].appendChild(chess.dom);
 }
 
