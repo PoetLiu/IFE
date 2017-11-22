@@ -14,13 +14,13 @@ function init() {
                 board.moveChess();
                 break;
             case 'TUN LEF':
-                board.turnChess(LEFT, true);
+                board.turnChess('left');
                 break;
             case 'TUN RIG':
-                board.turnChess(RIGHT, true);
+                board.turnChess('right');
                 break;
             case 'TUN BAC':
-                board.turnChess(DOWN, true);
+                board.turnChess('back');
                 break;
         }
     }

@@ -7,8 +7,6 @@ function ChessBoard(dom, row, col) {
     this.init();
 }
 
-const UP = 1, RIGHT = 2, DOWN = 3, LEFT = 4;
-
 function random(min, max) {
     return Math.floor(Math.random() * max) - min;
 }
@@ -23,16 +21,16 @@ ChessBoard.prototype.init = function () {
         var k = e.key;
         switch (k) {
             case 'w':
-                board.moveChess(UP);
+                board.moveChess('up');
                 break;
             case 's':
-                board.moveChess(DOWN);
+                board.moveChess('down');
                 break;
             case 'a':
-                board.moveChess(LEFT);
+                board.moveChess('left');
                 break;
             case 'd':
-                board.moveChess(RIGHT);
+                board.moveChess('right');
                 break;
         }
     }
@@ -40,7 +38,6 @@ ChessBoard.prototype.init = function () {
     function onChessBoardClick(e) {
         console.log(board.data.indexOf(e.target));
     }
-
 };
 
 ChessBoard.prototype.load = function (chess) {
@@ -50,7 +47,7 @@ ChessBoard.prototype.load = function (chess) {
     this.data = Array.from(this.dom.children);
 
     // add random chess.
-    chess = chess || new Chess(random(0, this.col), random(0, this.row), this.getBoarder(), UP, 0);
+    chess = chess || new Chess(random(0, this.col), random(0, this.row), this.getBoarder(), 'up', 0);
     this.addChess(chess);
 
     function newChessCell() {
@@ -72,8 +69,8 @@ ChessBoard.prototype.idWithinBorder = function (i) {
     return i >= 0 && i < this.col * this.row;
 };
 
-ChessBoard.prototype.turnChess = function (dir, rotate) {
-    this.chess.changeDir(dir, rotate);
+ChessBoard.prototype.turnChess = function (dir) {
+    this.chess.turn(dir);
 };
 
 ChessBoard.prototype.moveChess = function (dir) {
@@ -91,7 +88,7 @@ ChessBoard.prototype.moveChess = function (dir) {
 
 ChessBoard.prototype.addChess = function (chess) {
     var id = this.chessCordToId(chess);
-    console.log(chess);
+    // console.log(chess);
     this.data[id].appendChild(chess.dom);
     this.chess = chess;
 };

@@ -3,7 +3,7 @@ function Chess(x, y, boarder, dir, deg) {
     this.y = y;
     this.boarder = boarder;
     this.dom = this.newChessDom();
-    this.dir = dir || UP;
+    this.dir = dir || 'up';
     this.deg = deg || 0;
 }
 
@@ -26,16 +26,16 @@ Chess.prototype.willHitBorder = function (border) {
     var col = border.col, row = border.row;
     var d = this.dir;
     var x = this.x, y = this.y;
-    return ((y === 0 && d === UP) ||
-        (y === row - 1 && d === DOWN) ||
-        (x === 0 && d === LEFT) ||
-        (x === col - 1 && d === RIGHT));
+    return ((y === 0 && d === 'up') ||
+        (y === row - 1 && d === 'down') ||
+        (x === 0 && d === 'left') ||
+        (x === col - 1 && d === 'right'));
 };
 
 Chess.prototype.move = function (dir, beforeMoveCB, afterMoveCB) {
     dir = dir || this.dir;
 
-    this.changeDir(dir);
+    this.changeDirTo(dir);
     if (this.willHitBorder()) {
         return;
     }
@@ -61,6 +61,8 @@ Chess.prototype.rotate = function (deg) {
             deg += 360;
         } else if (deg === 360) {
             deg = 0;
+        } else {
+            deg -= 360;
         }
         return deg;
     }
@@ -69,41 +71,60 @@ Chess.prototype.rotate = function (deg) {
         var dir = 0;
         switch (deg) {
             case 0:
-                dir = UP;
+                dir = 'up';
                 break;
             case 90:
-                dir = RIGHT;
+                dir = 'right';
                 break;
             case 180:
-                dir = DOWN;
+                dir = 'down';
                 break;
             case 270:
-                dir = LEFT;
+                dir = 'left';
                 break;
         }
         return dir;
     }
 };
 
-Chess.prototype.changeDir = function (dir, turning) {
-    if (!turning && this.dir === dir) {
+Chess.prototype.changeDirTo = function (dir) {
+    if (this.dir === dir) {
         return;
     }
 
     // Rotate
     var deg = this.deg;
     switch (dir) {
-        case UP:
+        case 'up':
             deg = 0;
             break;
-        case RIGHT:
-            deg = turning ? deg + 90 : 90;
+        case 'right':
+            deg = 90;
             break;
-        case DOWN:
-            deg = turning ? deg + 180 : 180;
+        case 'down':
+            deg = 180;
             break;
-        case LEFT:
-            deg = turning ? deg - 90 : -90;
+        case 'left':
+            deg = -90;
+            break;
+    }
+
+    this.rotate(deg);
+};
+
+
+Chess.prototype.turn = function (dir) {
+    // Rotate
+    var deg = this.deg;
+    switch (dir) {
+        case 'right':
+            deg += 90;
+            break;
+        case 'back':
+            deg += 180;
+            break;
+        case 'left':
+            deg -= 90;
             break;
     }
 
@@ -112,16 +133,16 @@ Chess.prototype.changeDir = function (dir, turning) {
 
 Chess.prototype.updatePosition = function (dir) {
     switch (dir) {
-        case UP:
+        case 'up':
             this.y -= 1;
             break;
-        case RIGHT:
+        case 'right':
             this.x += 1;
             break;
-        case DOWN:
+        case 'down':
             this.y += 1;
             break;
-        case LEFT:
+        case 'left':
             this.x -= 1;
             break;
     }
