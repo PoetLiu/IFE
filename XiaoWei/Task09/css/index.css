@@ -734,3 +734,54 @@ select.font12 {
     display: inline-block;
     content: '\00a0';
 }
+
+#calender button,
+#calender select {
+    height: 100%;
+    font-size: 12px;
+    font-family: "黑体", SimHei, "微软雅黑", Helvetica, Tahoma, Arial, SimSun, Heiti, sans-serif;
+    color: #666666;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#calender button {
+    width: 64px;
+    background-color: #FFFFFF;
+    border: solid 1px #aaaaaa;
+}
+
+#calender #year-select {
+    width: 64px;
+}
+
+#calender #month-select {
+    width: 85px;
+}
+
+#calender #day-select {
+    width: 75px;
+}
+
+#calender .content-main-box {
+    padding: 10px 20px;
+}
+
+#calender .content-main-box >div >* {
+    margin-right: 6px;
+    float: left;
+}
+
+#calender .content-main-box >div >*:last-child {
+    margin-right: 0;
+}
+
+#calender .content-main-box >div {
+    height: 22px;
+}
+
+#calender table {
+    width: 310px;
+    height: 252px;
+}
