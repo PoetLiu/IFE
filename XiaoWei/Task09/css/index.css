@@ -784,4 +784,5 @@ select.font12 {
 #calender table {
     width: 310px;
     height: 252px;
+    text-align: center;
 }
