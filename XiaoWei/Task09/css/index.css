@@ -79,6 +79,10 @@
     font-size: 10px;
 }
 
+.font11 {
+    font-size: 11px;
+}
+
 .font12 {
     font-size: 12px;
 }
@@ -765,6 +769,7 @@ select.font12 {
 }
 
 #calender .content-main-box {
+    position:relative;
     padding: 10px 20px;
 }
 
@@ -777,12 +782,52 @@ select.font12 {
     margin-right: 0;
 }
 
-#calender .content-main-box >div {
+#calender .content-main-box >div:first-child {
     height: 22px;
 }
 
 #calender table {
+    margin-top: 10px;
     width: 310px;
     height: 252px;
     text-align: center;
+}
+
+#calender table td {
+    height: 43px;
+    box-sizing: border-box;
+}
+
+#calender table[class~=font11] {
+    color: #333333;
+    font-family: "黑体", SimHei, "微软雅黑", Helvetica, Tahoma, Arial, SimSun, Heiti, sans-serif;
+}
+
+#calender table tr:first-child td {
+    box-sizing: border-box;
+    height: 31px;
+}
+
+.tb-head-line-top {
+    position: absolute;
+    top: 42px;
+   height: 1px;
+    width: 310px;
+    background-color: #66a9dd;
+}
+
+.tb-head-line-bottom {
+    position: absolute;
+    top: 73px;
+    height: 1px;
+    width: 310px;
+    background-color: #c2c3c4;
+}
+
+.highlight-td {
+   border: solid 1px #f4c21d;
+}
+
+.highlight-font {
+    color:#cc0033;
 }
