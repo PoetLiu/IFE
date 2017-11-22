@@ -58,7 +58,7 @@ ChessBoard.prototype.load = function (chess) {
 };
 
 ChessBoard.prototype.chessCordToId = function (chess) {
-    return chess.x + chess.y * this.row;
+    return chess.x + chess.y * this.col;
 };
 
 ChessBoard.prototype.getBoarder = function () {
