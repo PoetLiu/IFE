@@ -184,12 +184,16 @@
 #user-nav-box {
     font-family: "黑体", SimHei, "微软雅黑", Helvetica, Tahoma, Arial, SimSun, Heiti, sans-serif;
     margin-top: 35px;
-    margin-left: 45px;
+    margin-left: 20px;
     color: #669999;
 }
 
-#user-nav-box ul li {
+#user-nav-box > ul:first-child > li {
     margin-bottom: 35px;
+}
+
+#user-nav-box ul {
+    margin-left: 25px;
 }
 
 .content .right-box .path {
