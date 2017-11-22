@@ -1,6 +1,6 @@
-function Chess(idx, board, dir, deg) {
+function Chess(idx, boarder, dir, deg) {
     this.id = idx;
-    this.board = board;
+    this.boarder = boarder;
     this.dom = this.newChessDom();
     this.dir = dir || UP;
     this.deg = deg || 0;
@@ -21,6 +21,7 @@ Chess.prototype.newChessDom = function () {
 };
 
 Chess.prototype.chessWillHitBorder = function (border) {
+    border = border || this.boarder;
     var col = border.col, row = border.row;
     var d = this.dir;
     var i = this.id;
@@ -32,16 +33,57 @@ Chess.prototype.chessWillHitBorder = function (border) {
         (c === col - 1 && d === RIGHT));
 };
 
-Chess.prototype.move = function (dir) {
+Chess.prototype.move = function (dir, beforeMoveCB, afterMoveCB) {
     dir = dir || this.dir;
 
     this.changeDir(dir);
-    if (this.chessWillHitBorder(this.board.getBoarder())) {
+    if (this.chessWillHitBorder()) {
         return;
     }
-    this.board.removeChess(this);
+    beforeMoveCB && beforeMoveCB(this);
     this.updatePosition(dir);
-    this.board.addChess(this);
+    afterMoveCB && afterMoveCB(this);
+};
+
+Chess.prototype.rotate = function (deg) {
+    deg = degRound(deg);
+
+    this.dom.style.webkitTransform = 'rotate(' + deg + 'deg)';
+    this.dom.style.mozTransform = 'rotate(' + deg + 'deg)';
+    this.dom.style.msTransform = 'rotate(' + deg + 'deg)';
+    this.dom.style.oTransform = 'rotate(' + deg + 'deg)';
+    this.dom.style.transform = 'rotate(' + deg + 'deg)';
+
+    this.deg = deg;
+    this.dir = getDirByDeg(deg);
+
+    function degRound(deg) {
+        if (deg < 0) {
+            deg += 360;
+        } else if (deg === 360) {
+            deg = 0;
+        }
+        return deg;
+    }
+
+    function getDirByDeg(deg) {
+        var dir = 0;
+        switch (deg) {
+            case 0:
+                dir = UP;
+                break;
+            case 90:
+                dir = RIGHT;
+                break;
+            case 180:
+                dir = DOWN;
+                break;
+            case 270:
+                dir = LEFT;
+                break;
+        }
+        return dir;
+    }
 };
 
 Chess.prototype.changeDir = function (dir, rotate) {
@@ -66,51 +108,11 @@ Chess.prototype.changeDir = function (dir, rotate) {
             break;
     }
 
-    deg = degRound(deg);
-    dir = getDirByDeg(deg);
-    this.dom.style.webkitTransform = 'rotate(' + deg + 'deg)';
-    this.dom.style.mozTransform = 'rotate(' + deg + 'deg)';
-    this.dom.style.msTransform = 'rotate(' + deg + 'deg)';
-    this.dom.style.oTransform = 'rotate(' + deg + 'deg)';
-    this.dom.style.transform = 'rotate(' + deg + 'deg)';
-
-    this.dir = dir;
-    this.deg = deg;
-
-    // console.log(chess);
-
-    function degRound(deg) {
-        if (deg < 0) {
-            deg += 360;
-        } else if (deg === 360) {
-            deg = 0;
-        }
-
-        return deg;
-    }
-
-    function getDirByDeg(deg) {
-        var dir = 0;
-        switch (deg) {
-            case 0:
-                dir = UP;
-                break;
-            case 90:
-                dir = RIGHT;
-                break;
-            case 180:
-                dir = DOWN;
-                break;
-            case 270:
-                dir = LEFT;
-                break;
-        }
-        return dir;
-    }
+    this.rotate(deg);
 };
 
 Chess.prototype.updatePosition = function (dir) {
-    var c = this.board.col;
+    var c = this.boarder.col;
     switch (dir) {
         case UP:
             this.id -= c;

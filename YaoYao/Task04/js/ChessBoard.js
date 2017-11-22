@@ -23,16 +23,16 @@ ChessBoard.prototype.init = function () {
         var k = e.key;
         switch (k) {
             case 'w':
-                board.chess.move(UP);
+                board.moveChess(UP);
                 break;
             case 's':
-                board.chess.move(DOWN);
+                board.moveChess(DOWN);
                 break;
             case 'a':
-                board.chess.move(LEFT);
+                board.moveChess(LEFT);
                 break;
             case 'd':
-                board.chess.move(RIGHT);
+                board.moveChess(RIGHT);
                 break;
         }
     }
@@ -54,7 +54,7 @@ ChessBoard.prototype.load = function (chess) {
     this.data = Array.from(this.dom.children);
 
     // add random chess.
-    chess = chess || new Chess(this.getChessId(), this, UP, 0);
+    chess = chess || new Chess(this.getChessId(), this.getBoarder(), UP, 0);
     this.addChess(chess);
 
     function newChessCell() {
@@ -72,9 +72,21 @@ ChessBoard.prototype.idWithinBorder = function (i) {
     return i >= 0 && i < this.col * this.row;
 };
 
-ChessBoard.prototype.moveChess = function (dir) {
+ChessBoard.prototype.turnChess = function (dir, rotate) {
+    this.chess.changeDir(dir, rotate);
+};
 
-    this.chess.move(dir);
+ChessBoard.prototype.moveChess = function (dir) {
+    var board = this;
+    this.chess.move(
+        dir,
+        function (chess) {
+            board.removeChess(chess)
+        },
+        function (chess) {
+            board.addChess(chess);
+        }
+    );
 };
 
 ChessBoard.prototype.addChess = function (chess) {
