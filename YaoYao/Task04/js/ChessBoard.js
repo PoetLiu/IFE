@@ -43,10 +43,6 @@ ChessBoard.prototype.init = function () {
 
 };
 
-ChessBoard.prototype.getChessId = function () {
-    return random(0, this.row * this.col);
-};
-
 ChessBoard.prototype.load = function (chess) {
     for (var i = 0; i < this.row * this.col; i++) {
         this.dom.appendChild(newChessCell());
@@ -54,7 +50,7 @@ ChessBoard.prototype.load = function (chess) {
     this.data = Array.from(this.dom.children);
 
     // add random chess.
-    chess = chess || new Chess(this.getChessId(), this.getBoarder(), UP, 0);
+    chess = chess || new Chess(random(0, this.col), random(0, this.row), this.getBoarder(), UP, 0);
     this.addChess(chess);
 
     function newChessCell() {
@@ -62,6 +58,10 @@ ChessBoard.prototype.load = function (chess) {
         cell.className += 'cell';
         return cell;
     }
+};
+
+ChessBoard.prototype.chessCordToId = function (chess) {
+    return chess.x + chess.y * this.row;
 };
 
 ChessBoard.prototype.getBoarder = function () {
@@ -90,7 +90,9 @@ ChessBoard.prototype.moveChess = function (dir) {
 };
 
 ChessBoard.prototype.addChess = function (chess) {
-    this.data[chess.id].appendChild(chess.dom);
+    var id = this.chessCordToId(chess);
+    console.log(chess);
+    this.data[id].appendChild(chess.dom);
     this.chess = chess;
 };
 
@@ -99,6 +101,7 @@ ChessBoard.prototype.removeChess = function (chess) {
     if (!chess) {
         return;
     }
-    this.data[chess.id].removeChild(chess.dom);
+    var id = this.chessCordToId(chess);
+    this.data[id].removeChild(chess.dom);
     this.chess = null;
 };

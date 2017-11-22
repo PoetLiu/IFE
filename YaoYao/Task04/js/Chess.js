@@ -1,5 +1,6 @@
-function Chess(idx, boarder, dir, deg) {
-    this.id = idx;
+function Chess(x, y, boarder, dir, deg) {
+    this.x = x;
+    this.y = y;
     this.boarder = boarder;
     this.dom = this.newChessDom();
     this.dir = dir || UP;
@@ -24,13 +25,11 @@ Chess.prototype.willHitBorder = function (border) {
     border = border || this.boarder;
     var col = border.col, row = border.row;
     var d = this.dir;
-    var i = this.id;
-    var r = Math.floor(i / col);
-    var c = i % col;
-    return ((r === 0 && d === UP) ||
-        (r === row - 1 && d === DOWN) ||
-        (c === 0 && d === LEFT) ||
-        (c === col - 1 && d === RIGHT));
+    var x = this.x, y = this.y;
+    return ((y === 0 && d === UP) ||
+        (y === row - 1 && d === DOWN) ||
+        (x === 0 && d === LEFT) ||
+        (x === col - 1 && d === RIGHT));
 };
 
 Chess.prototype.move = function (dir, beforeMoveCB, afterMoveCB) {
@@ -112,19 +111,18 @@ Chess.prototype.changeDir = function (dir, turning) {
 };
 
 Chess.prototype.updatePosition = function (dir) {
-    var c = this.boarder.col;
     switch (dir) {
         case UP:
-            this.id -= c;
+            this.y -= 1;
             break;
         case RIGHT:
-            this.id += 1;
+            this.x += 1;
             break;
         case DOWN:
-            this.id += c;
+            this.y += 1;
             break;
         case LEFT:
-            this.id -= 1;
+            this.x -= 1;
             break;
     }
 };
