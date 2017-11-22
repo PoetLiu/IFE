@@ -20,7 +20,7 @@ Chess.prototype.newChessDom = function () {
     return chess;
 };
 
-Chess.prototype.chessWillHitBorder = function (border) {
+Chess.prototype.willHitBorder = function (border) {
     border = border || this.boarder;
     var col = border.col, row = border.row;
     var d = this.dir;
@@ -37,7 +37,7 @@ Chess.prototype.move = function (dir, beforeMoveCB, afterMoveCB) {
     dir = dir || this.dir;
 
     this.changeDir(dir);
-    if (this.chessWillHitBorder()) {
+    if (this.willHitBorder()) {
         return;
     }
     beforeMoveCB && beforeMoveCB(this);
@@ -86,8 +86,8 @@ Chess.prototype.rotate = function (deg) {
     }
 };
 
-Chess.prototype.changeDir = function (dir, rotate) {
-    if (!rotate && this.dir === dir) {
+Chess.prototype.changeDir = function (dir, turning) {
+    if (!turning && this.dir === dir) {
         return;
     }
 
@@ -98,13 +98,13 @@ Chess.prototype.changeDir = function (dir, rotate) {
             deg = 0;
             break;
         case RIGHT:
-            deg = rotate ? deg + 90 : 90;
+            deg = turning ? deg + 90 : 90;
             break;
         case DOWN:
-            deg = rotate ? deg + 180 : 180;
+            deg = turning ? deg + 180 : 180;
             break;
         case LEFT:
-            deg = rotate ? deg - 90 : -90;
+            deg = turning ? deg - 90 : -90;
             break;
     }
 
@@ -128,4 +128,3 @@ Chess.prototype.updatePosition = function (dir) {
             break;
     }
 };
-
