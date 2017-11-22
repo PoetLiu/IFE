@@ -26,6 +26,7 @@ Chess.prototype.willHitBorder = function (border) {
     var col = border.col, row = border.row;
     var d = this.dir;
     var x = this.x, y = this.y;
+    console.log(x, y, col, row, d, this);
     return ((y === 0 && d === 'up') ||
         (y === row - 1 && d === 'down') ||
         (x === 0 && d === 'left') ||
@@ -59,9 +60,7 @@ Chess.prototype.rotate = function (deg) {
     function degRound(deg) {
         if (deg < 0) {
             deg += 360;
-        } else if (deg === 360) {
-            deg = 0;
-        } else {
+        } else if (deg >= 360) {
             deg -= 360;
         }
         return deg;
