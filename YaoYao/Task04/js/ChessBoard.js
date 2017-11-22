@@ -41,8 +41,15 @@ ChessBoard.prototype.init = function () {
 };
 
 ChessBoard.prototype.load = function (chess) {
-    for (var i = 0; i < this.row * this.col; i++) {
-        this.dom.appendChild(newChessCell());
+    var newline = false;
+    for (var i = 0; i < this.row; i++) {
+        for (var j = 0; j < this.col; j++) {
+            this.dom.appendChild(newChessCell(newline));
+            if (newline) {
+                newline = false;
+            }
+        }
+        newline = true;
     }
     this.data = Array.from(this.dom.children);
 
@@ -50,9 +57,12 @@ ChessBoard.prototype.load = function (chess) {
     chess = chess || new Chess(random(0, this.col), random(0, this.row), this.getBoarder(), 'up', 0);
     this.addChess(chess);
 
-    function newChessCell() {
+    function newChessCell(newline) {
         var cell = document.createElement('div');
         cell.className += 'cell';
+        if (newline) {
+            cell.style.clear = 'left';
+        }
         return cell;
     }
 };
