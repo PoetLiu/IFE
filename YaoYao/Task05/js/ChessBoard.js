@@ -83,7 +83,7 @@ ChessBoard.prototype.turnChess = function (dir) {
     this.chess.turn(dir);
 };
 
-ChessBoard.prototype.moveChess = function (dir) {
+ChessBoard.prototype.moveChess = function (dir, keepDir) {
     var board = this;
     this.chess.move(
         dir,
@@ -92,8 +92,13 @@ ChessBoard.prototype.moveChess = function (dir) {
         },
         function (chess) {
             board.addChess(chess);
-        }
+        },
+        keepDir
     );
+};
+
+ChessBoard.prototype.transferChess = function (dir) {
+    this.moveChess(dir, true);
 };
 
 ChessBoard.prototype.addChess = function (chess) {

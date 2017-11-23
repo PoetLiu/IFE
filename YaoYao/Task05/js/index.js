@@ -22,6 +22,30 @@ function init() {
             case 'TUN BAC':
                 board.turnChess('back');
                 break;
+            case 'TRA LEF':
+                board.transferChess('left');
+                break;
+            case 'TRA TOP':
+                board.transferChess('up');
+                break;
+            case 'TRA RIG':
+                board.transferChess('right');
+                break;
+            case 'TRA BOT':
+                board.transferChess('down');
+                break;
+            case 'MOV LEF':
+                board.moveChess('left');
+                break;
+            case 'MOV TOP':
+                board.moveChess('up');
+                break;
+            case 'MOV RIG':
+                board.moveChess('right');
+                break;
+            case 'MOV BOT':
+                board.moveChess('down');
+                break;
         }
     }
 }

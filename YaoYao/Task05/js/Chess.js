@@ -21,10 +21,10 @@ Chess.prototype.newChessDom = function () {
     return chess;
 };
 
-Chess.prototype.willHitBorder = function (border) {
-    border = border || this.boarder;
-    var col = border.col, row = border.row;
-    var d = this.dir;
+Chess.prototype.willHitBorder = function (dir) {
+    var b = this.boarder;
+    var col = b.col, row = b.row;
+    var d = dir || this.dir;
     var x = this.x, y = this.y;
     console.log(x, y, col, row, d, this);
     return ((y === 0 && d === 'up') ||
@@ -33,11 +33,11 @@ Chess.prototype.willHitBorder = function (border) {
         (x === col - 1 && d === 'right'));
 };
 
-Chess.prototype.move = function (dir, beforeMoveCB, afterMoveCB) {
+Chess.prototype.move = function (dir, beforeMoveCB, afterMoveCB, keepDir) {
     dir = dir || this.dir;
 
-    this.changeDirTo(dir);
-    if (this.willHitBorder()) {
+    keepDir || this.changeDirTo(dir);
+    if (this.willHitBorder(dir)) {
         return;
     }
     beforeMoveCB && beforeMoveCB(this);
