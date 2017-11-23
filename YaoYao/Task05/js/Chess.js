@@ -1,39 +1,25 @@
-function Chess(x, y, board, dir, deg) {
+function Chess(x, y, dir, border) {
     this.x = x;
     this.y = y;
-    this.board = board;
     this.dir = dir || 'up';
-    this.deg = deg || 0;
-    this.dom;
-
-    this.init();
+    this.deg = 0;
+    this.border = border;
 }
 
-Chess.prototype.init = function () {
-    this.dom = this.newChessDom();
-    this.updateDomPosition();
+Chess.prototype.serialize = function () {
+    return {
+        x: this.x,
+        y: this.y,
+        dir: this.dir
+    };
 };
 
-Chess.prototype.newChessDom = function () {
-    var chess = document.createElement('div');
-    chess.className += 'chess';
-
-    var div = document.createElement('div');
-    div.className += 'chess-head';
-    chess.appendChild(div);
-
-    div = document.createElement('div');
-    div.className += 'chess-body';
-    chess.appendChild(div);
-    return chess;
-};
-
-Chess.prototype.willHitBorder = function (dir) {
-    var b = this.board;
+Chess.prototype.willHitBorder = function (dir, border) {
+    var b = border || this.border;
     var col = b.col, row = b.row;
     var d = dir || this.dir;
     var x = this.x, y = this.y;
-    console.log(x, y, col, row, d, this);
+    // console.log(x, y, col, row, d, this);
     return ((y === 0 && d === 'up') ||
         (y === row - 1 && d === 'down') ||
         (x === 0 && d === 'left') ||
@@ -53,14 +39,8 @@ Chess.prototype.move = function (dir, keepDir) {
 Chess.prototype.rotate = function (deg) {
     deg = degRound(deg);
 
-    this.dom.style.webkitTransform = 'rotate(' + deg + 'deg)';
-    this.dom.style.mozTransform = 'rotate(' + deg + 'deg)';
-    this.dom.style.msTransform = 'rotate(' + deg + 'deg)';
-    this.dom.style.oTransform = 'rotate(' + deg + 'deg)';
-    this.dom.style.transform = 'rotate(' + deg + 'deg)';
-
     this.deg = deg;
-    this.dir = getDirByDeg(deg);
+    this.dir = degToDir(deg);
 
     function degRound(deg) {
         if (deg < 0) {
@@ -71,7 +51,7 @@ Chess.prototype.rotate = function (deg) {
         return deg;
     }
 
-    function getDirByDeg(deg) {
+    function degToDir(deg) {
         var dir = 0;
         switch (deg) {
             case 0:
@@ -134,14 +114,6 @@ Chess.prototype.turn = function (dir) {
     this.rotate(deg);
 };
 
-Chess.prototype.updateDomPosition = function () {
-    var b = this.board;
-    var top = this.y * b.rowH, left = this.x * b.colW;
-    this.dom.style.top = top + 'px';
-    this.dom.style.left = left + 'px';
-    console.log(top, left, this);
-};
-
 Chess.prototype.updatePosition = function (dir) {
     switch (dir) {
         case 'up':
@@ -157,5 +129,4 @@ Chess.prototype.updatePosition = function (dir) {
             this.x -= 1;
             break;
     }
-    this.updateDomPosition();
 };
