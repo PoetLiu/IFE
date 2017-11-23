@@ -19,6 +19,7 @@ Chess.prototype.willHitBorder = function (dir, border) {
     var col = b.col, row = b.row;
     var d = dir || this.dir;
     var x = this.x, y = this.y;
+
     // console.log(x, y, col, row, d, this);
     return ((y === 0 && d === 'up') ||
         (y === row - 1 && d === 'down') ||

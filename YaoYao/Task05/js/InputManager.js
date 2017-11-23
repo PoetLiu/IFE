@@ -25,13 +25,13 @@ InputManager.prototype.listen = function () {
     var map = {
         'move': {
             'w': 'up',
-            'MOV TOP': 'up',
-            'GO': 'up',
             'd': 'right',
-            'MOV RIG': 'right',
             's': 'down',
-            'MOV BOT': 'down',
             'a': 'left',
+            'GO': 'up',
+            'MOV TOP': 'up',
+            'MOV RIG': 'right',
+            'MOV BOT': 'down',
             'MOV LEF': 'left'
         },
         'turn': {
