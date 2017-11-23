@@ -6,6 +6,11 @@ function init() {
     var board = new ChessBoard(chessBoard, 10, 10);
     board.load();
     exeBtn.addEventListener('click', onExeBtnClick);
+    document.addEventListener('keydown', function (e) {
+        if (e.keyCode === 13) {
+            onExeBtnClick();
+        }
+    });
 
     function onExeBtnClick() {
         var cmd = cmdInput.value;
