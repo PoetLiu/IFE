@@ -3,7 +3,7 @@ var cmdInput = document.getElementById('cmd-input');
 var exeBtn = document.getElementById('exe-btn');
 
 function init() {
-    var board = new ChessBoard(chessBoard, 10, 10);
+    var board = new ChessBoard(chessBoard, 10, 10, 45, 45);
     board.load();
     exeBtn.addEventListener('click', onExeBtnClick);
     document.addEventListener('keydown', function (e) {

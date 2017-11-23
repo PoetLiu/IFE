@@ -5,6 +5,7 @@ function Chess(x, y, boarder, dir, deg) {
     this.dom = this.newChessDom();
     this.dir = dir || 'up';
     this.deg = deg || 0;
+    this.updateDomPosition();
 }
 
 Chess.prototype.newChessDom = function () {
@@ -33,16 +34,14 @@ Chess.prototype.willHitBorder = function (dir) {
         (x === col - 1 && d === 'right'));
 };
 
-Chess.prototype.move = function (dir, beforeMoveCB, afterMoveCB, keepDir) {
+Chess.prototype.move = function (dir, keepDir) {
     dir = dir || this.dir;
 
     keepDir || this.changeDirTo(dir);
     if (this.willHitBorder(dir)) {
         return;
     }
-    beforeMoveCB && beforeMoveCB(this);
     this.updatePosition(dir);
-    afterMoveCB && afterMoveCB(this);
 };
 
 Chess.prototype.rotate = function (deg) {
@@ -111,7 +110,6 @@ Chess.prototype.changeDirTo = function (dir) {
     this.rotate(deg);
 };
 
-
 Chess.prototype.turn = function (dir) {
     // Rotate
     var deg = this.deg;
@@ -130,6 +128,14 @@ Chess.prototype.turn = function (dir) {
     this.rotate(deg);
 };
 
+Chess.prototype.updateDomPosition = function () {
+    var b = this.boarder;
+    var top = this.y * b.rowH, left = this.x * b.colW;
+    this.dom.style.top = top + 'px';
+    this.dom.style.left = left + 'px';
+    console.log(top, left, this);
+};
+
 Chess.prototype.updatePosition = function (dir) {
     switch (dir) {
         case 'up':
@@ -145,4 +151,5 @@ Chess.prototype.updatePosition = function (dir) {
             this.x -= 1;
             break;
     }
+    this.updateDomPosition();
 };

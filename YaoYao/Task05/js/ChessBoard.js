@@ -1,7 +1,9 @@
-function ChessBoard(dom, row, col) {
+function ChessBoard(dom, row, col, rowHeight, colWidth) {
     this.dom = dom;
     this.row = row;
     this.col = col;
+    this.rowH = rowHeight;
+    this.colW = colWidth;
     this.data = [];
 
     this.init();
@@ -72,7 +74,7 @@ ChessBoard.prototype.chessCordToId = function (chess) {
 };
 
 ChessBoard.prototype.getBoarder = function () {
-    return {row: this.row, col: this.col};
+    return {row: this.row, col: this.col, rowH: this.rowH, colW: this.colW};
 };
 
 ChessBoard.prototype.idWithinBorder = function (i) {
@@ -85,16 +87,7 @@ ChessBoard.prototype.turnChess = function (dir) {
 
 ChessBoard.prototype.moveChess = function (dir, keepDir) {
     var board = this;
-    this.chess.move(
-        dir,
-        function (chess) {
-            board.removeChess(chess)
-        },
-        function (chess) {
-            board.addChess(chess);
-        },
-        keepDir
-    );
+    this.chess.move(dir, keepDir);
 };
 
 ChessBoard.prototype.transferChess = function (dir) {
@@ -102,9 +95,8 @@ ChessBoard.prototype.transferChess = function (dir) {
 };
 
 ChessBoard.prototype.addChess = function (chess) {
-    var id = this.chessCordToId(chess);
-    // console.log(chess);
-    this.data[id].appendChild(chess.dom);
+    var d = this.dom;
+    d.insertBefore(chess.dom, d.firstChild);
     this.chess = chess;
 };
 
@@ -113,7 +105,6 @@ ChessBoard.prototype.removeChess = function (chess) {
     if (!chess) {
         return;
     }
-    var id = this.chessCordToId(chess);
-    this.data[id].removeChild(chess.dom);
+    this.dom.removeChild(chess);
     this.chess = null;
 };
