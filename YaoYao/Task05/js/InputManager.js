@@ -28,7 +28,7 @@ InputManager.prototype.listen = function () {
             'd': 'right',
             's': 'down',
             'a': 'left',
-            'GO': 'up',
+            'GO': null,
             'MOV TOP': 'up',
             'MOV RIG': 'right',
             'MOV BOT': 'down',
