@@ -188,8 +188,13 @@
     color: #669999;
 }
 
-#user-nav-box > ul:first-child > li {
+#user-nav-box .user-ul > li {
     margin-bottom: 35px;
+}
+
+#user-nav-box .user-ul .file-ul > li,
+#user-nav-box .user-ul .file-ul .doc-ul > li {
+    margin-top: 15px;
 }
 
 #user-nav-box ul {
