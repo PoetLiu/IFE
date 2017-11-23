@@ -192,6 +192,14 @@
     margin-bottom: 35px;
 }
 
+#user-nav-box .user-ul > li > img {
+    margin-right: 10px;
+}
+
+#user-nav-box .user-ul .file-ul img {
+    margin-right: 5px;
+}
+
 #user-nav-box .user-ul .file-ul > li,
 #user-nav-box .user-ul .file-ul .doc-ul > li {
     margin-top: 15px;
