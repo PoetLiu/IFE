@@ -1,7 +1,7 @@
 function Chess(x, y, boarder, dir, deg) {
     this.x = x;
     this.y = y;
-    this.boarder = boarder;
+    this.board = boarder;
     this.dom = this.newChessDom();
     this.dir = dir || 'up';
     this.deg = deg || 0;
@@ -22,7 +22,7 @@ Chess.prototype.newChessDom = function () {
 };
 
 Chess.prototype.willHitBorder = function (border) {
-    border = border || this.boarder;
+    border = border || this.board;
     var col = border.col, row = border.row;
     var d = this.dir;
     var x = this.x, y = this.y;

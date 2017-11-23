@@ -56,7 +56,7 @@ ChessBoard.prototype.load = function (chess) {
     this.data = Array.from(this.dom.children);
 
     // add random chess.
-    chess = chess || new Chess(random(0, this.col), random(0, this.row), this.getBoarder(), 'up', 0);
+    chess = chess || new Chess(random(0, this.col), random(0, this.row), this.getBoard(), 'up', 0);
     this.addChess(chess);
 
     function newChessCell(newline) {
@@ -73,7 +73,7 @@ ChessBoard.prototype.chessCordToId = function (chess) {
     return chess.x + chess.y * this.col;
 };
 
-ChessBoard.prototype.getBoarder = function () {
+ChessBoard.prototype.getBoard = function () {
     return {row: this.row, col: this.col, rowH: this.rowH, colW: this.colW};
 };
 

@@ -1,12 +1,18 @@
-function Chess(x, y, boarder, dir, deg) {
+function Chess(x, y, board, dir, deg) {
     this.x = x;
     this.y = y;
-    this.boarder = boarder;
-    this.dom = this.newChessDom();
+    this.board = board;
     this.dir = dir || 'up';
     this.deg = deg || 0;
-    this.updateDomPosition();
+    this.dom;
+
+    this.init();
 }
+
+Chess.prototype.init = function () {
+    this.dom = this.newChessDom();
+    this.updateDomPosition();
+};
 
 Chess.prototype.newChessDom = function () {
     var chess = document.createElement('div');
@@ -23,7 +29,7 @@ Chess.prototype.newChessDom = function () {
 };
 
 Chess.prototype.willHitBorder = function (dir) {
-    var b = this.boarder;
+    var b = this.board;
     var col = b.col, row = b.row;
     var d = dir || this.dir;
     var x = this.x, y = this.y;
@@ -129,7 +135,7 @@ Chess.prototype.turn = function (dir) {
 };
 
 Chess.prototype.updateDomPosition = function () {
-    var b = this.boarder;
+    var b = this.board;
     var top = this.y * b.rowH, left = this.x * b.colW;
     this.dom.style.top = top + 'px';
     this.dom.style.left = left + 'px';
