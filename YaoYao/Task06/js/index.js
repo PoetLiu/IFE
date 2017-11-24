@@ -9,7 +9,8 @@ function init() {
             content: {
                 width: 610,
                 height: 305,
-                border: 'solid 1px black'
+                border: 'solid 1px black',
+                dragToMove:   'enable'
             }
         });
 

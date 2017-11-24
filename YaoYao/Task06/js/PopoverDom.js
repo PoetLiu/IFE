@@ -93,9 +93,28 @@ PopoverDom.prototype.hide = function () {
 PopoverDom.prototype.onClick = function (target) {
     if (target === this.cover) {
         this.hide();
+        return true;
     }
 };
 
+PopoverDom.prototype.onDrag = function (target, data) {
+    if (target === this.content) {
+        console.log("Dragging!", target, data);
+        return true;
+    }
+};
+PopoverDom.prototype.onDragStart = function (target, data) {
+    if (target === this.content) {
+        console.log("Drag Start!", target, data);
+        return true;
+    }
+};
+PopoverDom.prototype.onDragEnd = function (target, data) {
+    if (target === this.content) {
+        console.log("Drag End!", target, data);
+        return true;
+    }
+};
 PopoverDom.prototype.addItem = function (item) {
     this.content.appendChild(item);
 };
