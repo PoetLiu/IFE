@@ -1,60 +1,76 @@
 function PopoverDom(cfg) {
-   this.setup(cfg);
+    this.setup(cfg);
 }
 
-PopoverDom.prototype.setup  = function (cfg) {
-   var container = document.createElement('div');
-   var s = container.style;
-   cfg  = cfg || {};
+PopoverDom.prototype.setup = function (cfg) {
+    cfg = cfg || {};
 
-   console.log(cfg);
-   // container.
-   s.height = '100%';
-   s.width  = '100%';
-   s.position   = 'fixed';
-   s.top    = 0;
-   s.left   = 0;
+    console.log(cfg);
 
-   // cover.
-    var cover   = document.createElement('div');
-    s   = cover.style;
-    s.height = '100%';
-    s.width  = '100%';
-    s.backgroundColor   = cfg.color || 'gray';
-    s.opacity   = cfg.opacity || 0.3;
-    container.appendChild(cover);
+    // container.
+    var div = document.createElement('div');
+    this.container = div;
+    this.containerCfg(cfg.container);
+
+    // cover.
+    div = document.createElement('div');
+    this.container.appendChild(div);
+    this.cover = div;
+    this.coverCfg(cfg.cover);
 
     // content box.
-    var content = document.createElement('div');
-    s   = content.style;
-    if (cfg.height) {
-        s.height = cfg.height+'px';
-    }
-    if (cfg.width) {
-        s.width = cfg.width+'px';
-    }
-    s.position  = 'absolute';
-    s.opacity   = 1;
-    s.backgroundColor   = '#FFFFFF';
-    s.top   = '50%';
-    s.left  = '50%';
-    s.webkitTransform = 'translate(-50%, -50%)';
-    s.mozTransform    = 'translate(-50%, -50%)';
-    s.msTransform     = 'translate(-50%, -50%)';
-    s.oTransform      = 'translate(-50%, -50%)';
-    s.transform       = 'translate(-50%, -50%)';
-    container.appendChild(content);
+    div = document.createElement('div');
+    this.container.appendChild(div);
+    this.content = div;
+    this.contentCfg(cfg);
 
-    this.container  = container;
-    this.cover      = cover;
-    this.content    = content;
 };
 
-PopoverDom.prototype.show   = function () {
+PopoverDom.prototype.containerCfg = function (cfg) {
+    cfg = cfg || {};
+    var s = this.container.style;
+    s.height = '100%';
+    s.width = '100%';
+    s.position = 'fixed';
+    s.top = 0;
+    s.left = 0;
+};
+
+PopoverDom.prototype.coverCfg = function (cfg) {
+    cfg = cfg || {};
+    var s = this.cover.style;
+    s.height = '100%';
+    s.width = '100%';
+    s.backgroundColor = cfg.color || 'gray';
+    s.opacity = cfg.opacity || 0.3;
+};
+
+PopoverDom.prototype.contentCfg = function (cfg) {
+    cfg = cfg || {};
+    var s = this.content.style;
+    if (cfg.height) {
+        s.height = cfg.height + 'px';
+    }
+    if (cfg.width) {
+        s.width = cfg.width + 'px';
+    }
+    s.position = 'absolute';
+    s.opacity = 1;
+    s.backgroundColor = '#FFFFFF';
+    s.top = '50%';
+    s.left = '50%';
+    s.webkitTransform = 'translate(-50%, -50%)';
+    s.mozTransform = 'translate(-50%, -50%)';
+    s.msTransform = 'translate(-50%, -50%)';
+    s.oTransform = 'translate(-50%, -50%)';
+    s.transform = 'translate(-50%, -50%)';
+};
+
+PopoverDom.prototype.show = function () {
     document.body.appendChild(this.container);
 };
 
-PopoverDom.prototype.hide   = function () {
+PopoverDom.prototype.hide = function () {
     document.body.removeChild(this.container);
 };
 
@@ -64,6 +80,6 @@ PopoverDom.prototype.onClick = function (target) {
     }
 };
 
-PopoverDom.prototype.addItem  = function (item) {
+PopoverDom.prototype.addItem = function (item) {
     this.content.appendChild(item);
 };
