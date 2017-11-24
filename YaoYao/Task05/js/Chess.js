@@ -86,16 +86,17 @@ Chess.prototype.dirToPositionChange = function (dir) {
 };
 
 Chess.prototype.rotate = function (deg) {
-    deg = degRound(deg);
-
     this.deg = deg;
-    this.dir = this.degToDir(deg);
+    this.dir = this.degToDir(degRound(deg));
 
+    console.log(deg, this.dir);
     function degRound(deg) {
-        if (deg < 0) {
-            deg += 360;
-        } else if (deg >= 360) {
-            deg -= 360;
+        while (deg < 0 || deg >= 360) {
+            if (deg < 0) {
+                deg += 360;
+            } else if (deg >= 360) {
+                deg -= 360;
+            }
         }
         return deg;
     }
