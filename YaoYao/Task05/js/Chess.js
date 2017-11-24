@@ -69,8 +69,10 @@ Chess.prototype.move = function (dir, keepDir) {
 
 Chess.prototype.degToDir = function (deg) {
     var m = this.dirDegMap;
+    var d1 = deg % 360, d2 = d1 > 0 ? d1 - 360 : 360 + d1;
+    // console.log('deg To dir', deg, d1, d2);
     for (var key in m) {
-        if (m[key]['deg'] === deg) {
+        if (m[key]['deg'] === d1 || m[key]['deg'] === d2) {
             return key;
         }
     }
@@ -87,19 +89,8 @@ Chess.prototype.dirToPositionChange = function (dir) {
 
 Chess.prototype.rotate = function (deg) {
     this.deg = deg;
-    this.dir = this.degToDir(degRound(deg));
-
-    console.log(deg, this.dir);
-    function degRound(deg) {
-        while (deg < 0 || deg >= 360) {
-            if (deg < 0) {
-                deg += 360;
-            } else if (deg >= 360) {
-                deg -= 360;
-            }
-        }
-        return deg;
-    }
+    this.dir = this.degToDir(deg);
+    // console.log(deg, this.dir);
 };
 
 Chess.prototype.changeDirTo = function (dir) {
@@ -107,8 +98,18 @@ Chess.prototype.changeDirTo = function (dir) {
         return;
     }
 
+    var deg = this.deg % 360;
+    var d1 = this.dirToDeg(dir) || (deg < 0 ? -360 : 0), d2 = d1 > 0 ? d1 - 360 : 360 + d1;
+    var dd1 = d1 - deg, dd2 = d2 - deg;
+
+    console.log("ChangeDir:" + dir, "now deg:" + this.deg, "deg:" + deg, "d1:" + d1, "d2:" + d2, dd1, dd2);
+    if (Math.abs(dd1) < Math.abs(dd2)) {
+        deg = dd1;
+    } else {
+        deg = dd2;
+    }
     // Rotate
-    this.rotate(this.dirToDeg(dir));
+    this.rotate(this.deg + deg);
 };
 
 Chess.prototype.turn = function (dir) {
