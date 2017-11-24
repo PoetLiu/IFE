@@ -22,9 +22,9 @@ Chess.prototype.willHitBorder = function (dir, border) {
 
     // console.log(x, y, col, row, d, this);
     return ((y === 0 && d === 'up') ||
-        (y === row - 1 && d === 'down') ||
-        (x === 0 && d === 'left') ||
-        (x === col - 1 && d === 'right'));
+            (y === row - 1 && d === 'down') ||
+            (x === 0 && d === 'left') ||
+            (x === col - 1 && d === 'right'));
 };
 
 Chess.prototype.move = function (dir, keepDir) {
