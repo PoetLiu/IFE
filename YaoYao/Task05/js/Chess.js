@@ -98,11 +98,12 @@ Chess.prototype.changeDirTo = function (dir) {
         return;
     }
 
+    // find min deg to rotate.
     var deg = this.deg % 360;
     var d1 = this.dirToDeg(dir) || (deg < 0 ? -360 : 0), d2 = d1 > 0 ? d1 - 360 : 360 + d1;
     var dd1 = d1 - deg, dd2 = d2 - deg;
 
-    console.log("ChangeDir:" + dir, "now deg:" + this.deg, "deg:" + deg, "d1:" + d1, "d2:" + d2, dd1, dd2);
+    // console.log("ChangeDir:" + dir, "now deg:" + this.deg, "deg:" + deg, "d1:" + d1, "d2:" + d2, dd1, dd2);
     if (Math.abs(dd1) < Math.abs(dd2)) {
         deg = dd1;
     } else {
