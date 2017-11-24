@@ -1,12 +1,16 @@
-function Popover(config) {
-   this.setup(config);
+function Popover(cfg) {
+   this.setup(cfg);
 }
 
-Popover.prototype.setup = function (config) {
-    this.dom    = new PopoverDom(config);
+Popover.prototype.setup = function (cfg) {
+    this.dom    = new PopoverDom(cfg);
     this.inputManager   = new PopoverInputManager();
 
     this.inputManager.on('click', this.onClick.bind(this));
+};
+
+Popover.prototype.cfg   = function (cfg) {
+    this.dom.cfg(cfg);
 };
 
 Popover.prototype.onClick = function (target) {

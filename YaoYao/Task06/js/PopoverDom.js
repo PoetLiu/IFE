@@ -3,27 +3,38 @@ function PopoverDom(cfg) {
 }
 
 PopoverDom.prototype.setup = function (cfg) {
-    cfg = cfg || {};
-
-    console.log(cfg);
-
     // container.
     var div = document.createElement('div');
     this.container = div;
-    this.containerCfg(cfg.container);
 
     // cover.
     div = document.createElement('div');
     this.container.appendChild(div);
     this.cover = div;
-    this.coverCfg(cfg.cover);
 
     // content box.
     div = document.createElement('div');
     this.container.appendChild(div);
     this.content = div;
-    this.contentCfg(cfg);
 
+    this.cfg(cfg, true);
+};
+
+PopoverDom.prototype.cfg    = function (cfg, init) {
+    cfg = cfg || {};
+
+    console.log(cfg);
+    if (cfg.container || init) {
+        this.containerCfg(cfg.container);
+    }
+
+    if (cfg.cover || init) {
+        this.coverCfg(cfg.cover);
+    }
+
+    if (cfg.content || init) {
+        this.contentCfg(cfg.content);
+    }
 };
 
 PopoverDom.prototype.containerCfg = function (cfg) {
@@ -47,12 +58,17 @@ PopoverDom.prototype.coverCfg = function (cfg) {
 
 PopoverDom.prototype.contentCfg = function (cfg) {
     cfg = cfg || {};
+
+    console.log(cfg);
     var s = this.content.style;
     if (cfg.height) {
         s.height = cfg.height + 'px';
     }
     if (cfg.width) {
         s.width = cfg.width + 'px';
+    }
+    if (cfg.border) {
+        s.border    = cfg.border;
     }
     s.position = 'absolute';
     s.opacity = 1;
