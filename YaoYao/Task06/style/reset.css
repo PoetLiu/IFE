@@ -24,7 +24,12 @@ ul {
 }
 
 button {
-    border: none;
+    padding: 10px;
+    background-color: #FFFFFF;
+    border: solid 1px blue;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
 }
 
 input,
