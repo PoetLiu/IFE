@@ -11,10 +11,7 @@ HtmlActuator.prototype.actuate = function (chess, board) {
     }
 
     this.updateChessPosition(
-        {
-            x: chess.x,
-            y: chess.y
-        },
+        chess,
         board);
     this.updateChessRotate(chess.deg);
 };
