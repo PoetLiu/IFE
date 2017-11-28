@@ -1,0 +1,39 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.flex-container {
+    display: flex;
+    padding: 20px;
+    align-items: center;
+}
+
+.flex-container div {
+    width:  150px;
+    padding: 20px;
+}
+
+.red-border {
+    border: solid 1px red;
+}
+
+.blue-border {
+    border: solid 1px blue;
+}
+
+.flex-container div:first-child {
+    height: 120px;
+}
+
+.flex-container div:nth-child(2) {
+    height: 100px;
+}
+
+.flex-container div:nth-child(3) {
+   height: 40px;
+}
+
+.flex-container div:nth-child(4) {
+    height: 200px;
+}
