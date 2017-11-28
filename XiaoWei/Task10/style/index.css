@@ -8,6 +8,7 @@
     padding: 20px;
     align-items: center;
     justify-content: space-around;
+    flex-flow: row wrap;
 }
 
 .flex-container div {
