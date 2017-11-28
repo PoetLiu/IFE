@@ -60,6 +60,10 @@
 }
 
 @media (max-width: 641px) {
+    .flex-container {
+        align-items: flex-start;
+    }
+
     .flex-container div:first-child {
         order: 2;
     }
