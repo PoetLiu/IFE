@@ -41,24 +41,6 @@
     height: 200px;
 }
 
-@media (min-width: 641px) {
-    .flex-container div:first-child {
-        order: 1;
-    }
-
-    .flex-container div:nth-child(2) {
-        order: 2;
-    }
-
-    .flex-container div:nth-child(3) {
-        order: 3;
-    }
-
-    .flex-container div:nth-child(4) {
-        order: 4;
-    }
-}
-
 @media (max-width: 641px) {
     .flex-container {
         align-items: flex-start;
