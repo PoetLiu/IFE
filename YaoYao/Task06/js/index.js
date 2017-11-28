@@ -1,6 +1,6 @@
 function init() {
     var pop = new Popover();
-    pop.cfg(
+    pop.configure(
         {
             cover: {
                 color: 'gray',

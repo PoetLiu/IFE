@@ -17,10 +17,10 @@ PopoverDom.prototype.setup = function (cfg) {
     this.container.appendChild(div);
     this.content = div;
 
-    this.cfg(cfg, true);
+    this.configure(cfg, true);
 };
 
-PopoverDom.prototype.cfg    = function (cfg, init) {
+PopoverDom.prototype.configure = function (cfg, init) {
     cfg = cfg || {};
 
     console.log(cfg);
