@@ -92,8 +92,7 @@ PopoverDom.prototype.hide = function () {
 
 PopoverDom.prototype.onClick = function (target) {
     if (target === this.cover) {
-        this.hide();
-        return true;
+        return true;    // is need hide or not.
     }
 };
 

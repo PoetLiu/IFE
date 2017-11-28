@@ -8,6 +8,11 @@ PopoverInputManager.prototype.on = function (event, callback) {
         this.events[event]  = [];
     }
     this.events[event].push(callback);
+    var id = this.events[event].indexOf(callback);
+};
+
+PopoverInputManager.prototype.clearAll = function () {
+    this.events = {};
 };
 
 PopoverInputManager.prototype.emit = function (event, data) {

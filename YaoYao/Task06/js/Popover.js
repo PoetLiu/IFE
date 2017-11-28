@@ -6,7 +6,6 @@ Popover.prototype.setup = function (cfg) {
     this.dom    = new PopoverDom(cfg);
     this.inputManager   = new PopoverInputManager();
 
-    this.inputManager.on('click', this.onClick.bind(this));
     this.configure(cfg);
 };
 
@@ -18,6 +17,7 @@ Popover.prototype.configure = function (cfg) {
 Popover.prototype.onClick = function (event) {
     if (this.dom.onClick(event.target)) {
         event.preventDefault();
+        this.hide();
     }
 };
 
@@ -45,10 +45,12 @@ Popover.prototype.show  = function () {
         this.inputManager.on('drag', this.onDrag.bind(this));
         this.inputManager.on('dragend', this.onDragEnd.bind(this));
     }
+    this.inputManager.on('click', this.onClick.bind(this));
     this.dom.show();
 };
 
 Popover.prototype.hide  = function () {
+    this.inputManager.clearAll();
     this.dom.hide();
 };
 
