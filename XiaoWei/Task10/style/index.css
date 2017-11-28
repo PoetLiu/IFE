@@ -7,7 +7,7 @@
     display: flex;
     padding: 20px;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-flow: row wrap;
     border: solid 1px black;
 }
@@ -74,6 +74,7 @@
 
     .flex-container div:nth-child(3) {
         order: 4;
+        margin-top: 20px;
     }
 
     .flex-container div:nth-child(4) {
