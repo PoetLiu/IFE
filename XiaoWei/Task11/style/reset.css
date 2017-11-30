@@ -1,0 +1,55 @@
+* {
+    padding:0;
+    margin:0;
+}
+
+.clear-fix {
+    *overflow: hidden;
+    *zoom: 1;
+}
+
+.clear-fix:after {
+    display: table;
+    content: "";
+    width: 0;
+    clear: both;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+button, .btn {
+    color: #FFFFFF;
+    background: #388ac1;
+    border: none;
+    outline: none;
+    vertical-align: middle;
+}
+
+input,
+textarea {
+    border: none;
+    background-color: inherit;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0;
+    border: solid 1px #aaaaaa;
+    background: url("../image/down.png") no-repeat right 10px center;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.select1 {
+    background: url("../image/arrow-down.png") no-repeat right 6px center;
+    padding-left: 5px;
+    padding-right: 20px;
+}
