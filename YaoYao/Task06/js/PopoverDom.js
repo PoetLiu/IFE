@@ -68,18 +68,32 @@ PopoverDom.prototype.contentCfg = function (cfg) {
         s.width = cfg.width + 'px';
     }
     if (cfg.border) {
-        s.border    = cfg.border;
+        s.border = cfg.border;
     }
     s.position = 'absolute';
     s.opacity = 1;
     s.backgroundColor = '#FFFFFF';
-    s.top = '50%';
-    s.left = '50%';
-    s.webkitTransform = 'translate(-50%, -50%)';
-    s.mozTransform = 'translate(-50%, -50%)';
-    s.msTransform = 'translate(-50%, -50%)';
-    s.oTransform = 'translate(-50%, -50%)';
-    s.transform = 'translate(-50%, -50%)';
+
+    var contentDragMove = cfg && cfg.dragToMove;
+    console.log(cfg, contentDragMove);
+    if (contentDragMove) {
+        s.top   = (document.body.offsetHeight-cfg.height)/2 + 'px';
+        s.left  = (document.body.offsetWidth-cfg.width)/2 + 'px';
+        s.webkitTransform   = 'none';
+        s.mozTransform  = 'none';
+        s.msTransform   = 'none';
+        s.oTransform    = 'none';
+        s.transform     = 'none';
+    } else {
+        s.top   = '50%';
+        s.left  = '50%';
+        s.webkitTransform = 'translate(-50%, -50%)';
+        s.mozTransform = 'translate(-50%, -50%)';
+        s.msTransform = 'translate(-50%, -50%)';
+        s.oTransform = 'translate(-50%, -50%)';
+        s.transform = 'translate(-50%, -50%)';
+    }
+
 };
 
 PopoverDom.prototype.show = function () {
@@ -98,19 +112,24 @@ PopoverDom.prototype.onClick = function (target) {
 
 PopoverDom.prototype.onDrag = function (target, data) {
     if (target === this.content) {
-        console.log("Dragging!", target, data);
         return true;
     }
 };
 PopoverDom.prototype.onDragStart = function (target, data) {
     if (target === this.content) {
-        console.log("Drag Start!", target, data);
+        var s = this.content.style;
+        this.dragData = {startX:data.clientX, startY:data.clientY};
+        console.log("Drag Start!", data, s.top, s.left, this.dragData);
         return true;
     }
 };
 PopoverDom.prototype.onDragEnd = function (target, data) {
     if (target === this.content) {
-        console.log("Drag End!", target, data);
+        var s = this.content.style, d = this.dragData;
+        s.left  = (parseInt(s.left)+data.clientX-d.startX) + 'px';
+        s.top   = (parseInt(s.top)+data.clientY-d.startY) + 'px';
+        console.log("Drag End!", data, s.top, s.left, d);
+        this.dragData   = null;
         return true;
     }
 };

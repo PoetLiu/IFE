@@ -19,7 +19,7 @@ PopoverInputManager.prototype.emit = function (event, data) {
     var callbacks = this.events[event];
     if (callbacks) {
         callbacks.forEach(function (cb) {
-            console.log(event, data);
+            // console.log(event, data);
             cb(data);
         });
     }
