@@ -5,6 +5,25 @@ body {
 }
 
 .container {
-    width: 100px;
     margin: 100px auto;
+}
+
+.container table {
+    margin:0 auto;
+    width: 850px;
+    height: 200px;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+table,
+th,
+tr,
+td {
+    border: solid 1px gray;
+}
+
+.container table th {
+    background-color: #5B5B5B;
+    color: #FFFFFF;
 }
