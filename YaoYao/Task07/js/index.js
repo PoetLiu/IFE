@@ -1,9 +1,12 @@
 function init() {
+    var container   = document.getElementById('container');
+
     var cfg = {
-        'width': 850,
-        'height': 200,
-        'text-align': 'center',
+        'width':    850,
+        'height':   200,
+        'text-align':   'center',
         'border-collapse': 'collapse',
+        'border': 'solid 1px gray',
         'content': {
             'head': ['姓名', '语文', '数学', '英语', '总分'],
             'body': [
@@ -12,6 +15,7 @@ function init() {
                 ['小亮', 60, 100, 70, 230],
             ]
         },
+        'parent': container,
     };
 
     var table = new Table(cfg);
