@@ -10,7 +10,8 @@ function init() {
                 width: 610,
                 height: 305,
                 border: 'solid 1px black',
-                dragToMove:   'enable'
+                dragToMove:   'enable',
+                dragToResize:   'enable',
             }
         });
 

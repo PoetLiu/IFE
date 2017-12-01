@@ -21,9 +21,9 @@ PopoverDom.prototype.setup = function (cfg) {
 };
 
 PopoverDom.prototype.configure = function (cfg, init) {
-    cfg = cfg || {};
+    cfg = cfg || this.cfg || {};
 
-    console.log(cfg);
+    this.cfg    = cfg;
     if (cfg.container || init) {
         this.containerCfg(cfg.container);
     }
@@ -96,7 +96,17 @@ PopoverDom.prototype.contentCfg = function (cfg) {
 
 };
 
+PopoverDom.prototype.contentDrag = function (offsetX, offsetY)  {
+    var cfg = this.cfg.content;
+    if (cfg.dragToMove) {
+        var s = this.content.style;
+        s.left = (parseInt(s.left) + offsetX) + 'px';
+        s.top = (parseInt(s.top) + offsetY) + 'px';
+    }
+};
+
 PopoverDom.prototype.show = function () {
+    this.contentCfg(this.cfg.content);
     document.body.appendChild(this.container);
 };
 
@@ -112,11 +122,10 @@ PopoverDom.prototype.onClick = function (target) {
 
 PopoverDom.prototype.onDrag = function (target, data) {
     if (target === this.content) {
-        var s = this.content.style, d = this.dragData;
+        var d = this.dragData;
         if (d) {
-            s.left = (parseInt(s.left) + data.clientX - d.startX) + 'px';
-            s.top = (parseInt(s.top) + data.clientY - d.startY) + 'px';
-            console.log("Dragging!", data, s.top, s.left, d);
+            this.contentDrag(data.clientX-d.startX, data.clientY-d.startY);
+            console.log("Dragging!", data, d);
         }
         this.dragData = {startX: data.clientX, startY: data.clientY};
         return true;
