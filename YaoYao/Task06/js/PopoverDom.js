@@ -112,9 +112,15 @@ PopoverDom.prototype.onClick = function (target) {
 
 PopoverDom.prototype.onDrag = function (target, data) {
     if (target === this.content) {
+        var s = this.content.style, d = this.dragData;
+        s.left  = (parseInt(s.left)+data.clientX-d.startX) + 'px';
+        s.top   = (parseInt(s.top)+data.clientY-d.startY) + 'px';
+        console.log("Dragging!", data, s.top, s.left, d);
+        this.dragData = {startX:data.clientX, startY:data.clientY};
         return true;
     }
 };
+
 PopoverDom.prototype.onDragStart = function (target, data) {
     if (target === this.content) {
         var s = this.content.style;
@@ -123,16 +129,14 @@ PopoverDom.prototype.onDragStart = function (target, data) {
         return true;
     }
 };
+
 PopoverDom.prototype.onDragEnd = function (target, data) {
     if (target === this.content) {
-        var s = this.content.style, d = this.dragData;
-        s.left  = (parseInt(s.left)+data.clientX-d.startX) + 'px';
-        s.top   = (parseInt(s.top)+data.clientY-d.startY) + 'px';
-        console.log("Drag End!", data, s.top, s.left, d);
         this.dragData   = null;
         return true;
     }
 };
+
 PopoverDom.prototype.addItem = function (item) {
     this.content.appendChild(item);
 };
