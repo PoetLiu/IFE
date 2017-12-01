@@ -1,0 +1,42 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.clear-fix {
+    *overflow: hidden;
+    *zoom: 1;
+}
+
+.clear-fix:after {
+    display: table;
+    content: "";
+    width: 0;
+    clear: both;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    padding: 10px;
+    background-color: #FFFFFF;
+    border: solid 1px blue;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+input,
+select {
+    border: solid 1px lightgrey;
+    padding: 0 10px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
