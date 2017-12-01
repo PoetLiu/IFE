@@ -11,7 +11,7 @@ function init() {
                 height: 305,
                 border: 'solid 1px black',
                 dragToMove:   'enable',
-                dragToResize:   'enable',
+                // dragToResize:   'enable',
             }
         });
 
