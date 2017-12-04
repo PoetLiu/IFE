@@ -8,8 +8,8 @@ Table.prototype.setup = function (cfg) {
     var tb = document.createElement('table');
     var s = tb.style;
 
-    if (!cfg.parent) {
-        console.log("Parent required!");
+    if (!cfg.addTable) {
+        console.log("addTable callback required!");
         return -1;
     }
 
@@ -31,7 +31,7 @@ Table.prototype.setup = function (cfg) {
     this.dom = tb;
     this.cfg = cfg;
     this.setContent(cfg.content);
-    cfg.parent.appendChild(tb);
+    cfg.addTable(tb);
 };
 
 Table.prototype.setContent = function (content) {

@@ -15,7 +15,9 @@ function init() {
                 ['小亮', 60, 100, 70, 230],
             ]
         },
-        'parent': container,
+        'addTable': function (tb) {
+           container.appendChild(tb);
+        },
     };
 
     var table = new Table(cfg);
