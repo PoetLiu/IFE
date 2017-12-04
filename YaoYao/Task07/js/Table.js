@@ -1,6 +1,6 @@
 function Table(cfg) {
     this.setup(cfg);
-};
+}
 
 Table.prototype.setup = function (cfg) {
     cfg = cfg || this.cfg;
@@ -34,15 +34,29 @@ Table.prototype.setup = function (cfg) {
     cfg.addTable(tb);
 };
 
+Table.prototype.tdAddSortBtn = function (td) {
+    var div = document.createElement('div');
+    div.className   += 'arrow-up';
+    td.appendChild(div);
+
+    div = document.createElement('div');
+    div.className   += 'arrow-down';
+    td.appendChild(div);
+    console.log(td);
+};
+
 Table.prototype.setContent = function (content) {
     var c = content || this.cfg.content;
-    var self = this, isHead = true;
+    var self = this, isHead = true, i = 0;
 
     c.data.forEach(function (t) {
         var tr = document.createElement('tr');
         t.forEach(function (t2) {
             var td = document.createElement(isHead?'th':'td');
-            td.innerHTML = t2;
+            td.innerHTML += t2;
+            if (isHead && c.sortAble[i++] ) {
+                self.tdAddSortBtn(td);
+            }
             tr.appendChild(td);
         });
         isHead  = false;

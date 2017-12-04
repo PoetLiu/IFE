@@ -27,3 +27,28 @@ td {
     background-color: #5B5B5B;
     color: #FFFFFF;
 }
+
+th,
+td {
+    position: relative;
+}
+
+.arrow-up ,
+.arrow-down {
+    position: absolute;
+    right: 15px;
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+}
+
+.arrow-up {
+    top: 12px;
+    border-bottom: 7px solid white;
+}
+
+.arrow-down {
+    top: 32px;
+    border-top: 7px solid white;
+}
