@@ -34,26 +34,26 @@ Table.prototype.setup = function (cfg) {
     cfg.addTable(tb);
 };
 
-Table.prototype.upSortBtnClick  = function (e) {
-   console.log(e, e.target.parentNode.id);
+Table.prototype.upSortBtnClick = function (e) {
+    console.log(e, e.target.parentNode.id);
 };
 
-Table.prototype.downSortBtnClick  = function (e) {
+Table.prototype.downSortBtnClick = function (e) {
     console.log(e, e.target.parentNode.id);
 };
 
 Table.prototype.tdAddSortBtn = function (td, id) {
     var div = document.createElement('div');
-    div.className   += 'arrow-up';
+    div.className += 'arrow-up';
     td.appendChild(div);
     div.addEventListener('click', this.upSortBtnClick.bind(this));
 
     div = document.createElement('div');
-    div.className   += 'arrow-down';
+    div.className += 'arrow-down';
     td.appendChild(div);
     div.addEventListener('click', this.downSortBtnClick.bind(this));
 
-    td.id   = id;
+    td.id = id;
 };
 
 Table.prototype.setContent = function (content) {
@@ -63,14 +63,14 @@ Table.prototype.setContent = function (content) {
     c.data.forEach(function (t) {
         var tr = document.createElement('tr');
         t.forEach(function (t2) {
-            var td = document.createElement(isHead?'th':'td');
+            var td = document.createElement(isHead ? 'th' : 'td');
             td.innerHTML += t2;
-            if (isHead && c.sortAble[i++] ) {
-                self.tdAddSortBtn(td, i-1);
+            if (isHead && c.sortAble[i++]) {
+                self.tdAddSortBtn(td, i - 1);
             }
             tr.appendChild(td);
         });
-        isHead  = false;
+        isHead = false;
         self.dom.appendChild(tr);
     });
 };
