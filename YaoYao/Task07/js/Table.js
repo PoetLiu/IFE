@@ -30,6 +30,7 @@ Table.prototype.setup = function (cfg) {
 
     this.dom = tb;
     this.cfg = cfg;
+    this.sort = this.cfg.sort || this.sort;
     this.setContent(cfg.content);
     cfg.addTable(tb);
 };
@@ -46,8 +47,7 @@ Table.prototype.sort = function (order, col) {
 };
 
 Table.prototype.sortAndUpdate = function (order, col) {
-    var sort = this.cfg.sort || this.sort;
-    sort.call(this, order, col, this.cfg.content);
+    this.sort(order, col, this.cfg.content);
     this.setContent();
 };
 
