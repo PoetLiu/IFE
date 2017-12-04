@@ -34,12 +34,24 @@ Table.prototype.setup = function (cfg) {
     cfg.addTable(tb);
 };
 
+Table.prototype.sort  = function (order, col) {
+    var c = this.cfg.content;
+    var body = c.data.splice(1);
+    body.sort( function (a, b) {
+        var n1 = parseInt(a[col]), n2 = parseInt(b[col]);
+        return order === 'ascend'? n1 > n2 : n1 < n2;
+    });
+    this.dom.innerHTML  = '';
+    c.data   = c.data.concat(body);
+    this.setContent();
+};
+
 Table.prototype.upSortBtnClick = function (e) {
-    console.log(e, e.target.parentNode.id);
+    this.sort('ascend', e.target.parentNode.id);
 };
 
 Table.prototype.downSortBtnClick = function (e) {
-    console.log(e, e.target.parentNode.id);
+    this.sort('descend', e.target.parentNode.id);
 };
 
 Table.prototype.tdAddSortBtn = function (td, id) {
