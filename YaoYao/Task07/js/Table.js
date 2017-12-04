@@ -6,12 +6,24 @@ Table.prototype.setup = function (cfg) {
     cfg = cfg || this.cfg;
 
     var tb = document.createElement('table');
-    var s = tb.style;
+    this.dom = tb;
+
+    this.cfg = cfg;
+    this.setTable();
+    this.setContent();
+
+    this.sort = this.cfg.sort || this.sort;
 
     if (!cfg.addTable) {
         console.log("addTable callback required!");
         return -1;
     }
+    cfg.addTable(tb);
+};
+
+Table.prototype.setTable = function (cfg) {
+    cfg = cfg || this.cfg;
+    var s = this.dom.style;
 
     if (cfg.width) {
         s.width = cfg.width + 'px';
@@ -28,11 +40,6 @@ Table.prototype.setup = function (cfg) {
         s.textAlign = cfg.textAlign;
     }
 
-    this.dom = tb;
-    this.cfg = cfg;
-    this.sort = this.cfg.sort || this.sort;
-    this.setContent(cfg.content);
-    cfg.addTable(tb);
 };
 
 Table.prototype.sort = function (order, col) {
