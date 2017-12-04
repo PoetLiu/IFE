@@ -15,8 +15,7 @@ Table.prototype.setup = function (cfg) {
     this.sort = this.cfg.sort || this.sort;
 
     if (!cfg.addTable) {
-        console.log("addTable callback required!");
-        return -1;
+        throw new Error("addTable callback is required!");
     }
     cfg.addTable(tb);
 };
