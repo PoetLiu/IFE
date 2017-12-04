@@ -36,13 +36,17 @@ Table.prototype.setup = function (cfg) {
 
 Table.prototype.sort  = function (order, col) {
     var c = this.cfg.content;
+    // Sort table body, dose not include th.
     var body = c.data.splice(1);
     body.sort( function (a, b) {
         var n1 = parseInt(a[col]), n2 = parseInt(b[col]);
         return order === 'ascend'? n1 > n2 : n1 < n2;
     });
-    this.dom.innerHTML  = '';
     c.data   = c.data.concat(body);
+
+    // Clear table body.
+    this.dom.innerHTML  = '';
+    // Generate table content.
     this.setContent();
 };
 
