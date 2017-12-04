@@ -36,25 +36,16 @@ Table.prototype.setup = function (cfg) {
 
 Table.prototype.setContent = function (content) {
     var c = content || this.cfg.content;
+    var self = this, isHead = true;
 
-    // head
-    var tr = document.createElement('tr');
-    this.dom.appendChild(tr);
-    c.head.forEach(function (t) {
-        var th = document.createElement('th');
-        th.innerHTML = t;
-        tr.appendChild(th);
-    });
-
-    // body
-    var self = this;
-    c.body.forEach(function (t) {
-        tr = document.createElement('tr');
+    c.data.forEach(function (t) {
+        var tr = document.createElement('tr');
         t.forEach(function (t2) {
-            var td = document.createElement('td');
+            var td = document.createElement(isHead?'th':'td');
             td.innerHTML = t2;
             tr.appendChild(td);
         });
+        isHead  = false;
         self.dom.appendChild(tr);
     });
 };
