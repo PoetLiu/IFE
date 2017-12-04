@@ -43,19 +43,20 @@ Table.prototype.sort  = function (order, col) {
         return order === 'ascend'? n1 > n2 : n1 < n2;
     });
     c.data   = c.data.concat(body);
+};
 
-    // Clear table body.
-    this.dom.innerHTML  = '';
-    // Generate table content.
+Table.prototype.sortAndUpdate = function (order, col) {
+    var sort = this.cfg.sort || this.sort;
+    sort.call(this, order, col, this.cfg.content);
     this.setContent();
 };
 
 Table.prototype.upSortBtnClick = function (e) {
-    this.sort('ascend', e.target.parentNode.id);
+    this.sortAndUpdate('ascend', e.target.parentNode.id);
 };
 
 Table.prototype.downSortBtnClick = function (e) {
-    this.sort('descend', e.target.parentNode.id);
+    this.sortAndUpdate('descend', e.target.parentNode.id);
 };
 
 Table.prototype.tdAddSortBtn = function (td, id) {
@@ -76,6 +77,7 @@ Table.prototype.setContent = function (content) {
     var c = content || this.cfg.content;
     var self = this, isHead = true, i = 0;
 
+    this.dom.innerHTML  = '';
     c.data.forEach(function (t) {
         var tr = document.createElement('tr');
         t.forEach(function (t2) {

@@ -19,6 +19,16 @@ function init() {
         'addTable': function (tb) {
             container.appendChild(tb);
         },
+        'sort': function (order, col, content) {
+            console.log("Call outer sort func.");
+            var d = content.data;
+            var body = d.splice(1);
+            body.sort( function (a, b) {
+                var n1 = parseInt(a[col]), n2 = parseInt(b[col]);
+                return order === 'ascend'? n1 > n2 : n1 < n2;
+            });
+            content.data   = d.concat(body);
+        },
     };
 
     var table = new Table(cfg);
