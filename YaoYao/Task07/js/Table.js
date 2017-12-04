@@ -34,15 +34,26 @@ Table.prototype.setup = function (cfg) {
     cfg.addTable(tb);
 };
 
-Table.prototype.tdAddSortBtn = function (td) {
+Table.prototype.upSortBtnClick  = function (e) {
+   console.log(e, e.target.parentNode.id);
+};
+
+Table.prototype.downSortBtnClick  = function (e) {
+    console.log(e, e.target.parentNode.id);
+};
+
+Table.prototype.tdAddSortBtn = function (td, id) {
     var div = document.createElement('div');
     div.className   += 'arrow-up';
     td.appendChild(div);
+    div.addEventListener('click', this.upSortBtnClick.bind(this));
 
     div = document.createElement('div');
     div.className   += 'arrow-down';
     td.appendChild(div);
-    console.log(td);
+    div.addEventListener('click', this.downSortBtnClick.bind(this));
+
+    td.id   = id;
 };
 
 Table.prototype.setContent = function (content) {
@@ -55,7 +66,7 @@ Table.prototype.setContent = function (content) {
             var td = document.createElement(isHead?'th':'td');
             td.innerHTML += t2;
             if (isHead && c.sortAble[i++] ) {
-                self.tdAddSortBtn(td);
+                self.tdAddSortBtn(td, i-1);
             }
             tr.appendChild(td);
         });
